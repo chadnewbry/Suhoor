@@ -7,47 +7,52 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01068EE16C5C148A39426120 /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA2EC670BA61266C6B0C237 /* LocationData.swift */; };
-		0AF942549D8BF8751B3DD9F4 /* ShareableSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B494459DAFEC81FCA5EEA7 /* ShareableSummaryView.swift */; };
-		16F8F176E9087EAE64789EB2 /* DailyDeedsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320DBBEC226F166F1B8DEE10 /* DailyDeedsView.swift */; };
-		258352B0296E678EF2291A03 /* DeedOfTheDayCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB886B3765C9C2E2E917837 /* DeedOfTheDayCard.swift */; };
-		31BC121480ABDCC59B6EE988 /* CountdownArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498BE728491FE2E59733C2B9 /* CountdownArcView.swift */; };
+		03BEBB0CDA32AC7E0B356D59 /* HydrationEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0EB512514FCD9E067824DE /* HydrationEntry.swift */; };
+		08C163672F7A5BB6A83F0F74 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330EBD12ED238268377189D3 /* DashboardViewModel.swift */; };
+		1261B9FA8CC478AACC70ED02 /* RamadanScorecardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFF62EC611461E79ADFA586 /* RamadanScorecardView.swift */; };
+		13D5181ACB967E8D12E4DAB2 /* YearComparisonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C7670C0060F158F5DDE04D /* YearComparisonView.swift */; };
+		16A8495E2F5947493AE38B3D /* DeedOfTheDayCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD0684C48EDAF3D0EB9553 /* DeedOfTheDayCard.swift */; };
+		19457772ED6A89552D466865 /* HijriCalendarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC21C4D629E17A78C328F5A /* HijriCalendarService.swift */; };
+		1E6E0272BACBC33E2627ACED /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E511D30CDE08A56AF0B24EB4 /* LocationData.swift */; };
+		27B13F3160C50C87FC9487AE /* RingChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD1FB0EDCD06869504DCEFC /* RingChartView.swift */; };
+		2E6E986B7910E18720FEE85C /* QuranVerse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2569270F1AF5E5349D8B11C4 /* QuranVerse.swift */; };
 		333255421B6617A74816C8D2 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF6F5EE0DCF6BE7E9FD3F92 /* Color+Extensions.swift */; };
-		3A68DBE6A726C864F435DE8D /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC30227A9B40AD841D1110CC /* HealthKitService.swift */; };
+		348B8B45F61CCBF216BDF67F /* BadgesGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23A194B0E75960FB82B090C /* BadgesGridView.swift */; };
 		3E0FDECEAC106F44EDD3A067 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4ACAF6FC3E0BB1BF7F398C /* SettingsView.swift */; };
+		4070A4D94916576FD3B93FEC /* DailyVerseCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600E823130393E5295D1C1FA /* DailyVerseCard.swift */; };
 		426BBA0361EAA3929F036D95 /* QuranView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C87D0F59921D049440DC48B /* QuranView.swift */; };
-		456E116F9C2A7F2A7EA7AEA8 /* RingChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95079515253B01AE54A6AF22 /* RingChartView.swift */; };
-		50DBD7B8F7D240A130DE70E9 /* DeedOfTheDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB1D53BE2E288172643597C /* DeedOfTheDay.swift */; };
-		50E1267C92EB1FBE1D676766 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E165EF471D74E0FAD12C8947 /* UserSettings.swift */; };
+		4698B81B379A6B34FAE9DBC6 /* ShareableSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09B6CC9940A1235268BC158 /* ShareableSummaryView.swift */; };
+		4925C91E5755D5940657B239 /* CountdownEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64F45B47AF686D4E9001296 /* CountdownEngine.swift */; };
+		4B52656DB65A36A9A10F6078 /* ModelContainer+Suhoor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0CAE61A3E6FA830EFD0EFE /* ModelContainer+Suhoor.swift */; };
+		5303EF07CD3BD379BFBA2FE6 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144106AB2CB1102F5C6E8C66 /* Badge.swift */; };
+		56FD1FD45F5D8E63947FAD74 /* RamadanDayCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70243E777C7E1E9B27C5E22 /* RamadanDayCard.swift */; };
+		5755B6D49EBC7BAEA2AF8526 /* DailyDeedsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05C299C68C863F67D400011 /* DailyDeedsView.swift */; };
 		5DFE548DFA768DD2EFC156EC /* TrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACDE62A96136D2F47425089 /* TrackerView.swift */; };
-		627ED6C6CB153F85B079F32C /* ModelContainer+Suhoor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3285D987B0A405AB0B8E2D3 /* ModelContainer+Suhoor.swift */; };
-		6339613B3FAE0A1CEB68815C /* FastingDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE5C5199A12F28025DE2642 /* FastingDay.swift */; };
-		65DEC36CE67A630CB731EF4E /* DailyVerseCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614FCE10358844D97C33ED31 /* DailyVerseCard.swift */; };
-		67257EE00E647650A7083700 /* NextPrayerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85EB19BED4D3710CCFB829 /* NextPrayerCard.swift */; };
+		5F9BBF921CF857A3361F95AD /* CountdownArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4E87F30B0850A0AC087514 /* CountdownArcView.swift */; };
+		6244A0B2D807B9A81107AAF6 /* DeedEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8758898E99D4F034F9FB7E3A /* DeedEntry.swift */; };
 		69314AFC51DD018764C94282 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30236ED79DBDD9574CBA22CA /* DashboardView.swift */; };
-		6B0EA1A25A7686EC96742035 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB35176DEA0999AE8B36582 /* Badge.swift */; };
-		88B9290B880DBE9D02C4651F /* YearComparisonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AE11B5601EAD7A01551BE5 /* YearComparisonView.swift */; };
+		7ECBCF5B75340DB4346B2621 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276A3910D68B3234B0160F24 /* DataService.swift */; };
 		8D67EF5B621753A1693E9B7B /* SuhoorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E0FA15D24BCE755C348384 /* SuhoorApp.swift */; };
+		8F968D11EBE301A53F2D2858 /* DeedOfTheDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE9FB3D089E65C997108FA3 /* DeedOfTheDay.swift */; };
+		9364403E5217846DCAFDF898 /* FastingRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA27A9F106C54F2841958D8 /* FastingRecord.swift */; };
 		968FFAE261E32DB1F6681905 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1994C9A1226302607D72E015 /* ContentView.swift */; };
-		9B5CB41946177A43E12D54BE /* RamadanDayCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89FACD9EF86C4B519BA45B /* RamadanDayCard.swift */; };
-		A7DC2EE4A49CD60FEDF83611 /* RamadanScorecardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA23D2F78A8CF0DC055E434A /* RamadanScorecardView.swift */; };
+		990D7827085086AB2F92EE4E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7BA26A4E6D11890F94DB2C /* DataManager.swift */; };
 		A8A9DEF2A4AA9CD21676FC2E /* SuhoorWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34234A51FC680D834287D23 /* SuhoorWidgets.swift */; };
-		A90AD260899F795025A7102C /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CE548C3CA7A69F88EDB00B /* DataManager.swift */; };
-		B42B3E22CA219250CBEB8B18 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB2D94B64703D30909B00E9 /* DashboardViewModel.swift */; };
-		C02290860DADE45E8EF166DC /* BadgesGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF17A8E9839F0B8CA0C2554 /* BadgesGridView.swift */; };
-		C13EE180D1B4B1B3EB37251D /* MakeupFast.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED827BA72B5CAB0B74D238BA /* MakeupFast.swift */; };
-		C52D1932E5DF57508193D6C6 /* FastingRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02FC16697BDE4522721B689 /* FastingRecord.swift */; };
-		CDBFF760EDADEF68E7BA9BB9 /* PrayerTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E04842DECD1F1FADDB7D56 /* PrayerTime.swift */; };
+		C5470ED549023B36A1DB4E53 /* PrayerTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF08C8C5F265751315D6BDA /* PrayerTime.swift */; };
+		C916D0DA752BBEEE691586D2 /* MakeupFast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B223E20275D3ACD89E2F6 /* MakeupFast.swift */; };
+		D21A0BE5D5A9331CA50EDAAC /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988CFDF375C77C7B2955DB92 /* UserSettings.swift */; };
+		D39E22C40DB30941112B222B /* QuranProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F08D6455AEC6A144CAB6DB7 /* QuranProgress.swift */; };
+		D67CE39D514B6522F3397394 /* QuickStatsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BC0A676EFB8F834BB58AF2 /* QuickStatsRow.swift */; };
+		DBCEDA88C668B432E2F16F15 /* PrayerTimesCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E6E5E4C40F69E14C50274 /* PrayerTimesCalculator.swift */; };
+		DC3712F22878827122DA44F6 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8598E9D3BFE625FA49B679 /* LocationService.swift */; };
+		E445BFA023786A646C327069 /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C36683F804926FCC10634AD /* HealthKitService.swift */; };
 		E55FFC201656F9E09FFF6445 /* SuhoorWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAACFB950998F42377AFC07A /* SuhoorWatchApp.swift */; };
-		E844A486BB97FC1EAFAC4862 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B4F5B5E32F17AAE6D15E7C /* DataService.swift */; };
-		EAF3E6029D753CA7FAAF777C /* HydrationEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91236DA0CCD1BAF7EFDD265 /* HydrationEntry.swift */; };
+		EA6A7CA80F9B2E9FD8BE13BB /* NextPrayerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A28892FF74A74EE2AF4E9AE /* NextPrayerCard.swift */; };
 		EB748345639FF8D971925B8A /* CalendarTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C66BE3453EF0C95D5E882D0 /* CalendarTabView.swift */; };
 		EC21397B57E5C4FD36EE04EF /* WatchContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7D5003606C9FF39076D5C6 /* WatchContentView.swift */; };
-		F04E569CE1DC6A66CD5D4CDF /* QuickStatsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F1A0132DCA08EA80378981 /* QuickStatsRow.swift */; };
-		F79C28C2B723D9BFB93CA43D /* QuranVerse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE52F4FAE62C9C4D56161B7 /* QuranVerse.swift */; };
+		F3BE096F783B6DC89DB0936E /* FastingDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADA77EB52EF21705D6FA187 /* FastingDay.swift */; };
+		F8D530F08B7C5DA23556EA4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F17E860E2F4C9291D52C133 /* Assets.xcassets */; };
 		FB285F962B84DFE0519FB61C /* SuhoorWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1F00809967824B041BE1EA7A /* SuhoorWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		FC5145D18F491A1C25C8B40E /* QuranProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F0AD522D66D4967B55C442 /* QuranProgress.swift */; };
-		FF7D2B9D10BB17C557D824C0 /* DeedEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A495FEAD7DB6E59CA4F584E /* DeedEntry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,57 +80,62 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0A0B223E20275D3ACD89E2F6 /* MakeupFast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeupFast.swift; sourceTree = "<group>"; };
+		0BC21C4D629E17A78C328F5A /* HijriCalendarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HijriCalendarService.swift; sourceTree = "<group>"; };
+		144106AB2CB1102F5C6E8C66 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		1994C9A1226302607D72E015 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		1A495FEAD7DB6E59CA4F584E /* DeedEntry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DeedEntry.swift; sourceTree = "<group>"; };
+		1A28892FF74A74EE2AF4E9AE /* NextPrayerCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextPrayerCard.swift; sourceTree = "<group>"; };
 		1ACDE62A96136D2F47425089 /* TrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerView.swift; sourceTree = "<group>"; };
 		1C87D0F59921D049440DC48B /* QuranView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranView.swift; sourceTree = "<group>"; };
 		1D03953894A91AA211CAEDC4 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		1F00809967824B041BE1EA7A /* SuhoorWidgets.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = SuhoorWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		1FB35176DEA0999AE8B36582 /* Badge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
+		2569270F1AF5E5349D8B11C4 /* QuranVerse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranVerse.swift; sourceTree = "<group>"; };
+		276A3910D68B3234B0160F24 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		2F08D6455AEC6A144CAB6DB7 /* QuranProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranProgress.swift; sourceTree = "<group>"; };
 		30236ED79DBDD9574CBA22CA /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
-		320DBBEC226F166F1B8DEE10 /* DailyDeedsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DailyDeedsView.swift; sourceTree = "<group>"; };
-		3CB2D94B64703D30909B00E9 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		330EBD12ED238268377189D3 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		3CF08C8C5F265751315D6BDA /* PrayerTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTime.swift; sourceTree = "<group>"; };
 		3EC60840A2208E70889F66EE /* SuhoorWidgets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SuhoorWidgets.entitlements; sourceTree = "<group>"; };
-		40F0AD522D66D4967B55C442 /* QuranProgress.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QuranProgress.swift; sourceTree = "<group>"; };
-		42AE11B5601EAD7A01551BE5 /* YearComparisonView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = YearComparisonView.swift; sourceTree = "<group>"; };
 		43E0FA15D24BCE755C348384 /* SuhoorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuhoorApp.swift; sourceTree = "<group>"; };
-		48E04842DECD1F1FADDB7D56 /* PrayerTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTime.swift; sourceTree = "<group>"; };
-		498BE728491FE2E59733C2B9 /* CountdownArcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownArcView.swift; sourceTree = "<group>"; };
-		4CE5C5199A12F28025DE2642 /* FastingDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastingDay.swift; sourceTree = "<group>"; };
-		4D85EB19BED4D3710CCFB829 /* NextPrayerCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextPrayerCard.swift; sourceTree = "<group>"; };
-		50B4F5B5E32F17AAE6D15E7C /* DataService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
-		52CE548C3CA7A69F88EDB00B /* DataManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		534BFA4E75CFAECEC7F930FA /* Suhoor.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Suhoor.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		614FCE10358844D97C33ED31 /* DailyVerseCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyVerseCard.swift; sourceTree = "<group>"; };
+		5C36683F804926FCC10634AD /* HealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
+		5C7BA26A4E6D11890F94DB2C /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		5CD1FB0EDCD06869504DCEFC /* RingChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingChartView.swift; sourceTree = "<group>"; };
+		600E823130393E5295D1C1FA /* DailyVerseCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyVerseCard.swift; sourceTree = "<group>"; };
 		6C66BE3453EF0C95D5E882D0 /* CalendarTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTabView.swift; sourceTree = "<group>"; };
-		79B494459DAFEC81FCA5EEA7 /* ShareableSummaryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ShareableSummaryView.swift; sourceTree = "<group>"; };
+		6DA27A9F106C54F2841958D8 /* FastingRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastingRecord.swift; sourceTree = "<group>"; };
+		75CD0684C48EDAF3D0EB9553 /* DeedOfTheDayCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeedOfTheDayCard.swift; sourceTree = "<group>"; };
+		7A4E87F30B0850A0AC087514 /* CountdownArcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownArcView.swift; sourceTree = "<group>"; };
+		7F17E860E2F4C9291D52C133 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8758898E99D4F034F9FB7E3A /* DeedEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeedEntry.swift; sourceTree = "<group>"; };
+		89C7670C0060F158F5DDE04D /* YearComparisonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearComparisonView.swift; sourceTree = "<group>"; };
+		8A8598E9D3BFE625FA49B679 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		8AFF62EC611461E79ADFA586 /* RamadanScorecardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamadanScorecardView.swift; sourceTree = "<group>"; };
+		8FE9FB3D089E65C997108FA3 /* DeedOfTheDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeedOfTheDay.swift; sourceTree = "<group>"; };
 		90A7AE0D8ADBB32A82802F69 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
-		95079515253B01AE54A6AF22 /* RingChartView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RingChartView.swift; sourceTree = "<group>"; };
+		954E6E5E4C40F69E14C50274 /* PrayerTimesCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimesCalculator.swift; sourceTree = "<group>"; };
+		988CFDF375C77C7B2955DB92 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		9AEAF0C16B7D4A95886317C9 /* SuhoorWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuhoorWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9DB1D53BE2E288172643597C /* DeedOfTheDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeedOfTheDay.swift; sourceTree = "<group>"; };
-		AA23D2F78A8CF0DC055E434A /* RamadanScorecardView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RamadanScorecardView.swift; sourceTree = "<group>"; };
-		AAB886B3765C9C2E2E917837 /* DeedOfTheDayCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeedOfTheDayCard.swift; sourceTree = "<group>"; };
-		AC30227A9B40AD841D1110CC /* HealthKitService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
+		A05C299C68C863F67D400011 /* DailyDeedsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDeedsView.swift; sourceTree = "<group>"; };
+		AA0EB512514FCD9E067824DE /* HydrationEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydrationEntry.swift; sourceTree = "<group>"; };
 		AE4ACAF6FC3E0BB1BF7F398C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		AE7D5003606C9FF39076D5C6 /* WatchContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchContentView.swift; sourceTree = "<group>"; };
-		B02FC16697BDE4522721B689 /* FastingRecord.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastingRecord.swift; sourceTree = "<group>"; };
-		B91236DA0CCD1BAF7EFDD265 /* HydrationEntry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HydrationEntry.swift; sourceTree = "<group>"; };
+		B09B6CC9940A1235268BC158 /* ShareableSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareableSummaryView.swift; sourceTree = "<group>"; };
+		B70243E777C7E1E9B27C5E22 /* RamadanDayCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamadanDayCard.swift; sourceTree = "<group>"; };
 		BBDD2EDA1D53537BAF5F848E /* Suhoor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Suhoor.entitlements; sourceTree = "<group>"; };
-		BCF17A8E9839F0B8CA0C2554 /* BadgesGridView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BadgesGridView.swift; sourceTree = "<group>"; };
 		BDCA5E9955AF6504F3498FFF /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		C057859B32EE5CFCD0E88011 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		C23A194B0E75960FB82B090C /* BadgesGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesGridView.swift; sourceTree = "<group>"; };
 		C5013D2F9602338362B8EE10 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
-		CEE52F4FAE62C9C4D56161B7 /* QuranVerse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranVerse.swift; sourceTree = "<group>"; };
 		CF547A2BAE03710D7B7A2165 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
-		D3285D987B0A405AB0B8E2D3 /* ModelContainer+Suhoor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ModelContainer+Suhoor.swift"; sourceTree = "<group>"; };
-		E165EF471D74E0FAD12C8947 /* UserSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		D64F45B47AF686D4E9001296 /* CountdownEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownEngine.swift; sourceTree = "<group>"; };
+		E511D30CDE08A56AF0B24EB4 /* LocationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
 		EAACFB950998F42377AFC07A /* SuhoorWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuhoorWatchApp.swift; sourceTree = "<group>"; };
-		ED827BA72B5CAB0B74D238BA /* MakeupFast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MakeupFast.swift; sourceTree = "<group>"; };
-		EE89FACD9EF86C4B519BA45B /* RamadanDayCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamadanDayCard.swift; sourceTree = "<group>"; };
+		EADA77EB52EF21705D6FA187 /* FastingDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastingDay.swift; sourceTree = "<group>"; };
 		EEF6F5EE0DCF6BE7E9FD3F92 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
-		EFA2EC670BA61266C6B0C237 /* LocationData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
-		F0F1A0132DCA08EA80378981 /* QuickStatsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickStatsRow.swift; sourceTree = "<group>"; };
+		EF0CAE61A3E6FA830EFD0EFE /* ModelContainer+Suhoor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModelContainer+Suhoor.swift"; sourceTree = "<group>"; };
 		F34234A51FC680D834287D23 /* SuhoorWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuhoorWidgets.swift; sourceTree = "<group>"; };
+		F7BC0A676EFB8F834BB58AF2 /* QuickStatsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickStatsRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -133,19 +143,19 @@
 			isa = PBXGroup;
 			children = (
 				CF547A2BAE03710D7B7A2165 /* .gitkeep */,
-				48E04842DECD1F1FADDB7D56 /* PrayerTime.swift */,
-				4CE5C5199A12F28025DE2642 /* FastingDay.swift */,
-				CEE52F4FAE62C9C4D56161B7 /* QuranVerse.swift */,
-				9DB1D53BE2E288172643597C /* DeedOfTheDay.swift */,
-				1FB35176DEA0999AE8B36582 /* Badge.swift */,
-				1A495FEAD7DB6E59CA4F584E /* DeedEntry.swift */,
-				B02FC16697BDE4522721B689 /* FastingRecord.swift */,
-				B91236DA0CCD1BAF7EFDD265 /* HydrationEntry.swift */,
-				EFA2EC670BA61266C6B0C237 /* LocationData.swift */,
-				ED827BA72B5CAB0B74D238BA /* MakeupFast.swift */,
-				D3285D987B0A405AB0B8E2D3 /* ModelContainer+Suhoor.swift */,
-				40F0AD522D66D4967B55C442 /* QuranProgress.swift */,
-				E165EF471D74E0FAD12C8947 /* UserSettings.swift */,
+				144106AB2CB1102F5C6E8C66 /* Badge.swift */,
+				8758898E99D4F034F9FB7E3A /* DeedEntry.swift */,
+				8FE9FB3D089E65C997108FA3 /* DeedOfTheDay.swift */,
+				EADA77EB52EF21705D6FA187 /* FastingDay.swift */,
+				6DA27A9F106C54F2841958D8 /* FastingRecord.swift */,
+				AA0EB512514FCD9E067824DE /* HydrationEntry.swift */,
+				E511D30CDE08A56AF0B24EB4 /* LocationData.swift */,
+				0A0B223E20275D3ACD89E2F6 /* MakeupFast.swift */,
+				EF0CAE61A3E6FA830EFD0EFE /* ModelContainer+Suhoor.swift */,
+				3CF08C8C5F265751315D6BDA /* PrayerTime.swift */,
+				2F08D6455AEC6A144CAB6DB7 /* QuranProgress.swift */,
+				2569270F1AF5E5349D8B11C4 /* QuranVerse.swift */,
+				988CFDF375C77C7B2955DB92 /* UserSettings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -166,6 +176,19 @@
 				CB069D1FF301557FEA9AE741 /* SuhoorWidgets */,
 				9E5EF3A71042BB76330CC5A9 /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		352D6AA55BBBC390DB2F8B63 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C23A194B0E75960FB82B090C /* BadgesGridView.swift */,
+				A05C299C68C863F67D400011 /* DailyDeedsView.swift */,
+				8AFF62EC611461E79ADFA586 /* RamadanScorecardView.swift */,
+				5CD1FB0EDCD06869504DCEFC /* RingChartView.swift */,
+				B09B6CC9940A1235268BC158 /* ShareableSummaryView.swift */,
+				89C7670C0060F158F5DDE04D /* YearComparisonView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		42A0EF07BF8645B9123F04EA /* Qibla */ = {
@@ -194,25 +217,11 @@
 			path = SuhoorWatch/SuhoorWatchApp;
 			sourceTree = "<group>";
 		};
-		8C18DCC9BDD2D2CC9455D00B /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				95079515253B01AE54A6AF22 /* RingChartView.swift */,
-				AA23D2F78A8CF0DC055E434A /* RamadanScorecardView.swift */,
-				320DBBEC226F166F1B8DEE10 /* DailyDeedsView.swift */,
-				BCF17A8E9839F0B8CA0C2554 /* BadgesGridView.swift */,
-				42AE11B5601EAD7A01551BE5 /* YearComparisonView.swift */,
-				79B494459DAFEC81FCA5EEA7 /* ShareableSummaryView.swift */,
-			);
-			name = Components;
-			path = Components;
-			sourceTree = "<group>";
-		};
 		8F6E35344737174046B38252 /* Tracker */ = {
 			isa = PBXGroup;
 			children = (
 				1ACDE62A96136D2F47425089 /* TrackerView.swift */,
-				8C18DCC9BDD2D2CC9455D00B /* Components */,
+				352D6AA55BBBC390DB2F8B63 /* Components */,
 			);
 			path = Tracker;
 			sourceTree = "<group>";
@@ -263,7 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				30236ED79DBDD9574CBA22CA /* DashboardView.swift */,
-				F8FA97568019E5D9CCA6FE41 /* Components */,
+				E7961DC7519AC8B2748FBF7F /* Components */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -295,18 +304,35 @@
 			isa = PBXGroup;
 			children = (
 				C5013D2F9602338362B8EE10 /* .gitkeep */,
-				3CB2D94B64703D30909B00E9 /* DashboardViewModel.swift */,
+				330EBD12ED238268377189D3 /* DashboardViewModel.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		E7961DC7519AC8B2748FBF7F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				7A4E87F30B0850A0AC087514 /* CountdownArcView.swift */,
+				600E823130393E5295D1C1FA /* DailyVerseCard.swift */,
+				75CD0684C48EDAF3D0EB9553 /* DeedOfTheDayCard.swift */,
+				1A28892FF74A74EE2AF4E9AE /* NextPrayerCard.swift */,
+				F7BC0A676EFB8F834BB58AF2 /* QuickStatsRow.swift */,
+				B70243E777C7E1E9B27C5E22 /* RamadanDayCard.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		E7D608BD8DADC6586B114E99 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				90A7AE0D8ADBB32A82802F69 /* .gitkeep */,
-				52CE548C3CA7A69F88EDB00B /* DataManager.swift */,
-				50B4F5B5E32F17AAE6D15E7C /* DataService.swift */,
-				AC30227A9B40AD841D1110CC /* HealthKitService.swift */,
+				D64F45B47AF686D4E9001296 /* CountdownEngine.swift */,
+				5C7BA26A4E6D11890F94DB2C /* DataManager.swift */,
+				276A3910D68B3234B0160F24 /* DataService.swift */,
+				5C36683F804926FCC10634AD /* HealthKitService.swift */,
+				0BC21C4D629E17A78C328F5A /* HijriCalendarService.swift */,
+				8A8598E9D3BFE625FA49B679 /* LocationService.swift */,
+				954E6E5E4C40F69E14C50274 /* PrayerTimesCalculator.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -315,6 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				C057859B32EE5CFCD0E88011 /* .gitkeep */,
+				7F17E860E2F4C9291D52C133 /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -327,19 +354,6 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
-		F8FA97568019E5D9CCA6FE41 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				498BE728491FE2E59733C2B9 /* CountdownArcView.swift */,
-				EE89FACD9EF86C4B519BA45B /* RamadanDayCard.swift */,
-				4D85EB19BED4D3710CCFB829 /* NextPrayerCard.swift */,
-				614FCE10358844D97C33ED31 /* DailyVerseCard.swift */,
-				F0F1A0132DCA08EA80378981 /* QuickStatsRow.swift */,
-				AAB886B3765C9C2E2E917837 /* DeedOfTheDayCard.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -348,6 +362,7 @@
 			buildConfigurationList = 8A350E98102CF103338C9BDC /* Build configuration list for PBXNativeTarget "Suhoor" */;
 			buildPhases = (
 				369C9A893907568435AD7846 /* Sources */,
+				9BE0892DC3153C05F7FD0F67 /* Resources */,
 				2931C6EB0AA359B8AE6647E3 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
@@ -356,6 +371,8 @@
 				228C9290F2AFF096A0A03DE4 /* PBXTargetDependency */,
 			);
 			name = Suhoor;
+			packageProductDependencies = (
+			);
 			productName = Suhoor;
 			productReference = 534BFA4E75CFAECEC7F930FA /* Suhoor.app */;
 			productType = "com.apple.product-type.application";
@@ -371,6 +388,8 @@
 			dependencies = (
 			);
 			name = SuhoorWatch;
+			packageProductDependencies = (
+			);
 			productName = SuhoorWatch;
 			productReference = 9AEAF0C16B7D4A95886317C9 /* SuhoorWatch.app */;
 			productType = "com.apple.product-type.application";
@@ -386,6 +405,8 @@
 			dependencies = (
 			);
 			name = SuhoorWidgets;
+			packageProductDependencies = (
+			);
 			productName = SuhoorWidgets;
 			productReference = 1F00809967824B041BE1EA7A /* SuhoorWidgets.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -424,7 +445,6 @@
 			mainGroup = 2C93CDD6316C52EFF1C2E8B4;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 9E5EF3A71042BB76330CC5A9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -435,48 +455,63 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		9BE0892DC3153C05F7FD0F67 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8D530F08B7C5DA23556EA4B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		369C9A893907568435AD7846 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5303EF07CD3BD379BFBA2FE6 /* Badge.swift in Sources */,
+				348B8B45F61CCBF216BDF67F /* BadgesGridView.swift in Sources */,
 				EB748345639FF8D971925B8A /* CalendarTabView.swift in Sources */,
 				333255421B6617A74816C8D2 /* Color+Extensions.swift in Sources */,
 				968FFAE261E32DB1F6681905 /* ContentView.swift in Sources */,
+				5F9BBF921CF857A3361F95AD /* CountdownArcView.swift in Sources */,
+				4925C91E5755D5940657B239 /* CountdownEngine.swift in Sources */,
+				5755B6D49EBC7BAEA2AF8526 /* DailyDeedsView.swift in Sources */,
+				4070A4D94916576FD3B93FEC /* DailyVerseCard.swift in Sources */,
 				69314AFC51DD018764C94282 /* DashboardView.swift in Sources */,
+				08C163672F7A5BB6A83F0F74 /* DashboardViewModel.swift in Sources */,
+				990D7827085086AB2F92EE4E /* DataManager.swift in Sources */,
+				7ECBCF5B75340DB4346B2621 /* DataService.swift in Sources */,
+				6244A0B2D807B9A81107AAF6 /* DeedEntry.swift in Sources */,
+				8F968D11EBE301A53F2D2858 /* DeedOfTheDay.swift in Sources */,
+				16A8495E2F5947493AE38B3D /* DeedOfTheDayCard.swift in Sources */,
+				F3BE096F783B6DC89DB0936E /* FastingDay.swift in Sources */,
+				9364403E5217846DCAFDF898 /* FastingRecord.swift in Sources */,
+				E445BFA023786A646C327069 /* HealthKitService.swift in Sources */,
+				19457772ED6A89552D466865 /* HijriCalendarService.swift in Sources */,
+				03BEBB0CDA32AC7E0B356D59 /* HydrationEntry.swift in Sources */,
+				1E6E0272BACBC33E2627ACED /* LocationData.swift in Sources */,
+				DC3712F22878827122DA44F6 /* LocationService.swift in Sources */,
+				C916D0DA752BBEEE691586D2 /* MakeupFast.swift in Sources */,
+				4B52656DB65A36A9A10F6078 /* ModelContainer+Suhoor.swift in Sources */,
+				EA6A7CA80F9B2E9FD8BE13BB /* NextPrayerCard.swift in Sources */,
+				C5470ED549023B36A1DB4E53 /* PrayerTime.swift in Sources */,
+				DBCEDA88C668B432E2F16F15 /* PrayerTimesCalculator.swift in Sources */,
+				D67CE39D514B6522F3397394 /* QuickStatsRow.swift in Sources */,
+				D39E22C40DB30941112B222B /* QuranProgress.swift in Sources */,
+				2E6E986B7910E18720FEE85C /* QuranVerse.swift in Sources */,
 				426BBA0361EAA3929F036D95 /* QuranView.swift in Sources */,
+				56FD1FD45F5D8E63947FAD74 /* RamadanDayCard.swift in Sources */,
+				1261B9FA8CC478AACC70ED02 /* RamadanScorecardView.swift in Sources */,
+				27B13F3160C50C87FC9487AE /* RingChartView.swift in Sources */,
 				3E0FDECEAC106F44EDD3A067 /* SettingsView.swift in Sources */,
+				4698B81B379A6B34FAE9DBC6 /* ShareableSummaryView.swift in Sources */,
 				8D67EF5B621753A1693E9B7B /* SuhoorApp.swift in Sources */,
 				5DFE548DFA768DD2EFC156EC /* TrackerView.swift in Sources */,
-				31BC121480ABDCC59B6EE988 /* CountdownArcView.swift in Sources */,
-				65DEC36CE67A630CB731EF4E /* DailyVerseCard.swift in Sources */,
-				B42B3E22CA219250CBEB8B18 /* DashboardViewModel.swift in Sources */,
-				50DBD7B8F7D240A130DE70E9 /* DeedOfTheDay.swift in Sources */,
-				258352B0296E678EF2291A03 /* DeedOfTheDayCard.swift in Sources */,
-				6339613B3FAE0A1CEB68815C /* FastingDay.swift in Sources */,
-				67257EE00E647650A7083700 /* NextPrayerCard.swift in Sources */,
-				CDBFF760EDADEF68E7BA9BB9 /* PrayerTime.swift in Sources */,
-				F04E569CE1DC6A66CD5D4CDF /* QuickStatsRow.swift in Sources */,
-				F79C28C2B723D9BFB93CA43D /* QuranVerse.swift in Sources */,
-				9B5CB41946177A43E12D54BE /* RamadanDayCard.swift in Sources */,
-				6B0EA1A25A7686EC96742035 /* Badge.swift in Sources */,
-				FF7D2B9D10BB17C557D824C0 /* DeedEntry.swift in Sources */,
-				C52D1932E5DF57508193D6C6 /* FastingRecord.swift in Sources */,
-				EAF3E6029D753CA7FAAF777C /* HydrationEntry.swift in Sources */,
-				01068EE16C5C148A39426120 /* LocationData.swift in Sources */,
-				C13EE180D1B4B1B3EB37251D /* MakeupFast.swift in Sources */,
-				627ED6C6CB153F85B079F32C /* ModelContainer+Suhoor.swift in Sources */,
-				FC5145D18F491A1C25C8B40E /* QuranProgress.swift in Sources */,
-				50E1267C92EB1FBE1D676766 /* UserSettings.swift in Sources */,
-				A90AD260899F795025A7102C /* DataManager.swift in Sources */,
-				E844A486BB97FC1EAFAC4862 /* DataService.swift in Sources */,
-				3A68DBE6A726C864F435DE8D /* HealthKitService.swift in Sources */,
-				456E116F9C2A7F2A7EA7AEA8 /* RingChartView.swift in Sources */,
-				A7DC2EE4A49CD60FEDF83611 /* RamadanScorecardView.swift in Sources */,
-				16F8F176E9087EAE64789EB2 /* DailyDeedsView.swift in Sources */,
-				C02290860DADE45E8EF166DC /* BadgesGridView.swift in Sources */,
-				88B9290B880DBE9D02C4651F /* YearComparisonView.swift in Sources */,
-				0AF942549D8BF8751B3DD9F4 /* ShareableSummaryView.swift in Sources */,
+				D21A0BE5D5A9331CA50EDAAC /* UserSettings.swift in Sources */,
+				13D5181ACB967E8D12E4DAB2 /* YearComparisonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
