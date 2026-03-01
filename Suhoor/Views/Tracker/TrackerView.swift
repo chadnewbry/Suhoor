@@ -2,8 +2,13 @@ import SwiftUI
 
 struct TrackerView: View {
     private let dataManager = DataManager.shared
-    // TODO: Calculate actual Hijri Ramadan year; using Gregorian year for now
-    private let ramadanYear = Calendar.current.component(.year, from: Date())
+    private let hijriService = HijriCalendarService.shared
+
+    private var ramadanYear: Int {
+        hijriService.currentRamadanHijriYear(adjustment: UserSettings.shared.hijriAdjustment)
+    }
+
+    @State private var selectedSection = 0
 
     var body: some View {
         ScrollView {
@@ -22,48 +27,94 @@ struct TrackerView: View {
                 }
                 .padding(.horizontal)
 
-                // Ramadan Scorecard
-                RamadanScorecardView(
-                    dataManager: dataManager,
-                    ramadanYear: ramadanYear
-                )
+                // Section picker
+                Picker("Section", selection: $selectedSection) {
+                    Text("Fasting").tag(0)
+                    Text("Deeds").tag(1)
+                }
+                .pickerStyle(.segmented)
                 .padding(.horizontal)
 
-                // Daily Deeds Checklist
-                DailyDeedsView(
-                    dataManager: dataManager,
-                    date: Date(),
-                    ramadanYear: ramadanYear
-                )
-                .padding(.horizontal)
+                if selectedSection == 0 {
+                    // FASTING TRACKER
+                    
+                    // Daily Fast Log
+                    DailyFastLogView(
+                        dataManager: dataManager,
+                        ramadanYear: ramadanYear
+                    )
+                    .padding(.horizontal)
 
-                // Badges Grid
-                BadgesGridView(
-                    dataManager: dataManager,
-                    ramadanYear: ramadanYear
-                )
-                .padding(.horizontal)
+                    // Fasting Streak
+                    FastingStreakView(
+                        dataManager: dataManager,
+                        ramadanYear: ramadanYear
+                    )
+                    .padding(.horizontal)
 
-                // Year over Year Comparison
-                YearComparisonView(
-                    dataManager: dataManager,
-                    currentYear: ramadanYear
-                )
-                .padding(.horizontal)
+                    // Ramadan Calendar
+                    RamadanCalendarView(
+                        dataManager: dataManager,
+                        ramadanYear: ramadanYear
+                    )
+                    .padding(.horizontal)
 
-                // Share Button
-                ShareableSummaryView(
-                    dataManager: dataManager,
-                    ramadanYear: ramadanYear
-                )
-                .padding(.horizontal)
-                .padding(.bottom, 32)
+                    // Ashra Progress
+                    AshraProgressView(
+                        dataManager: dataManager,
+                        ramadanYear: ramadanYear
+                    )
+                    .padding(.horizontal)
+
+                    // Makeup Fast Tracker
+                    MakeupFastTrackerView(dataManager: dataManager)
+                        .padding(.horizontal)
+
+                    // HealthKit Sync
+                    HealthKitSyncView()
+                        .padding(.horizontal)
+
+                } else {
+                    // DEEDS & ANALYTICS (existing)
+                    
+                    RamadanScorecardView(
+                        dataManager: dataManager,
+                        ramadanYear: ramadanYear
+                    )
+                    .padding(.horizontal)
+
+                    DailyDeedsView(
+                        dataManager: dataManager,
+                        date: Date(),
+                        ramadanYear: ramadanYear
+                    )
+                    .padding(.horizontal)
+
+                    BadgesGridView(
+                        dataManager: dataManager,
+                        ramadanYear: ramadanYear
+                    )
+                    .padding(.horizontal)
+
+                    YearComparisonView(
+                        dataManager: dataManager,
+                        currentYear: ramadanYear
+                    )
+                    .padding(.horizontal)
+
+                    ShareableSummaryView(
+                        dataManager: dataManager,
+                        ramadanYear: ramadanYear
+                    )
+                    .padding(.horizontal)
+                }
+
+                Spacer(minLength: 32)
             }
             .padding(.top)
         }
         .background(Color.suhoorIndigo.ignoresSafeArea())
         .onAppear {
-            // Check and award badges on view appearance
             dataManager.checkAndAwardStreakBadges(ramadanYear: ramadanYear)
             dataManager.checkAndAwardKhatamBadge(ramadanYear: ramadanYear)
             dataManager.checkAndAwardDeedMasterBadge(ramadanYear: ramadanYear)

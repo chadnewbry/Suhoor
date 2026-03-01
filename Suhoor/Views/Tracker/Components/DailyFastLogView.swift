@@ -167,7 +167,7 @@ struct DailyFastLogView: View {
         showNotes = false
 
         if UserSettings.shared.isHealthKitEnabled && status == .fasted {
-            Task { HealthKitService.shared.writeFastingData(start: record.fastStartTime, end: record.fastEndTime) }
+            Task { try? await HealthKitService.shared.saveFastingRecord(record) }
         }
     }
 
