@@ -294,3 +294,137 @@ final class DataManager {
         return Array(Set(records.map(\.ramadanYear))).sorted()
     }
 }
+
+// MARK: - Deed Master Badge
+
+extension DataManager {
+    /// Check if the user completed all default deed types every day for 7 consecutive days.
+    func checkAndAwardDeedMasterBadge(ramadanYear: Int) {
+        let records = fastingRecords(forRamadanYear: ramadanYear)
+        let defaultDeedTypes: Set<String> = [
+            DeedType.charity.rawValue,
+            DeedType.extraPrayer.rawValue,
+            DeedType.quranReading.rawValue,
+            DeedType.dhikr.rawValue,
+            DeedType.dua.rawValue,
+        ]
+
+        // For each day, check if all default deeds are completed
+        var consecutiveDays = 0
+        for record in records.sorted(by: { $0.dayNumber < $1.dayNumber }) {
+            let dayDeeds = record.deedEntries.filter { $0.isCompleted }
+            let completedTypes = Set(dayDeeds.map(\.deedTypeRaw))
+            if defaultDeedTypes.isSubset(of: completedTypes) {
+                consecutiveDays += 1
+                if consecutiveDays >= 7 {
+                    awardBadge(.deedMaster, ramadanYear: ramadanYear)
+                    return
+                }
+            } else {
+                consecutiveDays = 0
+            }
+        }
+    }
+
+    /// Number of completed juz for a Ramadan year.
+    func completedJuzCount(ramadanYear: Int) -> Int {
+        let progress = quranProgress(forRamadanYear: ramadanYear)
+        return Set(progress.filter(\.isCompleted).map(\.juzNumber)).count
+    }
+
+    /// Total deeds completed for a Ramadan year.
+    func totalDeedsCompleted(ramadanYear: Int) -> Int {
+        let yearPredicate = ramadanYear
+        let predicate = #Predicate<DeedEntry> { $0.ramadanYear == yearPredicate && $0.isCompleted }
+        return (try? modelContext.fetchCount(FetchDescriptor(predicate: predicate))) ?? 0
+    }
+
+    /// All deed entries for a specific date.
+    func deedEntries(for date: Date, ramadanYear: Int) -> [DeedEntry] {
+        let calendar = Calendar.current
+        let start = calendar.startOfDay(for: date)
+        let end = calendar.date(byAdding: .day, value: 1, to: start)!
+        let year = ramadanYear
+
+        let predicate = #Predicate<DeedEntry> { entry in
+            entry.date >= start && entry.date < end && entry.ramadanYear == year
+        }
+        let descriptor = FetchDescriptor(predicate: predicate, sortBy: [SortDescriptor(\.date)])
+        return (try? modelContext.fetch(descriptor)) ?? []
+    }
+
+    /// Toggle deed completion.
+    func toggleDeed(_ deed: DeedEntry) {
+        deed.isCompleted.toggle()
+        save()
+    }
+
+    /// Delete a deed entry.
+    func deleteDeed(_ deed: DeedEntry) {
+        modelContext.delete(deed)
+        save()
+    }
+
+    /// Ensure default deeds exist for today.
+    func ensureDefaultDeeds(for date: Date, ramadanYear: Int) {
+        let existing = deedEntries(for: date, ramadanYear: ramadanYear)
+        let existingTypes = Set(existing.map(\.deedTypeRaw))
+        let defaults: [DeedType] = [.charity, .extraPrayer, .quranReading, .dhikr, .dua]
+
+        for deedType in defaults {
+            if !existingTypes.contains(deedType.rawValue) {
+                addDeedEntry(date: date, deedType: deedType, ramadanYear: ramadanYear)
+            }
+        }
+    }
+
+    /// Badge progress (0.0–1.0) for a badge type.
+    func badgeProgress(_ badgeType: BadgeType, ramadanYear: Int) -> Double {
+        switch badgeType {
+        case .streak7:
+            return min(Double(longestStreak(ramadanYear: ramadanYear)) / 7.0, 1.0)
+        case .streak15:
+            return min(Double(longestStreak(ramadanYear: ramadanYear)) / 15.0, 1.0)
+        case .streak30:
+            return min(Double(longestStreak(ramadanYear: ramadanYear)) / 30.0, 1.0)
+        case .fullAshra1:
+            let records = fastingRecords(forRamadanYear: ramadanYear)
+            let fasted = Set(records.filter { $0.status == .fasted && $0.dayNumber >= 1 && $0.dayNumber <= 10 }.map(\.dayNumber))
+            return Double(fasted.count) / 10.0
+        case .fullAshra2:
+            let records = fastingRecords(forRamadanYear: ramadanYear)
+            let fasted = Set(records.filter { $0.status == .fasted && $0.dayNumber >= 11 && $0.dayNumber <= 20 }.map(\.dayNumber))
+            return Double(fasted.count) / 10.0
+        case .fullAshra3:
+            let records = fastingRecords(forRamadanYear: ramadanYear)
+            let fasted = Set(records.filter { $0.status == .fasted && $0.dayNumber >= 21 && $0.dayNumber <= 30 }.map(\.dayNumber))
+            return Double(fasted.count) / 10.0
+        case .khatam:
+            return Double(completedJuzCount(ramadanYear: ramadanYear)) / 30.0
+        case .allFasted:
+            let records = fastingRecords(forRamadanYear: ramadanYear)
+            let fasted = records.filter { $0.status == .fasted }.count
+            return Double(fasted) / 30.0
+        case .deedMaster:
+            // Simplified: show longest consecutive "all deeds" streak / 7
+            let records = fastingRecords(forRamadanYear: ramadanYear)
+            let defaultDeedTypes: Set<String> = [
+                DeedType.charity.rawValue, DeedType.extraPrayer.rawValue,
+                DeedType.quranReading.rawValue, DeedType.dhikr.rawValue,
+                DeedType.dua.rawValue,
+            ]
+            var best = 0
+            var current = 0
+            for record in records.sorted(by: { $0.dayNumber < $1.dayNumber }) {
+                let completedTypes = Set(record.deedEntries.filter(\.isCompleted).map(\.deedTypeRaw))
+                if defaultDeedTypes.isSubset(of: completedTypes) {
+                    current += 1
+                    best = max(best, current)
+                } else {
+                    current = 0
+                }
+            }
+            return min(Double(best) / 7.0, 1.0)
+        }
+    }
+}

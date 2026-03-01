@@ -1,32 +1,72 @@
 import SwiftUI
 
 struct TrackerView: View {
-    @StateObject private var settings = AppSettings.shared
-    @State private var fastingDays: [Int: FastingStatus] = [:]
-    
-    enum FastingStatus: String, CaseIterable {
-        case fasted = "Fasted"
-        case missed = "Missed"
-        case excused = "Excused"
-    }
-    
-    private var currentDay: Int {
-        let calendar = Calendar.current
-        let now = Date()
-        // Ramadan 2026 starts approximately Feb 18
-        let ramadanStart = calendar.date(from: DateComponents(year: 2026, month: 2, day: 18))!
-        let days = calendar.dateComponents([.day], from: ramadanStart, to: now).day ?? 0
-        return max(1, min(30, days + 1))
-    }
-    
-    private var streak: Int {
-        var count = 0
-        for day in stride(from: currentDay, through: 1, by: -1) {
-            if fastingDays[day] == .fasted {
-                count += 1
-            } else {
-                break
+    private let dataManager = DataManager.shared
+    // TODO: Calculate actual Hijri Ramadan year; using Gregorian year for now
+    private let ramadanYear = Calendar.current.component(.year, from: Date())
+
+    var body: some View {
+        ScrollView {
+            VStack(spacing: 20) {
+                // Header
+                HStack {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("Tracker")
+                            .font(.largeTitle.weight(.bold))
+                            .foregroundStyle(Color.suhoorTextPrimary)
+                        Text("Ramadan \(String(ramadanYear))")
+                            .font(.subheadline)
+                            .foregroundStyle(Color.suhoorTextSecondary)
+                    }
+                    Spacer()
+                }
+                .padding(.horizontal)
+
+                // Ramadan Scorecard
+                RamadanScorecardView(
+                    dataManager: dataManager,
+                    ramadanYear: ramadanYear
+                )
+                .padding(.horizontal)
+
+                // Daily Deeds Checklist
+                DailyDeedsView(
+                    dataManager: dataManager,
+                    date: Date(),
+                    ramadanYear: ramadanYear
+                )
+                .padding(.horizontal)
+
+                // Badges Grid
+                BadgesGridView(
+                    dataManager: dataManager,
+                    ramadanYear: ramadanYear
+                )
+                .padding(.horizontal)
+
+                // Year over Year Comparison
+                YearComparisonView(
+                    dataManager: dataManager,
+                    currentYear: ramadanYear
+                )
+                .padding(.horizontal)
+
+                // Share Button
+                ShareableSummaryView(
+                    dataManager: dataManager,
+                    ramadanYear: ramadanYear
+                )
+                .padding(.horizontal)
+                .padding(.bottom, 32)
             }
+            .padding(.top)
+        }
+        .background(Color.suhoorIndigo.ignoresSafeArea())
+        .onAppear {
+            // Check and award badges on view appearance
+            dataManager.checkAndAwardStreakBadges(ramadanYear: ramadanYear)
+            dataManager.checkAndAwardKhatamBadge(ramadanYear: ramadanYear)
+            dataManager.checkAndAwardDeedMasterBadge(ramadanYear: ramadanYear)
         }
         return count
     }

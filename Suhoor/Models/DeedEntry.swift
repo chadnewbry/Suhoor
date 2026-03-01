@@ -6,6 +6,7 @@ enum DeedType: String, Codable, CaseIterable {
     case extraPrayer
     case quranReading
     case dhikr
+    case dua
     case custom
 }
 
@@ -45,11 +46,23 @@ extension DeedEntry {
             return customLabel
         }
         switch deedType {
-        case .charity: return "Charity"
-        case .extraPrayer: return "Extra Prayer"
-        case .quranReading: return "Quran Reading"
-        case .dhikr: return "Dhikr"
+        case .charity: return "Give Charity"
+        case .extraPrayer: return "Extra Prayers (Tahajjud/Duha)"
+        case .quranReading: return "Read Quran"
+        case .dhikr: return "Dhikr (100x SubhanAllah, Alhamdulillah, Allahu Akbar)"
+        case .dua: return "Make Dua for Others"
         case .custom: return "Custom"
+        }
+    }
+
+    var displayEmoji: String {
+        switch deedType {
+        case .charity: return "💝"
+        case .extraPrayer: return "🤲"
+        case .quranReading: return "📖"
+        case .dhikr: return "📿"
+        case .dua: return "✨"
+        case .custom: return "⭐"
         }
     }
 }
