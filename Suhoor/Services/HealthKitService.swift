@@ -1,46 +1,61 @@
 import Foundation
 import HealthKit
 
+@Observable
 final class HealthKitService {
     static let shared = HealthKitService()
-    private let store = HKHealthStore()
+
+    private let healthStore = HKHealthStore()
+
+    var isAuthorized = false
 
     private init() {}
+
+    // MARK: - Authorization
 
     var isAvailable: Bool {
         HKHealthStore.isHealthDataAvailable()
     }
 
-    private(set) var isAuthorized: Bool = false
-
-    func requestAuthorization() {
+    func requestAuthorization() async throws {
         guard isAvailable else { return }
-        // Use mindful session as a proxy for fasting periods
-        guard let mindfulType = HKObjectType.categoryType(forIdentifier: .mindfulSession) else { return }
 
-        store.requestAuthorization(toShare: [mindfulType], read: [mindfulType]) { [weak self] success, _ in
-            DispatchQueue.main.async {
-                self?.isAuthorized = success
-            }
-        }
+        let typesToWrite: Set<HKSampleType> = [
+            HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!
+        ]
+
+        try await healthStore.requestAuthorization(toShare: typesToWrite, read: [])
+        isAuthorized = true
     }
 
-    func writeFastingData(start: Date, end: Date) {
-        guard isAvailable else { return }
-        guard let mindfulType = HKObjectType.categoryType(forIdentifier: .mindfulSession) else { return }
+    // MARK: - Save Fasting Data
 
+    /// Saves a completed fast as a sleep analysis category sample (maps to intermittent fasting).
+    func saveFastingRecord(_ record: FastingRecord) async throws {
+        guard isAvailable, record.status == .fasted else { return }
+
+        let categoryType = HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!
         let sample = HKCategorySample(
-            type: mindfulType,
-            value: HKCategoryValue.notApplicable.rawValue,
-            start: start,
-            end: end,
-            metadata: ["SuhoorFastingSession": true]
+            type: categoryType,
+            value: HKCategoryValueSleepAnalysis.asleepUnspecified.rawValue,
+            start: record.fastStartTime,
+            end: record.fastEndTime,
+            metadata: [
+                HKMetadataKeyWasTakenInLab: false,
+                "SuhoorFastingDay": record.dayNumber
+            ]
         )
 
-        store.save(sample) { _, error in
-            if let error {
-                print("HealthKit save error: \(error.localizedDescription)")
-            }
+        try await healthStore.save(sample)
+    }
+
+    // MARK: - Sync Historical Data
+
+    func syncHistoricalFasts(_ records: [FastingRecord]) async throws {
+        guard isAvailable else { return }
+
+        for record in records where record.status == .fasted {
+            try await saveFastingRecord(record)
         }
     }
 }

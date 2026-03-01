@@ -1,13 +1,29 @@
 import Foundation
 import SwiftData
 
+// MARK: - Fasting Status
+
+enum FastingStatus: String, Codable, CaseIterable {
+    case fasted
+    case missed
+    case excused
+}
+
+// MARK: - Excuse Reason
+
+enum ExcuseReason: String, Codable, CaseIterable {
+    case menstruation
+    case travel
+    case illness
+    case other
+}
+
 // MARK: - Fasting Record
 
 @Model
 final class FastingRecord {
     @Attribute(.unique) var date: Date
     var dayNumber: Int
-    var ramadanYear: Int
     var statusRaw: String
     var excuseReasonRaw: String?
     var notes: String?
@@ -37,26 +53,27 @@ final class FastingRecord {
     init(
         date: Date,
         dayNumber: Int,
-        ramadanYear: Int,
         status: FastingStatus = .fasted,
         excuseReason: ExcuseReason? = nil,
         notes: String? = nil,
         fastStartTime: Date,
-        fastEndTime: Date
+        fastEndTime: Date,
+        fastDurationHours: Double
     ) {
         self.date = date
         self.dayNumber = dayNumber
-        self.ramadanYear = ramadanYear
         self.statusRaw = status.rawValue
         self.excuseReasonRaw = excuseReason?.rawValue
         self.notes = notes
         self.fastStartTime = fastStartTime
         self.fastEndTime = fastEndTime
-        self.fastDurationHours = fastEndTime.timeIntervalSince(fastStartTime) / 3600.0
+        self.fastDurationHours = fastDurationHours
         self.hydrationEntries = []
         self.deedEntries = []
     }
 }
+
+// MARK: - Validation
 
 extension FastingRecord {
     var isValid: Bool {

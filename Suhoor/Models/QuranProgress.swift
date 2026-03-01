@@ -8,22 +8,19 @@ final class QuranProgress {
     var isCompleted: Bool
     var pagesRead: Int
     var readingDurationMinutes: Int?
-    var ramadanYear: Int
 
     init(
         date: Date,
         juzNumber: Int,
         isCompleted: Bool = false,
         pagesRead: Int = 0,
-        readingDurationMinutes: Int? = nil,
-        ramadanYear: Int
+        readingDurationMinutes: Int? = nil
     ) {
         self.date = date
         self.juzNumber = juzNumber
         self.isCompleted = isCompleted
         self.pagesRead = pagesRead
         self.readingDurationMinutes = readingDurationMinutes
-        self.ramadanYear = ramadanYear
     }
 }
 
