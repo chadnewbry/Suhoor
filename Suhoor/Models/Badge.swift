@@ -12,6 +12,7 @@ enum BadgeType: String, Codable, CaseIterable, Identifiable {
     case fullAshra3
     case khatam
     case allFasted
+    case deedMaster
 
     var id: String { rawValue }
 
@@ -19,12 +20,27 @@ enum BadgeType: String, Codable, CaseIterable, Identifiable {
         switch self {
         case .streak7: return "7-Day Streak"
         case .streak15: return "15-Day Streak"
-        case .streak30: return "30-Day Streak"
-        case .fullAshra1: return "First Ashra Complete"
-        case .fullAshra2: return "Second Ashra Complete"
-        case .fullAshra3: return "Third Ashra Complete"
-        case .khatam: return "Quran Khatam"
+        case .streak30: return "Full Ramadan"
+        case .fullAshra1: return "1st Ashra Complete"
+        case .fullAshra2: return "2nd Ashra Complete"
+        case .fullAshra3: return "3rd Ashra Complete"
+        case .khatam: return "Khatam"
         case .allFasted: return "All Days Fasted"
+        case .deedMaster: return "Deed Master"
+        }
+    }
+
+    var description: String {
+        switch self {
+        case .streak7: return "Fasted 7 days in a row"
+        case .streak15: return "Fasted 15 days in a row"
+        case .streak30: return "Fasted all 30 days"
+        case .fullAshra1: return "Completed the 1st Ashra (Mercy)"
+        case .fullAshra2: return "Completed the 2nd Ashra (Forgiveness)"
+        case .fullAshra3: return "Completed the 3rd Ashra (Salvation)"
+        case .khatam: return "Completed the entire Quran"
+        case .allFasted: return "Fasted every single day"
+        case .deedMaster: return "All deeds every day for a week"
         }
     }
 
@@ -38,6 +54,7 @@ enum BadgeType: String, Codable, CaseIterable, Identifiable {
         case .fullAshra3: return "⭐"
         case .khatam: return "📖"
         case .allFasted: return "👑"
+        case .deedMaster: return "💎"
         }
     }
 
