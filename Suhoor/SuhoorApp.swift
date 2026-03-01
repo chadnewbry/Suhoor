@@ -1,17 +1,15 @@
-import SwiftData
 import SwiftUI
+import SwiftData
 
 @main
 struct SuhoorApp: App {
-    let container = ModelContainer.suhoor
-    let settings = UserSettings.shared
+    let modelContainer: ModelContainer = .suhoor
 
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .preferredColorScheme(.dark)
-                .environment(settings)
         }
-        .modelContainer(container)
+        .modelContainer(modelContainer)
     }
 }

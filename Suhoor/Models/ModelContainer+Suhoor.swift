@@ -9,6 +9,7 @@ extension ModelContainer {
             DeedEntry.self,
             HydrationEntry.self,
             MakeupFast.self,
+            Badge.self,
         ])
 
         let configuration = ModelConfiguration(
@@ -16,7 +17,7 @@ extension ModelContainer {
             schema: schema,
             isStoredInMemoryOnly: false,
             groupContainer: .none,
-            cloudKitDatabase: .none
+            cloudKitDatabase: .automatic
         )
 
         do {
@@ -26,7 +27,7 @@ extension ModelContainer {
         }
     }
 
-    /// In-memory container for previews and testing
+    /// In-memory container for previews and testing.
     static var preview: ModelContainer {
         let schema = Schema([
             FastingRecord.self,
@@ -34,6 +35,7 @@ extension ModelContainer {
             DeedEntry.self,
             HydrationEntry.self,
             MakeupFast.self,
+            Badge.self,
         ])
 
         let configuration = ModelConfiguration(
