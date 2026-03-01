@@ -2,7 +2,6 @@ import SwiftUI
 
 struct ImsakiyaView: View {
     var viewModel: CalendarViewModel
-    @State private var selectedDate: Date?
 
     private let timeFormatter: DateFormatter = {
         let f = DateFormatter()
@@ -10,7 +9,7 @@ struct ImsakiyaView: View {
         return f
     }()
 
-    private let columns = ["Day", "Hijri", "Date", "Sehri", "Iftar", "Fast"]
+    private let columns = ["Day", "Date", "Imsak", "Fajr", "Rise", "Dhuhr", "Asr", "Mgrb", "Isha"]
 
     var body: some View {
         VStack(spacing: 0) {
@@ -29,16 +28,9 @@ struct ImsakiyaView: View {
             ScrollViewReader { proxy in
                 ScrollView(.vertical, showsIndicators: true) {
                     LazyVStack(spacing: 0) {
-                        ForEach(groupedRows, id: \.ashra.rawValue) { group in
-                            ashraHeader(group.ashra)
-
-                            ForEach(group.rows) { row in
-                                dayRow(row)
-                                    .id(row.ramadanDay)
-                                    .onTapGesture {
-                                        selectedDate = row.gregorianDate
-                                    }
-                            }
+                        ForEach(viewModel.rows) { row in
+                            dayRow(row)
+                                .id(row.ramadanDay)
                         }
                     }
                 }
@@ -51,57 +43,6 @@ struct ImsakiyaView: View {
         }
         .background(Color.suhoorIndigo)
         .clipShape(RoundedRectangle(cornerRadius: 16))
-        .sheet(item: $selectedDate) { date in
-            NavigationStack {
-                PrayerTimesView(initialDate: date)
-            }
-        }
-    }
-
-    // MARK: - Ashra Grouping
-
-    private struct AshraGroup {
-        let ashra: HijriCalendarService.Ashra
-        let rows: [ImsakiyaRow]
-    }
-
-    private var groupedRows: [AshraGroup] {
-        let hijri = HijriCalendarService.shared
-        var groups: [HijriCalendarService.Ashra: [ImsakiyaRow]] = [:]
-        for row in viewModel.rows {
-            let ashra = hijri.ashra(for: row.ramadanDay)
-            groups[ashra, default: []].append(row)
-        }
-        let order: [HijriCalendarService.Ashra] = [.first, .second, .third]
-        return order.compactMap { ashra in
-            guard let rows = groups[ashra], !rows.isEmpty else { return nil }
-            return AshraGroup(ashra: ashra, rows: rows)
-        }
-    }
-
-    // MARK: - Subviews
-
-    private func ashraHeader(_ ashra: HijriCalendarService.Ashra) -> some View {
-        HStack {
-            Rectangle()
-                .fill(ashraColor(ashra))
-                .frame(width: 3)
-            Text(ashra.rawValue)
-                .font(.caption.weight(.bold))
-                .foregroundStyle(ashraColor(ashra))
-            Spacer()
-        }
-        .padding(.horizontal, 12)
-        .padding(.vertical, 8)
-        .background(ashraColor(ashra).opacity(0.08))
-    }
-
-    private func ashraColor(_ ashra: HijriCalendarService.Ashra) -> Color {
-        switch ashra {
-        case .first: return Color.suhoorSuccess
-        case .second: return Color.suhoorAmber
-        case .third: return Color.purple
-        }
     }
 
     private var headerRow: some View {
@@ -124,20 +65,17 @@ struct ImsakiyaView: View {
                 .font(.caption.weight(isCurrent ? .bold : .regular))
                 .frame(maxWidth: .infinity)
 
-            Text("\(row.ramadanDay) Ram")
-                .font(.caption2)
-                .frame(maxWidth: .infinity)
-
             Text(row.gregorianDateString)
                 .font(.caption2)
                 .frame(maxWidth: .infinity)
 
+            timeCell(row.prayerTimes.imsak)
             timeCell(row.prayerTimes.fajr)
+            timeCell(row.prayerTimes.sunrise)
+            timeCell(row.prayerTimes.dhuhr)
+            timeCell(row.prayerTimes.asr)
             timeCell(row.prayerTimes.maghrib)
-
-            Text(row.fastingDuration)
-                .font(.caption2.monospacedDigit())
-                .frame(maxWidth: .infinity)
+            timeCell(row.prayerTimes.isha)
         }
         .foregroundStyle(isCurrent ? Color.suhoorGold : Color.suhoorTextPrimary)
         .padding(.vertical, 6)
@@ -153,7 +91,6 @@ struct ImsakiyaView: View {
                 .foregroundStyle(Color.suhoorDivider),
             alignment: .bottom
         )
-        .contentShape(Rectangle())
     }
 
     private func timeCell(_ date: Date) -> some View {
@@ -163,15 +100,7 @@ struct ImsakiyaView: View {
     }
 }
 
-// MARK: - Date Identifiable for sheet(item:)
-
-extension Date: @retroactive Identifiable {
-    public var id: TimeInterval { timeIntervalSinceReferenceDate }
-}
-
 #Preview {
-    NavigationStack {
-        ImsakiyaView(viewModel: CalendarViewModel())
-    }
-    .preferredColorScheme(.dark)
+    ImsakiyaView(viewModel: CalendarViewModel())
+        .preferredColorScheme(.dark)
 }

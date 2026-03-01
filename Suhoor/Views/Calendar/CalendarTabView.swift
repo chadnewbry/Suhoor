@@ -1,22 +1,63 @@
 import SwiftUI
 
 struct CalendarTabView: View {
-    @StateObject private var settings = AppSettings.shared
-    
-    private var ramadanDays: [RamadanDay] {
-        let calendar = Calendar.current
-        // Ramadan 2026 starts approximately Feb 18
-        let startDate = calendar.date(from: DateComponents(year: 2026, month: 2, day: 18))!
-        
-        return (0..<30).map { offset in
-            let date = calendar.date(byAdding: .day, value: offset, to: startDate)!
-            let dayNum = offset + 1
-            return RamadanDay(
-                day: dayNum,
-                date: date,
-                sehriEnd: calendar.date(bySettingHour: 5, minute: 30 + (offset % 10), second: 0, of: date)!,
-                iftarTime: calendar.date(bySettingHour: 18, minute: 10 + (offset % 15), second: 0, of: date)!
-            )
+    @State private var viewModel = CalendarViewModel()
+    @State private var selectedSection: CalendarSection = .imsakiya
+
+    enum CalendarSection: String, CaseIterable {
+        case imsakiya = "Imsakiya"
+        case qadr = "Laylat al-Qadr"
+        case eid = "Eid"
+    }
+
+    var body: some View {
+        ZStack {
+            Color.suhoorIndigo.ignoresSafeArea()
+
+            VStack(spacing: 0) {
+                HStack {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Ramadan Calendar")
+                            .font(.title2.weight(.bold))
+                            .foregroundStyle(Color.suhoorTextPrimary)
+                        if let day = viewModel.currentRamadanDay {
+                            Text("Day \(day) of \(viewModel.rows.count)")
+                                .font(.subheadline)
+                                .foregroundStyle(Color.suhoorGold)
+                        }
+                    }
+                    Spacer()
+                    Image(systemName: "moon.fill")
+                        .font(.title3)
+                        .foregroundStyle(Color.suhoorGold)
+                }
+                .padding(.horizontal, 16)
+                .padding(.top, 16)
+                .padding(.bottom, 12)
+
+                Picker("Section", selection: $selectedSection) {
+                    ForEach(CalendarSection.allCases, id: \.self) { section in
+                        Text(section.rawValue).tag(section)
+                    }
+                }
+                .pickerStyle(.segmented)
+                .padding(.horizontal, 16)
+                .padding(.bottom, 12)
+
+                ScrollView {
+                    switch selectedSection {
+                    case .imsakiya:
+                        ImsakiyaView(viewModel: viewModel)
+                            .padding(.horizontal, 8)
+                    case .qadr:
+                        LaylatAlQadrView(viewModel: viewModel)
+                            .padding(.horizontal, 16)
+                    case .eid:
+                        EidCountdownView(viewModel: viewModel)
+                            .padding(.horizontal, 16)
+                    }
+                }
+            }
         }
     }
     
@@ -75,4 +116,5 @@ private struct RamadanDay: Identifiable {
 
 #Preview {
     CalendarTabView()
+        .preferredColorScheme(.dark)
 }
