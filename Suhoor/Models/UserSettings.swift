@@ -97,6 +97,25 @@ final class UserSettings {
         set { defaults.set(newValue, forKey: "isMenstrualModeEnabled") }
     }
 
+    var hijriAdjustment: Int {
+        get { defaults.object(forKey: "hijriAdjustment") as? Int ?? 0 }
+        set { defaults.set(newValue, forKey: "hijriAdjustment") }
+    }
+
+    var selectedLocation: LocationData? {
+        get {
+            guard let data = defaults.data(forKey: "selectedLocation") else { return nil }
+            return try? JSONDecoder().decode(LocationData.self, from: data)
+        }
+        set {
+            if let newValue, let data = try? JSONEncoder().encode(newValue) {
+                defaults.set(data, forKey: "selectedLocation")
+            } else {
+                defaults.removeObject(forKey: "selectedLocation")
+            }
+        }
+    }
+
     var isHealthKitEnabled: Bool {
         get { defaults.bool(forKey: "isHealthKitEnabled") }
         set { defaults.set(newValue, forKey: "isHealthKitEnabled") }

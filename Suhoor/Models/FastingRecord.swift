@@ -24,6 +24,7 @@ enum ExcuseReason: String, Codable, CaseIterable {
 final class FastingRecord {
     @Attribute(.unique) var date: Date
     var dayNumber: Int
+    var ramadanYear: Int
     var statusRaw: String
     var excuseReasonRaw: String?
     var notes: String?
@@ -53,27 +54,26 @@ final class FastingRecord {
     init(
         date: Date,
         dayNumber: Int,
+        ramadanYear: Int,
         status: FastingStatus = .fasted,
         excuseReason: ExcuseReason? = nil,
         notes: String? = nil,
         fastStartTime: Date,
-        fastEndTime: Date,
-        fastDurationHours: Double
+        fastEndTime: Date
     ) {
         self.date = date
         self.dayNumber = dayNumber
+        self.ramadanYear = ramadanYear
         self.statusRaw = status.rawValue
         self.excuseReasonRaw = excuseReason?.rawValue
         self.notes = notes
         self.fastStartTime = fastStartTime
         self.fastEndTime = fastEndTime
-        self.fastDurationHours = fastDurationHours
+        self.fastDurationHours = fastEndTime.timeIntervalSince(fastStartTime) / 3600.0
         self.hydrationEntries = []
         self.deedEntries = []
     }
 }
-
-// MARK: - Validation
 
 extension FastingRecord {
     var isValid: Bool {
