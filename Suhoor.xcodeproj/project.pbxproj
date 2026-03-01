@@ -1,0 +1,678 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		333255421B6617A74816C8D2 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF6F5EE0DCF6BE7E9FD3F92 /* Color+Extensions.swift */; };
+		3E0FDECEAC106F44EDD3A067 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4ACAF6FC3E0BB1BF7F398C /* SettingsView.swift */; };
+		426BBA0361EAA3929F036D95 /* QuranView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C87D0F59921D049440DC48B /* QuranView.swift */; };
+		5DFE548DFA768DD2EFC156EC /* TrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACDE62A96136D2F47425089 /* TrackerView.swift */; };
+		69314AFC51DD018764C94282 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30236ED79DBDD9574CBA22CA /* DashboardView.swift */; };
+		8D67EF5B621753A1693E9B7B /* SuhoorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E0FA15D24BCE755C348384 /* SuhoorApp.swift */; };
+		968FFAE261E32DB1F6681905 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1994C9A1226302607D72E015 /* ContentView.swift */; };
+		A8A9DEF2A4AA9CD21676FC2E /* SuhoorWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34234A51FC680D834287D23 /* SuhoorWidgets.swift */; };
+		E55FFC201656F9E09FFF6445 /* SuhoorWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAACFB950998F42377AFC07A /* SuhoorWatchApp.swift */; };
+		EB748345639FF8D971925B8A /* CalendarTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C66BE3453EF0C95D5E882D0 /* CalendarTabView.swift */; };
+		EC21397B57E5C4FD36EE04EF /* WatchContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7D5003606C9FF39076D5C6 /* WatchContentView.swift */; };
+		FB285F962B84DFE0519FB61C /* SuhoorWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1F00809967824B041BE1EA7A /* SuhoorWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1E298423BF8DD865FCB89EA0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDF88ED580DFAF88517A6D2A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 74768475057C9512A310E040;
+			remoteInfo = SuhoorWidgets;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2931C6EB0AA359B8AE6647E3 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FB285F962B84DFE0519FB61C /* SuhoorWidgets.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1994C9A1226302607D72E015 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1ACDE62A96136D2F47425089 /* TrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerView.swift; sourceTree = "<group>"; };
+		1C87D0F59921D049440DC48B /* QuranView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranView.swift; sourceTree = "<group>"; };
+		1D03953894A91AA211CAEDC4 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		1F00809967824B041BE1EA7A /* SuhoorWidgets.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = SuhoorWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		30236ED79DBDD9574CBA22CA /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		3EC60840A2208E70889F66EE /* SuhoorWidgets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SuhoorWidgets.entitlements; sourceTree = "<group>"; };
+		43E0FA15D24BCE755C348384 /* SuhoorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuhoorApp.swift; sourceTree = "<group>"; };
+		534BFA4E75CFAECEC7F930FA /* Suhoor.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Suhoor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C66BE3453EF0C95D5E882D0 /* CalendarTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTabView.swift; sourceTree = "<group>"; };
+		90A7AE0D8ADBB32A82802F69 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		9AEAF0C16B7D4A95886317C9 /* SuhoorWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuhoorWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE4ACAF6FC3E0BB1BF7F398C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		AE7D5003606C9FF39076D5C6 /* WatchContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchContentView.swift; sourceTree = "<group>"; };
+		BBDD2EDA1D53537BAF5F848E /* Suhoor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Suhoor.entitlements; sourceTree = "<group>"; };
+		BDCA5E9955AF6504F3498FFF /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		C057859B32EE5CFCD0E88011 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		C5013D2F9602338362B8EE10 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		CF547A2BAE03710D7B7A2165 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		EAACFB950998F42377AFC07A /* SuhoorWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuhoorWatchApp.swift; sourceTree = "<group>"; };
+		EEF6F5EE0DCF6BE7E9FD3F92 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		F34234A51FC680D834287D23 /* SuhoorWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuhoorWidgets.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0150ED23522E7A7A08CFEB73 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CF547A2BAE03710D7B7A2165 /* .gitkeep */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2B751A173388A29A041D5A82 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				AE4ACAF6FC3E0BB1BF7F398C /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		2C93CDD6316C52EFF1C2E8B4 = {
+			isa = PBXGroup;
+			children = (
+				9B5A2537FC5A9180AB266E85 /* Suhoor */,
+				692AEA368E3BA6BB5C6B8E3E /* SuhoorWatchApp */,
+				CB069D1FF301557FEA9AE741 /* SuhoorWidgets */,
+				9E5EF3A71042BB76330CC5A9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		42A0EF07BF8645B9123F04EA /* Qibla */ = {
+			isa = PBXGroup;
+			children = (
+				BDCA5E9955AF6504F3498FFF /* .gitkeep */,
+			);
+			path = Qibla;
+			sourceTree = "<group>";
+		};
+		58A99168D02A7B37E7E06081 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				1D03953894A91AA211CAEDC4 /* .gitkeep */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		692AEA368E3BA6BB5C6B8E3E /* SuhoorWatchApp */ = {
+			isa = PBXGroup;
+			children = (
+				EAACFB950998F42377AFC07A /* SuhoorWatchApp.swift */,
+				AE7D5003606C9FF39076D5C6 /* WatchContentView.swift */,
+			);
+			name = SuhoorWatchApp;
+			path = SuhoorWatch/SuhoorWatchApp;
+			sourceTree = "<group>";
+		};
+		8F6E35344737174046B38252 /* Tracker */ = {
+			isa = PBXGroup;
+			children = (
+				1ACDE62A96136D2F47425089 /* TrackerView.swift */,
+			);
+			path = Tracker;
+			sourceTree = "<group>";
+		};
+		9B5A2537FC5A9180AB266E85 /* Suhoor */ = {
+			isa = PBXGroup;
+			children = (
+				1994C9A1226302607D72E015 /* ContentView.swift */,
+				BBDD2EDA1D53537BAF5F848E /* Suhoor.entitlements */,
+				43E0FA15D24BCE755C348384 /* SuhoorApp.swift */,
+				A3408200714C0960F9CDFFC0 /* Extensions */,
+				DC3ED171F77AF976A1C1CB7B /* Managers */,
+				0150ED23522E7A7A08CFEB73 /* Models */,
+				E9A0AACE477F090C255DC44B /* Resources */,
+				E7D608BD8DADC6586B114E99 /* Services */,
+				D9E2BA64F7719CC64E7C1F6D /* Views */,
+			);
+			path = Suhoor;
+			sourceTree = "<group>";
+		};
+		9E5EF3A71042BB76330CC5A9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				534BFA4E75CFAECEC7F930FA /* Suhoor.app */,
+				9AEAF0C16B7D4A95886317C9 /* SuhoorWatch.app */,
+				1F00809967824B041BE1EA7A /* SuhoorWidgets.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A3408200714C0960F9CDFFC0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EEF6F5EE0DCF6BE7E9FD3F92 /* Color+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A5FB9CF9D021D12C7A739F1F /* Quran */ = {
+			isa = PBXGroup;
+			children = (
+				1C87D0F59921D049440DC48B /* QuranView.swift */,
+			);
+			path = Quran;
+			sourceTree = "<group>";
+		};
+		B4CDF749F271395AC6CCD96C /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				30236ED79DBDD9574CBA22CA /* DashboardView.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		CB069D1FF301557FEA9AE741 /* SuhoorWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				3EC60840A2208E70889F66EE /* SuhoorWidgets.entitlements */,
+				F34234A51FC680D834287D23 /* SuhoorWidgets.swift */,
+			);
+			path = SuhoorWidgets;
+			sourceTree = "<group>";
+		};
+		D9E2BA64F7719CC64E7C1F6D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EA4FB43B531B253B21ED907C /* Calendar */,
+				B4CDF749F271395AC6CCD96C /* Dashboard */,
+				58A99168D02A7B37E7E06081 /* Onboarding */,
+				42A0EF07BF8645B9123F04EA /* Qibla */,
+				A5FB9CF9D021D12C7A739F1F /* Quran */,
+				2B751A173388A29A041D5A82 /* Settings */,
+				8F6E35344737174046B38252 /* Tracker */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DC3ED171F77AF976A1C1CB7B /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C5013D2F9602338362B8EE10 /* .gitkeep */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		E7D608BD8DADC6586B114E99 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				90A7AE0D8ADBB32A82802F69 /* .gitkeep */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E9A0AACE477F090C255DC44B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C057859B32EE5CFCD0E88011 /* .gitkeep */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EA4FB43B531B253B21ED907C /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				6C66BE3453EF0C95D5E882D0 /* CalendarTabView.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0E94181852E93888EC88C8BC /* Suhoor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A350E98102CF103338C9BDC /* Build configuration list for PBXNativeTarget "Suhoor" */;
+			buildPhases = (
+				369C9A893907568435AD7846 /* Sources */,
+				2931C6EB0AA359B8AE6647E3 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				228C9290F2AFF096A0A03DE4 /* PBXTargetDependency */,
+			);
+			name = Suhoor;
+			packageProductDependencies = (
+			);
+			productName = Suhoor;
+			productReference = 534BFA4E75CFAECEC7F930FA /* Suhoor.app */;
+			productType = "com.apple.product-type.application";
+		};
+		70DBB43634B7B43454EC6C12 /* SuhoorWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A85B85CE2BF49B3BCDB0D8F5 /* Build configuration list for PBXNativeTarget "SuhoorWatch" */;
+			buildPhases = (
+				5E06C5A525F11FCE2F2E5BCA /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SuhoorWatch;
+			packageProductDependencies = (
+			);
+			productName = SuhoorWatch;
+			productReference = 9AEAF0C16B7D4A95886317C9 /* SuhoorWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		74768475057C9512A310E040 /* SuhoorWidgets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2172CCC7056D396FD43B4FF9 /* Build configuration list for PBXNativeTarget "SuhoorWidgets" */;
+			buildPhases = (
+				6ABF66BFE35D23F61B3F9FA2 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SuhoorWidgets;
+			packageProductDependencies = (
+			);
+			productName = SuhoorWidgets;
+			productReference = 1F00809967824B041BE1EA7A /* SuhoorWidgets.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EDF88ED580DFAF88517A6D2A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					0E94181852E93888EC88C8BC = {
+						DevelopmentTeam = XHKABG374;
+						ProvisioningStyle = Automatic;
+					};
+					70DBB43634B7B43454EC6C12 = {
+						DevelopmentTeam = XHKABG374;
+						ProvisioningStyle = Automatic;
+					};
+					74768475057C9512A310E040 = {
+						DevelopmentTeam = XHKABG374;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 06721FF985C39818A16DAB14 /* Build configuration list for PBXProject "Suhoor" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 2C93CDD6316C52EFF1C2E8B4;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0E94181852E93888EC88C8BC /* Suhoor */,
+				70DBB43634B7B43454EC6C12 /* SuhoorWatch */,
+				74768475057C9512A310E040 /* SuhoorWidgets */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		369C9A893907568435AD7846 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB748345639FF8D971925B8A /* CalendarTabView.swift in Sources */,
+				333255421B6617A74816C8D2 /* Color+Extensions.swift in Sources */,
+				968FFAE261E32DB1F6681905 /* ContentView.swift in Sources */,
+				69314AFC51DD018764C94282 /* DashboardView.swift in Sources */,
+				426BBA0361EAA3929F036D95 /* QuranView.swift in Sources */,
+				3E0FDECEAC106F44EDD3A067 /* SettingsView.swift in Sources */,
+				8D67EF5B621753A1693E9B7B /* SuhoorApp.swift in Sources */,
+				5DFE548DFA768DD2EFC156EC /* TrackerView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E06C5A525F11FCE2F2E5BCA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E55FFC201656F9E09FFF6445 /* SuhoorWatchApp.swift in Sources */,
+				EC21397B57E5C4FD36EE04EF /* WatchContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6ABF66BFE35D23F61B3F9FA2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8A9DEF2A4AA9CD21676FC2E /* SuhoorWidgets.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		228C9290F2AFF096A0A03DE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 74768475057C9512A310E040 /* SuhoorWidgets */;
+			targetProxy = 1E298423BF8DD865FCB89EA0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0E85BA63EA73F7F9A2D82BF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = XHKABG374;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		547E12A2A8AEFBF654FD7EF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_GENERATION_MODE = GeneratedFile;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chadnewbry.suhoor.watchapp;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		5BEA86363647F1BA57A94A34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Suhoor/Suhoor.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_GENERATION_MODE = GeneratedFile;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Suhoor can track your fasting hours in Apple Health.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Suhoor needs your location to calculate accurate prayer times and Qibla direction.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chadnewbry.suhoor;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5F44BCE3B13BBD7D36262250 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = XHKABG374;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		96F686864566F20F30806D89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_GENERATION_MODE = GeneratedFile;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chadnewbry.suhoor.watchapp;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		BC625D184A1D66AF932C28B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Suhoor/Suhoor.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_GENERATION_MODE = GeneratedFile;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Suhoor can track your fasting hours in Apple Health.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Suhoor needs your location to calculate accurate prayer times and Qibla direction.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chadnewbry.suhoor;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C58156F974F95A854A4EABEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SuhoorWidgets/SuhoorWidgets.entitlements;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_GENERATION_MODE = GeneratedFile;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chadnewbry.suhoor.widgets;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F31D9515034E957E0BBD01C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SuhoorWidgets/SuhoorWidgets.entitlements;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_GENERATION_MODE = GeneratedFile;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chadnewbry.suhoor.widgets;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		06721FF985C39818A16DAB14 /* Build configuration list for PBXProject "Suhoor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E85BA63EA73F7F9A2D82BF4 /* Debug */,
+				5F44BCE3B13BBD7D36262250 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		2172CCC7056D396FD43B4FF9 /* Build configuration list for PBXNativeTarget "SuhoorWidgets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F31D9515034E957E0BBD01C5 /* Debug */,
+				C58156F974F95A854A4EABEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		8A350E98102CF103338C9BDC /* Build configuration list for PBXNativeTarget "Suhoor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC625D184A1D66AF932C28B2 /* Debug */,
+				5BEA86363647F1BA57A94A34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A85B85CE2BF49B3BCDB0D8F5 /* Build configuration list for PBXNativeTarget "SuhoorWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				547E12A2A8AEFBF654FD7EF5 /* Debug */,
+				96F686864566F20F30806D89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EDF88ED580DFAF88517A6D2A /* Project object */;
+}
