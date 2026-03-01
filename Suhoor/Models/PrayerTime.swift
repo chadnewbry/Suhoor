@@ -1,6 +1,6 @@
 import Foundation
 
-enum Prayer: String, CaseIterable, Codable, Identifiable {
+enum PrayerName: String, CaseIterable, Codable, Identifiable {
     case fajr = "Fajr"
     case sunrise = "Sunrise"
     case dhuhr = "Dhuhr"
@@ -10,6 +10,17 @@ enum Prayer: String, CaseIterable, Codable, Identifiable {
     
     var id: String { rawValue }
     var displayName: String { rawValue }
+    
+    var systemImage: String {
+        switch self {
+        case .fajr: "sun.horizon"
+        case .sunrise: "sunrise"
+        case .dhuhr: "sun.max"
+        case .asr: "sun.min"
+        case .maghrib: "sunset"
+        case .isha: "moon.stars"
+        }
+    }
     
     var emoji: String {
         switch self {
@@ -30,11 +41,30 @@ enum Prayer: String, CaseIterable, Codable, Identifiable {
     }
 }
 
-struct PrayerTime: Identifiable, Codable {
-    var id: String { prayer.rawValue + "-" + date.timeIntervalSince1970.description }
-    let prayer: Prayer
-    let date: Date
+typealias Prayer = PrayerName
+
+struct PrayerTime: Identifiable {
+    let id = UUID()
+    let name: PrayerName
     let time: Date
+    var azanEnabled: Bool = true
+    
+    var formattedTime: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "h:mm a"
+        return formatter.string(from: time)
+    }
+    
+    func countdown(from now: Date) -> String {
+        let interval = time.timeIntervalSince(now)
+        guard interval > 0 else { return "Passed" }
+        let hours = Int(interval) / 3600
+        let minutes = (Int(interval) % 3600) / 60
+        if hours > 0 {
+            return "\(hours)h \(minutes)m"
+        }
+        return "\(minutes)m"
+    }
     
     var isPassed: Bool { time < Date() }
 }
@@ -53,16 +83,16 @@ struct DailyPrayerTimes: Codable {
     
     var allPrayers: [PrayerTime] {
         [
-            PrayerTime(prayer: .fajr, date: date, time: fajr),
-            PrayerTime(prayer: .sunrise, date: date, time: sunrise),
-            PrayerTime(prayer: .dhuhr, date: date, time: dhuhr),
-            PrayerTime(prayer: .asr, date: date, time: asr),
-            PrayerTime(prayer: .maghrib, date: date, time: maghrib),
-            PrayerTime(prayer: .isha, date: date, time: isha),
+            PrayerTime(name: .fajr, time: fajr),
+            PrayerTime(name: .sunrise, time: sunrise),
+            PrayerTime(name: .dhuhr, time: dhuhr),
+            PrayerTime(name: .asr, time: asr),
+            PrayerTime(name: .maghrib, time: maghrib),
+            PrayerTime(name: .isha, time: isha),
         ]
     }
     
-    func time(for prayer: Prayer) -> Date {
+    func time(for prayer: PrayerName) -> Date {
         switch prayer {
         case .fajr: return fajr
         case .sunrise: return sunrise
