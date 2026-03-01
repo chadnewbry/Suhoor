@@ -8,6 +8,7 @@
 	<true/>
 	<key>com.apple.developer.healthkit.access</key>
 	<array/>
+<<<<<<< HEAD
 	<key>com.apple.developer.in-app-payments</key>
 	<array>
 		<string>merchant.com.chadnewbry.suhoor</string>
@@ -21,6 +22,8 @@
 		<string>CloudDocuments</string>
 		<string>CloudKit</string>
 	</array>
+=======
+>>>>>>> 7370069 (feat: implement prayer times calculation service)
 	<key>com.apple.security.application-groups</key>
 	<array>
 		<string>group.com.chadnewbry.suhoor</string>
