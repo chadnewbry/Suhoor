@@ -1,9 +1,9 @@
-import SwiftData
 import SwiftUI
+import SwiftData
 
 @main
 struct SuhoorApp: App {
-    let container = ModelContainer.suhoor
+    let modelContainer: ModelContainer = .suhoor
     let settings = UserSettings.shared
     @StateObject private var store = StoreService.shared
 
@@ -12,8 +12,7 @@ struct SuhoorApp: App {
             ContentView()
                 .environmentObject(store)
                 .preferredColorScheme(.dark)
-                .environment(settings)
         }
-        .modelContainer(container)
+        .modelContainer(modelContainer)
     }
 }

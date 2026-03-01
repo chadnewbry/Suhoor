@@ -15,6 +15,7 @@ final class DeedEntry {
     var deedTypeRaw: String
     var customLabel: String?
     var isCompleted: Bool
+    var ramadanYear: Int
 
     var fastingRecord: FastingRecord?
 
@@ -27,12 +28,14 @@ final class DeedEntry {
         date: Date,
         deedType: DeedType,
         customLabel: String? = nil,
-        isCompleted: Bool = false
+        isCompleted: Bool = false,
+        ramadanYear: Int
     ) {
         self.date = date
         self.deedTypeRaw = deedType.rawValue
         self.customLabel = customLabel
         self.isCompleted = isCompleted
+        self.ramadanYear = ramadanYear
     }
 }
 
