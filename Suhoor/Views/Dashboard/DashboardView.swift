@@ -4,6 +4,7 @@ struct DashboardView: View {
     @StateObject private var viewModel = DashboardViewModel()
     
     var body: some View {
+        NavigationStack {
         ScrollView {
             VStack(spacing: 20) {
                 // Decorative stars
@@ -59,6 +60,7 @@ struct DashboardView: View {
                 Spacer(minLength: 30)
             }
             .padding(.horizontal, 20)
+        }
         }
         .refreshable {
             viewModel.refresh()
