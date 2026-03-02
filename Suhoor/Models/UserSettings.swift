@@ -19,6 +19,43 @@ enum CalculationMethod: String, Codable, CaseIterable, Identifiable {
     case jafari = "Jafari (Shia Ithna-Ashari)"
 
     var id: String { rawValue }
+
+    var shortDescription: String {
+        switch self {
+        case .northAmerica: return "Used in North America"
+        case .muslimWorldLeague: return "Europe, Far East, parts of USA"
+        case .egyptian: return "Africa, Syria, Iraq, Lebanon"
+        case .karachi: return "Pakistan, Bangladesh, India, Afghanistan"
+        case .ummAlQura: return "Arabian Peninsula"
+        case .dubai: return "UAE"
+        case .qatar: return "Qatar"
+        case .kuwait: return "Kuwait"
+        case .moonsightingCommittee: return "Moonsighting Committee Worldwide"
+        case .singapore: return "Singapore, Malaysia, Indonesia"
+        case .turkey: return "Turkey"
+        case .tehran: return "Iran"
+        case .jafari: return "Shia communities"
+        }
+    }
+
+    /// Suggest a method based on ISO country code
+    static func suggested(forCountryCode code: String?) -> CalculationMethod {
+        guard let code = code?.uppercased() else { return .northAmerica }
+        switch code {
+        case "US", "CA": return .northAmerica
+        case "EG", "SY", "IQ", "LB": return .egyptian
+        case "PK", "BD", "IN", "AF": return .karachi
+        case "SA": return .ummAlQura
+        case "AE": return .dubai
+        case "QA": return .qatar
+        case "KW": return .kuwait
+        case "SG": return .singapore
+        case "MY", "ID": return .singapore
+        case "TR": return .turkey
+        case "IR": return .tehran
+        default: return .muslimWorldLeague
+        }
+    }
 }
 
 // MARK: - Madhhab
@@ -35,6 +72,11 @@ enum Madhhab: String, Codable, CaseIterable, Identifiable {
 enum AppLanguage: String, Codable, CaseIterable, Identifiable {
     case english = "en"
     case arabic = "ar"
+    case urdu = "ur"
+    case turkish = "tr"
+    case malay = "ms"
+    case indonesian = "id"
+    case french = "fr"
 
     var id: String { rawValue }
 
@@ -42,7 +84,18 @@ enum AppLanguage: String, Codable, CaseIterable, Identifiable {
         switch self {
         case .english: return "English"
         case .arabic: return "العربية"
+        case .urdu: return "اردو"
+        case .turkish: return "Türkçe"
+        case .malay: return "Bahasa Melayu"
+        case .indonesian: return "Bahasa Indonesia"
+        case .french: return "Français"
         }
+    }
+
+    /// Best guess based on system locale
+    static var systemDefault: AppLanguage {
+        let code = Locale.current.language.languageCode?.identifier ?? "en"
+        return AppLanguage(rawValue: code) ?? .english
     }
 }
 
@@ -157,6 +210,16 @@ final class UserSettings {
     var iftarNotification: Bool {
         get { defaults.object(forKey: "notify_iftar") as? Bool ?? true }
         set { defaults.set(newValue, forKey: "notify_iftar") }
+    }
+
+    var hasCompletedOnboarding: Bool {
+        get { defaults.bool(forKey: "hasCompletedOnboarding") }
+        set { defaults.set(newValue, forKey: "hasCompletedOnboarding") }
+    }
+
+    var quranReminderNotification: Bool {
+        get { defaults.object(forKey: "notify_quran") as? Bool ?? true }
+        set { defaults.set(newValue, forKey: "notify_quran") }
     }
 
     private init() {}
