@@ -16,6 +16,7 @@ enum CalculationMethod: String, Codable, CaseIterable, Identifiable {
     case turkey = "Turkey (Diyanet)"
     case tehran = "Tehran"
     case northAmerica = "ISNA (North America)"
+    case jafari = "Jafari (Shia Ithna-Ashari)"
 
     var id: String { rawValue }
 }

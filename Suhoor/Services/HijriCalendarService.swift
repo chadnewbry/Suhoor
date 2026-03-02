@@ -107,3 +107,45 @@ struct HijriCalendarService {
         return islamicCalendar.date(from: comps)
     }
 }
+
+// MARK: - Ashra
+
+extension HijriCalendarService {
+    enum Ashra: String {
+        case first = "First Ashra — Mercy"
+        case second = "Second Ashra — Forgiveness"
+        case third = "Third Ashra — Salvation"
+    }
+
+    /// Determine which Ashra a Ramadan day falls in.
+    func ashra(for ramadanDay: Int) -> Ashra {
+        switch ramadanDay {
+        case 1...10: return .first
+        case 11...20: return .second
+        default: return .third
+        }
+    }
+}
+
+// MARK: - Days Until Next Ramadan
+
+extension HijriCalendarService {
+    /// Days until the next Ramadan starts (0 if currently in Ramadan).
+    func daysUntilNextRamadan(from date: Date, adjustment: Int = 0) -> Int {
+        if isRamadan(date: date, adjustment: adjustment) { return 0 }
+
+        let comps = hijriComponents(from: date, adjustment: adjustment)
+        guard let currentMonth = comps.month, let currentYear = comps.year else { return 0 }
+
+        let targetYear = currentMonth >= 9 ? currentYear + 1 : currentYear
+        var ramadanStart = DateComponents()
+        ramadanStart.year = targetYear
+        ramadanStart.month = 9
+        ramadanStart.day = 1
+
+        guard let startDate = islamicCalendar.date(from: ramadanStart) else { return 0 }
+        let adjustedDate = Calendar.current.date(byAdding: .day, value: adjustment, to: date) ?? date
+        let days = Calendar.current.dateComponents([.day], from: adjustedDate, to: startDate).day ?? 0
+        return max(days, 0)
+    }
+}

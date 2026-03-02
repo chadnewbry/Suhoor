@@ -35,6 +35,8 @@ struct CalculationParameters {
             CalculationParameters(fajrAngle: 17.7, ishaAngle: 14.0, ishaInterval: nil, maghribAngle: 4.5)
         case .northAmerica:
             CalculationParameters(fajrAngle: 15.0, ishaAngle: 15.0, ishaInterval: nil, maghribAngle: nil)
+        case .jafari:
+            CalculationParameters(fajrAngle: 16.0, ishaAngle: 14.0, ishaInterval: nil, maghribAngle: 4.0)
         }
     }
 }
