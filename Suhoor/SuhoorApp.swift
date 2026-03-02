@@ -1,18 +1,18 @@
 import SwiftUI
-import SwiftData
 
 @main
 struct SuhoorApp: App {
-    let modelContainer: ModelContainer = .suhoor
-    let settings = UserSettings.shared
-    @StateObject private var store = StoreService.shared
+    @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding = false
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(store)
-                .preferredColorScheme(.dark)
+            if hasCompletedOnboarding {
+                ContentView()
+                    .preferredColorScheme(.dark)
+            } else {
+                OnboardingView()
+                    .preferredColorScheme(.dark)
+            }
         }
-        .modelContainer(modelContainer)
     }
 }
