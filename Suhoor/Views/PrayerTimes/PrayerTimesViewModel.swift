@@ -44,8 +44,7 @@ final class PrayerTimesViewModel: ObservableObject {
         return allPrayers.first { $0.time > now }
     }
 
-    init(initialDate: Date = Date()) {
-        selectedDate = initialDate
+    init() {
         loadToggles()
         recalculate()
         timer = Timer.publish(every: 1, on: .main, in: .common)

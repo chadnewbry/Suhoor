@@ -5,6 +5,7 @@ struct NextPrayerCard: View {
     let allPrayers: [PrayerTime]
     let now: Date
     @Binding var expanded: Bool
+    @State private var showPrayerTimes = false
     
     var body: some View {
         VStack(spacing: 0) {
@@ -86,10 +87,33 @@ struct NextPrayerCard: View {
                         .padding(.vertical, 10)
                         .background(isNext ? Color.suhoorGold.opacity(0.06) : .clear)
                     }
+
+                    Divider()
+                        .background(Color.suhoorDivider)
+
+                    Button {
+                        showPrayerTimes = true
+                    } label: {
+                        HStack {
+                            Text("View All Prayer Times")
+                                .font(.caption.weight(.medium))
+                                .foregroundStyle(Color.suhoorGold)
+                            Spacer()
+                            Image(systemName: "arrow.right")
+                                .font(.caption)
+                                .foregroundStyle(Color.suhoorGold)
+                        }
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 12)
+                    }
+                    .buttonStyle(.plain)
                 }
                 .transition(.opacity.combined(with: .move(edge: .top)))
             }
         }
         .background(Color.suhoorSurface, in: RoundedRectangle(cornerRadius: 16))
+        .navigationDestination(isPresented: $showPrayerTimes) {
+            PrayerTimesView()
+        }
     }
 }

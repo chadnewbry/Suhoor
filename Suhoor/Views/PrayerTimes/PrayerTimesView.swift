@@ -1,13 +1,7 @@
 import SwiftUI
 
 struct PrayerTimesView: View {
-    @StateObject private var viewModel: PrayerTimesViewModel
-    private let initialDate: Date
-
-    init(initialDate: Date = Date()) {
-        self.initialDate = initialDate
-        _viewModel = StateObject(wrappedValue: PrayerTimesViewModel(initialDate: initialDate))
-    }
+    @StateObject private var viewModel = PrayerTimesViewModel()
     @Environment(\.dismiss) private var dismiss
     @State private var showNearbyMosques = false
     @GestureState private var dragOffset: CGFloat = 0
