@@ -30,6 +30,7 @@ targets:
         INFOPLIST_KEY_UILaunchScreen_Generation: "YES"
         INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
         INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: "UIInterfaceOrientationPortrait"
+        INFOPLIST_KEY_UIBackgroundModes: "audio"
         INFOPLIST_KEY_NSLocationWhenInUseUsageDescription: "Suhoor needs your location to calculate accurate prayer times and Qibla direction."
         INFOPLIST_KEY_NSHealthShareUsageDescription: "Suhoor can track your fasting hours in Apple Health."
         SWIFT_EMIT_LOC_STRINGS: "YES"

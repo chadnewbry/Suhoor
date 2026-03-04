@@ -1,0 +1,93 @@
+{
+  "sehriDua": {
+    "arabic": "وَبِصَوْمِ غَدٍ نَّوَيْتُ مِنْ شَهْرِ رَمَضَانَ",
+    "transliteration": "Wa bisawmi ghadin nawaytu min shahri Ramadan",
+    "translation": "I intend to keep the fast for tomorrow in the month of Ramadan.",
+    "reference": "Reported in Abu Dawud"
+  },
+  "iftarDua": {
+    "arabic": "اللَّهُمَّ إِنِّي لَكَ صُمْتُ وَعَلَى رِزْقِكَ أَفْطَرْتُ",
+    "transliteration": "Allahumma inni laka sumtu wa ala rizqika aftartu",
+    "translation": "O Allah! I fasted for You and I break my fast with Your sustenance.",
+    "reference": "Abu Dawud 2358"
+  },
+  "iftarDuaAlternate": {
+    "arabic": "ذَهَبَ الظَّمَأُ وَابْتَلَّتِ الْعُرُوقُ وَثَبَتَ الأَجْرُ إِنْ شَاءَ اللَّهُ",
+    "transliteration": "Dhahaba al-zama'u wa abtallatil-urooqu wa thabatal-ajru insha'Allah",
+    "translation": "The thirst has gone, the veins are moistened, and the reward is confirmed, if Allah wills.",
+    "reference": "Abu Dawud 2357"
+  },
+  "ashras": [
+    {
+      "ashra": 1,
+      "name": "Mercy",
+      "days": "1-10",
+      "arabic": "رَبِّ اغْفِرْ وَارْحَمْ وَأَنْتَ خَيْرُ الرَّاحِمِينَ",
+      "transliteration": "Rabbighfir warham wa anta khairur-rahimeen",
+      "translation": "O my Lord! Forgive and have mercy, for You are the Best of those who show mercy.",
+      "reference": "Quran 23:118"
+    },
+    {
+      "ashra": 2,
+      "name": "Forgiveness",
+      "days": "11-20",
+      "arabic": "أَسْتَغْفِرُ اللَّهَ رَبِّي مِنْ كُلِّ ذَنْبٍ وَأَتُوبُ إِلَيْهِ",
+      "transliteration": "Astaghfirullaha rabbi min kulli dhanbin wa atubu ilayh",
+      "translation": "I seek forgiveness from Allah, my Lord, from every sin and I repent to Him.",
+      "reference": "Hadith, various collections"
+    },
+    {
+      "ashra": 3,
+      "name": "Freedom from Fire",
+      "days": "21-30",
+      "arabic": "اللَّهُمَّ أَجِرْنِي مِنَ النَّارِ",
+      "transliteration": "Allahumma ajirni minan-naar",
+      "translation": "O Allah, save me from the Hellfire.",
+      "reference": "Abu Dawud 5079"
+    }
+  ],
+  "laylatAlQadr": [
+    {
+      "arabic": "اللَّهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي",
+      "transliteration": "Allahumma innaka 'afuwwun tuhibbul-'afwa fa'fu 'anni",
+      "translation": "O Allah, You are the Most Forgiving, and You love forgiveness, so forgive me.",
+      "reference": "Tirmidhi 3513, Ibn Majah 3850"
+    },
+    {
+      "arabic": "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ",
+      "transliteration": "Rabbana atina fid-dunya hasanatan wa fil-akhirati hasanatan wa qina 'adhaban-naar",
+      "translation": "Our Lord, give us good in this world and good in the Hereafter, and save us from the punishment of the Fire.",
+      "reference": "Quran 2:201"
+    }
+  ],
+  "excusedDays": [
+    {
+      "title": "Dua for Ease",
+      "arabic": "اللَّهُمَّ لاَ سَهْلَ إِلاَّ مَا جَعَلْتَهُ سَهْلاً وَأَنْتَ تَجْعَلُ الْحَزْنَ إِذَا شِئْتَ سَهْلاً",
+      "transliteration": "Allahumma la sahla illa ma ja'altahu sahlan, wa anta taj'alul-hazna idha shi'ta sahla",
+      "translation": "O Allah, there is no ease except in that which You have made easy. If You wish, You make difficulty easy.",
+      "reference": "Ibn Hibban 974"
+    },
+    {
+      "title": "Dua for Patience",
+      "arabic": "رَبَّنَا أَفْرِغْ عَلَيْنَا صَبْرًا وَثَبِّتْ أَقْدَامَنَا",
+      "transliteration": "Rabbana afrigh 'alayna sabran wa thabbit aqdamana",
+      "translation": "Our Lord, pour upon us patience and plant firmly our feet.",
+      "reference": "Quran 2:250"
+    },
+    {
+      "title": "Dua for Comfort",
+      "arabic": "حَسْبِيَ اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ ۖ عَلَيْهِ تَوَكَّلْتُ ۖ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ",
+      "transliteration": "Hasbiyal-lahu la ilaha illa huwa, 'alayhi tawakkaltu, wa huwa Rabbul-'Arshil-'Azeem",
+      "translation": "Allah is sufficient for me. There is no deity except Him. Upon Him I have relied, and He is the Lord of the Great Throne.",
+      "reference": "Quran 9:129"
+    },
+    {
+      "title": "Dua for Healing",
+      "arabic": "اللَّهُمَّ رَبَّ النَّاسِ أَذْهِبِ الْبَاسَ اشْفِهِ وَأَنْتَ الشَّافِي لَا شِفَاءَ إِلَّا شِفَاؤُكَ شِفَاءً لَا يُغَادِرُ سَقَمًا",
+      "transliteration": "Allahumma Rabban-naas, adhhibil-ba's, ishfihi wa antash-Shaafi, la shifa'a illa shifa'uka, shifa'an la yughadiru saqama",
+      "translation": "O Allah, Lord of mankind, remove the affliction. Cure him, for You are the One who cures. There is no cure except Your cure — a cure that leaves no illness behind.",
+      "reference": "Bukhari 5675, Muslim 2191"
+    }
+  ]
+}
