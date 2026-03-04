@@ -30,6 +30,13 @@ struct ImsakiyaRow: Identifiable {
     let isLastTenNights: Bool
     let isOddLastNight: Bool
 
+    var fastingDuration: String {
+        let interval = prayerTimes.maghrib.timeIntervalSince(prayerTimes.fajr)
+        let hours = Int(interval) / 3600
+        let minutes = (Int(interval) % 3600) / 60
+        return "\(hours)h\(minutes > 0 ? " \(minutes)m" : "")"
+    }
+
     var gregorianDateString: String {
         let f = DateFormatter()
         f.dateFormat = "MMM d"
