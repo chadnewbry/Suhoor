@@ -1,23 +1,6 @@
 import Foundation
 import SwiftData
 
-// MARK: - Fasting Status
-
-enum FastingStatus: String, Codable, CaseIterable {
-    case fasted
-    case missed
-    case excused
-}
-
-// MARK: - Excuse Reason
-
-enum ExcuseReason: String, Codable, CaseIterable {
-    case menstruation
-    case travel
-    case illness
-    case other
-}
-
 // MARK: - Fasting Record
 
 @Model

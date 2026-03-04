@@ -12,8 +12,8 @@ struct ConfettiView: View {
                     guard age < 3 else { continue }
                     
                     let x = particle.x * size.width + sin(age * particle.wobble) * 30
-                    let y = particle.initialY + age * particle.speed * size.height / 3
-                    let opacity = max(0, 1 - age / 3)
+                    let y = particle.initialY + age * particle.speed * size.height / 3.0
+                    let opacity = max(0.0, 1.0 - age / 3.0)
                     
                     context.opacity = opacity
                     context.fill(
