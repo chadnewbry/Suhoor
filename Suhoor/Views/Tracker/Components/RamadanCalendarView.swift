@@ -84,6 +84,7 @@ private struct CalendarDayCell: View {
             case .fasted: return .suhoorSuccess
             case .missed: return .red
             case .excused: return .suhoorWarning
+            case .future, .unknown: return Color.gray.opacity(0.2)
             }
         }
         return isFuture ? Color.gray.opacity(0.2) : Color.suhoorSurface

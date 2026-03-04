@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct RamadanDayCard: View {
-    let fastingDay: FastingDay
-    
+    let fastingDay: DashboardDay
+
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack {
@@ -10,7 +10,7 @@ struct RamadanDayCard: View {
                     Text("Day \(fastingDay.dayNumber) of \(fastingDay.totalDays)")
                         .font(.title3.weight(.semibold))
                         .foregroundStyle(Color.suhoorTextPrimary)
-                    
+
                     Text(fastingDay.hijriDate)
                         .font(.subheadline)
                         .foregroundStyle(Color.suhoorGold)
@@ -23,21 +23,21 @@ struct RamadanDayCard: View {
                         .font(.subheadline)
                         .foregroundStyle(Color.suhoorTextSecondary)
                 }
-                
+
                 Spacer()
-                
+
                 Image(systemName: "moon.fill")
                     .font(.title2)
                     .foregroundStyle(Color.suhoorGold.opacity(0.3))
             }
-            
+
             // Month progress
             GeometryReader { geo in
                 ZStack(alignment: .leading) {
                     RoundedRectangle(cornerRadius: 3)
                         .fill(Color.suhoorSurface)
                         .frame(height: 6)
-                    
+
                     RoundedRectangle(cornerRadius: 3)
                         .fill(
                             LinearGradient(
@@ -50,7 +50,7 @@ struct RamadanDayCard: View {
                 }
             }
             .frame(height: 6)
-            
+
             Text(fastingDay.ashra.rawValue)
                 .font(.caption.weight(.medium))
                 .foregroundStyle(Color.suhoorAmber)
