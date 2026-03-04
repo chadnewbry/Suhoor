@@ -1,127 +1,132 @@
 import SwiftUI
 
 struct TrackerView: View {
-    private let dataManager = DataManager.shared
-    private let hijriService = HijriCalendarService.shared
-
-    private var ramadanYear: Int {
-        hijriService.currentRamadanHijriYear(adjustment: UserSettings.shared.hijriAdjustment)
-    }
-
-    @State private var selectedSection = 0
-
+    @State private var store = FastingStore()
+    @State private var selectedDay: FastingDay?
+    @State private var showConfetti = false
+    @State private var celebratedMilestone: Int?
+    
     var body: some View {
-        ScrollView {
-            VStack(spacing: 20) {
-                // Header
-                HStack {
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text("Tracker")
-                            .font(.largeTitle.weight(.bold))
-                            .foregroundStyle(Color.suhoorTextPrimary)
-                        Text("Ramadan \(String(ramadanYear))")
-                            .font(.subheadline)
-                            .foregroundStyle(Color.suhoorTextSecondary)
+        NavigationStack {
+            ZStack {
+                Color.suhoorIndigo.ignoresSafeArea()
+                
+                ScrollView {
+                    VStack(spacing: 20) {
+                        // Summary Stats
+                        FastingStatsBar(
+                            totalFasted: store.totalFasted,
+                            currentStreak: store.currentStreak,
+                            longestStreak: store.longestStreak
+                        )
+                        
+                        // Ramadan Grid
+                        RamadanGridView(
+                            days: store.days,
+                            currentDay: store.currentDayNumber,
+                            onDayTap: { day in selectedDay = day }
+                        )
+                        
+                        // Ashra Progress
+                        VStack(alignment: .leading, spacing: 12) {
+                            Text("Ashra Progress")
+                                .font(.headline)
+                                .foregroundStyle(Color.suhoorTextPrimary)
+                            
+                            ForEach(Ashra.allCases) { ashra in
+                                AshraCard(ashra: ashra, completion: store.ashraCompletion(ashra))
+                            }
+                        }
+                        .padding(.horizontal)
+                        
+                        // Menstrual Mode
+                        if store.menstrualModeEnabled {
+                            MenstrualModeSection(store: store)
+                        }
+                        
+                        // Makeup Fasts
+                        if !store.makeupFasts.isEmpty {
+                            MakeupFastSection(store: store)
+                        }
                     }
-                    Spacer()
+                    .padding(.vertical)
                 }
-                .padding(.horizontal)
-
-                // Section picker
-                Picker("Section", selection: $selectedSection) {
-                    Text("Fasting").tag(0)
-                    Text("Deeds").tag(1)
+                
+                // Confetti overlay
+                if showConfetti {
+                    ConfettiView()
+                        .ignoresSafeArea()
+                        .allowsHitTesting(false)
                 }
-                .pickerStyle(.segmented)
-                .padding(.horizontal)
-
-                if selectedSection == 0 {
-                    // FASTING TRACKER
-                    
-                    // Daily Fast Log
-                    DailyFastLogView(
-                        dataManager: dataManager,
-                        ramadanYear: ramadanYear
-                    )
-                    .padding(.horizontal)
-
-                    // Fasting Streak
-                    FastingStreakView(
-                        dataManager: dataManager,
-                        ramadanYear: ramadanYear
-                    )
-                    .padding(.horizontal)
-
-                    // Ramadan Calendar
-                    RamadanCalendarView(
-                        dataManager: dataManager,
-                        ramadanYear: ramadanYear
-                    )
-                    .padding(.horizontal)
-
-                    // Ashra Progress
-                    AshraProgressView(
-                        dataManager: dataManager,
-                        ramadanYear: ramadanYear
-                    )
-                    .padding(.horizontal)
-
-                    // Makeup Fast Tracker
-                    MakeupFastTrackerView(dataManager: dataManager)
-                        .padding(.horizontal)
-
-                    // HealthKit Sync
-                    HealthKitSyncView()
-                        .padding(.horizontal)
-
-                } else {
-                    // DEEDS & ANALYTICS (existing)
-                    
-                    RamadanScorecardView(
-                        dataManager: dataManager,
-                        ramadanYear: ramadanYear
-                    )
-                    .padding(.horizontal)
-
-                    DailyDeedsView(
-                        dataManager: dataManager,
-                        date: Date(),
-                        ramadanYear: ramadanYear
-                    )
-                    .padding(.horizontal)
-
-                    BadgesGridView(
-                        dataManager: dataManager,
-                        ramadanYear: ramadanYear
-                    )
-                    .padding(.horizontal)
-
-                    YearComparisonView(
-                        dataManager: dataManager,
-                        currentYear: ramadanYear
-                    )
-                    .padding(.horizontal)
-
-                    ShareableSummaryView(
-                        dataManager: dataManager,
-                        ramadanYear: ramadanYear
-                    )
-                    .padding(.horizontal)
-                }
-
-                Spacer(minLength: 32)
             }
-            .padding(.top)
+            .navigationTitle("Fasting Tracker")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbarColorScheme(.dark, for: .navigationBar)
+            .sheet(item: $selectedDay) { day in
+                FastingLogSheet(day: day, store: store)
+                    .presentationDetents([.medium])
+            }
+            .onAppear {
+                HealthKitService.shared.requestAuthorization()
+            }
+            .onChange(of: store.currentStreak) { _, newStreak in
+                checkMilestone(newStreak)
+            }
         }
-        .background(Color.suhoorIndigo.ignoresSafeArea())
-        .onAppear {
-            dataManager.checkAndAwardStreakBadges(ramadanYear: ramadanYear)
-            dataManager.checkAndAwardKhatamBadge(ramadanYear: ramadanYear)
-            dataManager.checkAndAwardDeedMasterBadge(ramadanYear: ramadanYear)
+    }
+    
+    private func checkMilestone(_ streak: Int) {
+        let milestones = [7, 15, 21, 30]
+        if milestones.contains(streak), celebratedMilestone != streak {
+            celebratedMilestone = streak
+            showConfetti = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                showConfetti = false
+            }
         }
+    }
+}
+
+// MARK: - Stats Bar
+
+struct FastingStatsBar: View {
+    let totalFasted: Int
+    let currentStreak: Int
+    let longestStreak: Int
+    
+    var body: some View {
+        HStack(spacing: 0) {
+            StatItem(value: "\(totalFasted)/30", label: "Fasted")
+            Divider().frame(height: 40).background(Color.suhoorDivider)
+            StatItem(value: "\(currentStreak)", label: "Streak")
+            Divider().frame(height: 40).background(Color.suhoorDivider)
+            StatItem(value: "\(longestStreak)", label: "Best")
+        }
+        .padding(.vertical, 12)
+        .background(Color.suhoorSurface)
+        .clipShape(RoundedRectangle(cornerRadius: 16))
+        .padding(.horizontal)
+    }
+}
+
+struct StatItem: View {
+    let value: String
+    let label: String
+    
+    var body: some View {
+        VStack(spacing: 4) {
+            Text(value)
+                .font(.title2.weight(.bold))
+                .foregroundStyle(Color.suhoorGold)
+            Text(label)
+                .font(.caption)
+                .foregroundStyle(Color.suhoorTextSecondary)
+        }
+        .frame(maxWidth: .infinity)
     }
 }
 
 #Preview {
     TrackerView()
+        .preferredColorScheme(.dark)
 }
