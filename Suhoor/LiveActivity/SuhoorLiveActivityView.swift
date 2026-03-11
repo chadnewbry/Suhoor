@@ -32,13 +32,21 @@ struct SuhoorLiveActivityView: Widget {
                         .foregroundStyle(.white.opacity(0.6))
                 }
                 DynamicIslandExpandedRegion(.bottom) {
-                    HStack {
-                        Image(systemName: "clock")
+                    HStack(spacing: 12) {
+                        HStack(spacing: 4) {
+                            Image(systemName: "clock")
+                                .font(.caption2)
+                            Text(context.state.eventTime, style: .time)
+                                .font(.caption)
+                        }
+                        .foregroundStyle(.white.opacity(0.5))
+                        
+                        Spacer()
+                        
+                        Text("Next: \(context.state.nextPrayerName)")
                             .font(.caption2)
-                        Text(context.state.eventTime, style: .time)
-                            .font(.caption)
+                            .foregroundStyle(.white.opacity(0.4))
                     }
-                    .foregroundStyle(.white.opacity(0.5))
                 }
             } compactLeading: {
                 Text("🌙")
@@ -58,11 +66,17 @@ struct SuhoorLiveActivityView: Widget {
     private func lockScreenView(context: ActivityViewContext<SuhoorActivityAttributes>) -> some View {
         HStack(spacing: 16) {
             VStack(alignment: .leading, spacing: 4) {
-                Text("Ramadan Day \(context.state.ramadanDay)")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
+                HStack(spacing: 6) {
+                    Text("🌙")
+                        .font(.caption)
+                    Text("Ramadan Day \(context.state.ramadanDay)")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+                
                 Text(context.state.eventName)
                     .font(.title2.weight(.bold))
+                
                 HStack(spacing: 4) {
                     Image(systemName: "clock")
                         .font(.caption)
@@ -70,6 +84,10 @@ struct SuhoorLiveActivityView: Widget {
                         .font(.subheadline)
                 }
                 .foregroundStyle(.secondary)
+                
+                Text("Next: \(context.state.nextPrayerName)")
+                    .font(.caption2)
+                    .foregroundStyle(.tertiary)
             }
             
             Spacer()
