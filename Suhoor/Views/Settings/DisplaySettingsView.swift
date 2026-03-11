@@ -42,11 +42,11 @@ struct DisplaySettingsView: View {
                                         .opacity(settings.colorTheme == theme ? 1 : 0)
                                 )
                             Text(theme.displayName)
-                                .foregroundStyle(.suhoorTextPrimary)
+                                .foregroundStyle(Color.suhoorTextPrimary)
                             Spacer()
                             if settings.colorTheme == theme {
                                 Image(systemName: "checkmark")
-                                    .foregroundStyle(.suhoorGold)
+                                    .foregroundStyle(Color.suhoorGold)
                             }
                         }
                     }
@@ -67,7 +67,7 @@ struct DisplaySettingsView: View {
         }
         .scrollContentBackground(.hidden)
         .background(Color.suhoorIndigo)
-        .foregroundStyle(.suhoorTextPrimary)
+        .foregroundStyle(Color.suhoorTextPrimary)
         .navigationTitle("Display")
     }
 }
