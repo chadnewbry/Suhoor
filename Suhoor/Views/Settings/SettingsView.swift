@@ -103,13 +103,13 @@ struct SettingsView: View {
 
                     // MARK: - Legal
                     Section {
-                        Link(destination: URL(string: "https://chadnewbry.github.io/suhoor/privacy")!) {
+                        Link(destination: URL(string: "https://chadnewbry.github.io/Suhoor/privacy")!) {
                             Label("Privacy Policy", systemImage: "hand.raised")
                         }
-                        Link(destination: URL(string: "https://chadnewbry.github.io/suhoor/terms")!) {
+                        Link(destination: URL(string: "https://chadnewbry.github.io/Suhoor/terms")!) {
                             Label("Terms of Use", systemImage: "doc.text")
                         }
-                        Link(destination: URL(string: "https://chadnewbry.github.io/suhoor/support")!) {
+                        Link(destination: URL(string: "https://chadnewbry.github.io/Suhoor/support")!) {
                             Label("Support Page", systemImage: "lifepreserver")
                         }
                     } header: {

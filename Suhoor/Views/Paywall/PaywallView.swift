@@ -261,9 +261,9 @@ struct PaywallView: View {
 
             HStack(spacing: 16) {
                 Link("Privacy Policy",
-                     destination: URL(string: "https://chadnewbry.github.io/suhoor/privacy")!)
+                     destination: URL(string: "https://chadnewbry.github.io/Suhoor/privacy")!)
                 Link("Terms of Use",
-                     destination: URL(string: "https://chadnewbry.github.io/suhoor/terms")!)
+                     destination: URL(string: "https://chadnewbry.github.io/Suhoor/terms")!)
             }
             .font(.caption2)
             .foregroundStyle(.white.opacity(0.35))
