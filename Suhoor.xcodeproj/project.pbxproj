@@ -7,17 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		157BB27FB71408DD9FBD6018 /* LiveActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21A31AE37DD253725F2D90B /* LiveActivityService.swift */; };
+		23CF2E990282150B89266029 /* azan_alaqsa.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1F001F18172952704DD5AF /* azan_alaqsa.caf */; };
 		333255421B6617A74816C8D2 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF6F5EE0DCF6BE7E9FD3F92 /* Color+Extensions.swift */; };
+		346EFA24D0765FEE13F1B7E5 /* SuhoorLiveActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7C18BF2EFECCEEA8472A64 /* SuhoorLiveActivityView.swift */; };
 		3E0FDECEAC106F44EDD3A067 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4ACAF6FC3E0BB1BF7F398C /* SettingsView.swift */; };
+		41552B582924DB4AB398FA07 /* RamadanInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C16AEAAF62097168D0DD53 /* RamadanInfo.swift */; };
 		426BBA0361EAA3929F036D95 /* QuranView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C87D0F59921D049440DC48B /* QuranView.swift */; };
+		42CDA59FC1953843934394DF /* NotificationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0C19E611E528E5C70A1AED /* NotificationSettingsView.swift */; };
+		4EBE448172E2CACD8400F23E /* SuhoorActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0101E6EBDD8F0EC3D0A0CE9 /* SuhoorActivityAttributes.swift */; };
+		5556D768DD2008386257DF99 /* azan_mishary.caf in Resources */ = {isa = PBXBuildFile; fileRef = C6E492850103D798EB913BFD /* azan_mishary.caf */; };
+		5D50036ABA3CA2D5E09FAFDA /* SuhoorComplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F7710946BF8CDF713DF7C6 /* SuhoorComplication.swift */; };
 		5DFE548DFA768DD2EFC156EC /* TrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACDE62A96136D2F47425089 /* TrackerView.swift */; };
+		5F9FCA6846A59616E0747295 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7DB298DD410C3B6E25E058B5 /* README.md */; };
+		660FF6180F62246B9AA58301 /* RamadanInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C16AEAAF62097168D0DD53 /* RamadanInfo.swift */; };
 		69314AFC51DD018764C94282 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30236ED79DBDD9574CBA22CA /* DashboardView.swift */; };
+		70585134D35E71F80FFCC8E4 /* NotificationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BD5D21C70EACF15AAE46C7 /* NotificationSettings.swift */; };
+		7426E418617CB12517ECE281 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94314E1F5E051738BE6BF86 /* SharedData.swift */; };
+		7C649E7F76DBDCC57A55CD02 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94314E1F5E051738BE6BF86 /* SharedData.swift */; };
+		80D420DFF3EACD6B641BB68B /* azan_makkah.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4084AFE9BF002A4E9AD41CE3 /* azan_makkah.caf */; };
 		8D67EF5B621753A1693E9B7B /* SuhoorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E0FA15D24BCE755C348384 /* SuhoorApp.swift */; };
+		95B3FD122C864E1F7F293F0B /* SuhoorLiveActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7C18BF2EFECCEEA8472A64 /* SuhoorLiveActivityView.swift */; };
 		968FFAE261E32DB1F6681905 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1994C9A1226302607D72E015 /* ContentView.swift */; };
 		A8A9DEF2A4AA9CD21676FC2E /* SuhoorWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34234A51FC680D834287D23 /* SuhoorWidgets.swift */; };
+		AB77EB90BAA1DFF8AE48AB29 /* PrayerTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF08C8C5F265751315D6BDA /* PrayerTime.swift */; };
+		C4A1A83D8F9798C5BF3D22ED /* SuhoorActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0101E6EBDD8F0EC3D0A0CE9 /* SuhoorActivityAttributes.swift */; };
+		C5470ED549023B36A1DB4E53 /* PrayerTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF08C8C5F265751315D6BDA /* PrayerTime.swift */; };
+		C632CCB0E643982197AEF4FC /* RamadanInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C16AEAAF62097168D0DD53 /* RamadanInfo.swift */; };
+		D3D39297BAF0A1C5EC06C501 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94314E1F5E051738BE6BF86 /* SharedData.swift */; };
 		E55FFC201656F9E09FFF6445 /* SuhoorWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAACFB950998F42377AFC07A /* SuhoorWatchApp.swift */; };
+		E83ADA4E76C8A0771ABDB345 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F17C1A0B84584ED7990477 /* NotificationService.swift */; };
+		E9E4B1F721864506B9340B12 /* azan_madinah.caf in Resources */ = {isa = PBXBuildFile; fileRef = 8A92B9299771D9362CF11E26 /* azan_madinah.caf */; };
 		EB748345639FF8D971925B8A /* CalendarTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C66BE3453EF0C95D5E882D0 /* CalendarTabView.swift */; };
 		EC21397B57E5C4FD36EE04EF /* WatchContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7D5003606C9FF39076D5C6 /* WatchContentView.swift */; };
+		ECC00A9314E38FCB929EAD52 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD375CAE5EE0F801E8DD4B52 /* NotificationManager.swift */; };
+		F9D0CDC912A02A2C50BA11FE /* PrayerTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF08C8C5F265751315D6BDA /* PrayerTime.swift */; };
 		FB285F962B84DFE0519FB61C /* SuhoorWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1F00809967824B041BE1EA7A /* SuhoorWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -52,19 +76,35 @@
 		1D03953894A91AA211CAEDC4 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		1F00809967824B041BE1EA7A /* SuhoorWidgets.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = SuhoorWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		30236ED79DBDD9574CBA22CA /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		3CF08C8C5F265751315D6BDA /* PrayerTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTime.swift; sourceTree = "<group>"; };
 		3EC60840A2208E70889F66EE /* SuhoorWidgets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SuhoorWidgets.entitlements; sourceTree = "<group>"; };
+		4084AFE9BF002A4E9AD41CE3 /* azan_makkah.caf */ = {isa = PBXFileReference; path = azan_makkah.caf; sourceTree = "<group>"; };
 		43E0FA15D24BCE755C348384 /* SuhoorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuhoorApp.swift; sourceTree = "<group>"; };
 		534BFA4E75CFAECEC7F930FA /* Suhoor.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Suhoor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B0C19E611E528E5C70A1AED /* NotificationSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsView.swift; sourceTree = "<group>"; };
+		60C16AEAAF62097168D0DD53 /* RamadanInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamadanInfo.swift; sourceTree = "<group>"; };
 		6C66BE3453EF0C95D5E882D0 /* CalendarTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTabView.swift; sourceTree = "<group>"; };
+		72F17C1A0B84584ED7990477 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		79BD5D21C70EACF15AAE46C7 /* NotificationSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettings.swift; sourceTree = "<group>"; };
+		7DB298DD410C3B6E25E058B5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8A92B9299771D9362CF11E26 /* azan_madinah.caf */ = {isa = PBXFileReference; path = azan_madinah.caf; sourceTree = "<group>"; };
 		90A7AE0D8ADBB32A82802F69 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		9AEAF0C16B7D4A95886317C9 /* SuhoorWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuhoorWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D1F001F18172952704DD5AF /* azan_alaqsa.caf */ = {isa = PBXFileReference; path = azan_alaqsa.caf; sourceTree = "<group>"; };
+		A9F7710946BF8CDF713DF7C6 /* SuhoorComplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuhoorComplication.swift; sourceTree = "<group>"; };
+		AD7C18BF2EFECCEEA8472A64 /* SuhoorLiveActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuhoorLiveActivityView.swift; sourceTree = "<group>"; };
 		AE4ACAF6FC3E0BB1BF7F398C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		AE7D5003606C9FF39076D5C6 /* WatchContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchContentView.swift; sourceTree = "<group>"; };
+		B0101E6EBDD8F0EC3D0A0CE9 /* SuhoorActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuhoorActivityAttributes.swift; sourceTree = "<group>"; };
 		BBDD2EDA1D53537BAF5F848E /* Suhoor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Suhoor.entitlements; sourceTree = "<group>"; };
 		BDCA5E9955AF6504F3498FFF /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		C057859B32EE5CFCD0E88011 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		C5013D2F9602338362B8EE10 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		C6E492850103D798EB913BFD /* azan_mishary.caf */ = {isa = PBXFileReference; path = azan_mishary.caf; sourceTree = "<group>"; };
+		CD375CAE5EE0F801E8DD4B52 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		CF547A2BAE03710D7B7A2165 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		D21A31AE37DD253725F2D90B /* LiveActivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityService.swift; sourceTree = "<group>"; };
+		D94314E1F5E051738BE6BF86 /* SharedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
 		EAACFB950998F42377AFC07A /* SuhoorWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuhoorWatchApp.swift; sourceTree = "<group>"; };
 		EEF6F5EE0DCF6BE7E9FD3F92 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		F34234A51FC680D834287D23 /* SuhoorWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuhoorWidgets.swift; sourceTree = "<group>"; };
@@ -75,6 +115,10 @@
 			isa = PBXGroup;
 			children = (
 				CF547A2BAE03710D7B7A2165 /* .gitkeep */,
+				79BD5D21C70EACF15AAE46C7 /* NotificationSettings.swift */,
+				3CF08C8C5F265751315D6BDA /* PrayerTime.swift */,
+				60C16AEAAF62097168D0DD53 /* RamadanInfo.swift */,
+				D94314E1F5E051738BE6BF86 /* SharedData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -82,6 +126,7 @@
 		2B751A173388A29A041D5A82 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				5B0C19E611E528E5C70A1AED /* NotificationSettingsView.swift */,
 				AE4ACAF6FC3E0BB1BF7F398C /* SettingsView.swift */,
 			);
 			path = Settings;
@@ -105,6 +150,14 @@
 			path = Qibla;
 			sourceTree = "<group>";
 		};
+		536FB3BBC6379253F2B5B25C /* Complications */ = {
+			isa = PBXGroup;
+			children = (
+				A9F7710946BF8CDF713DF7C6 /* SuhoorComplication.swift */,
+			);
+			path = Complications;
+			sourceTree = "<group>";
+		};
 		58A99168D02A7B37E7E06081 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +171,7 @@
 			children = (
 				EAACFB950998F42377AFC07A /* SuhoorWatchApp.swift */,
 				AE7D5003606C9FF39076D5C6 /* WatchContentView.swift */,
+				536FB3BBC6379253F2B5B25C /* Complications */,
 			);
 			name = SuhoorWatchApp;
 			path = SuhoorWatch/SuhoorWatchApp;
@@ -138,6 +192,7 @@
 				BBDD2EDA1D53537BAF5F848E /* Suhoor.entitlements */,
 				43E0FA15D24BCE755C348384 /* SuhoorApp.swift */,
 				A3408200714C0960F9CDFFC0 /* Extensions */,
+				C57B3A7D1ACAFFEE205FFA22 /* LiveActivity */,
 				DC3ED171F77AF976A1C1CB7B /* Managers */,
 				0150ED23522E7A7A08CFEB73 /* Models */,
 				E9A0AACE477F090C255DC44B /* Resources */,
@@ -181,6 +236,16 @@
 			path = Dashboard;
 			sourceTree = "<group>";
 		};
+		C57B3A7D1ACAFFEE205FFA22 /* LiveActivity */ = {
+			isa = PBXGroup;
+			children = (
+				D21A31AE37DD253725F2D90B /* LiveActivityService.swift */,
+				B0101E6EBDD8F0EC3D0A0CE9 /* SuhoorActivityAttributes.swift */,
+				AD7C18BF2EFECCEEA8472A64 /* SuhoorLiveActivityView.swift */,
+			);
+			path = LiveActivity;
+			sourceTree = "<group>";
+		};
 		CB069D1FF301557FEA9AE741 /* SuhoorWidgets */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				C5013D2F9602338362B8EE10 /* .gitkeep */,
+				CD375CAE5EE0F801E8DD4B52 /* NotificationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -216,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				90A7AE0D8ADBB32A82802F69 /* .gitkeep */,
+				72F17C1A0B84584ED7990477 /* NotificationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -224,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				C057859B32EE5CFCD0E88011 /* .gitkeep */,
+				EABF0EFC42B15DBA248B695F /* Sounds */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -236,6 +304,18 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
+		EABF0EFC42B15DBA248B695F /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				9D1F001F18172952704DD5AF /* azan_alaqsa.caf */,
+				8A92B9299771D9362CF11E26 /* azan_madinah.caf */,
+				4084AFE9BF002A4E9AD41CE3 /* azan_makkah.caf */,
+				C6E492850103D798EB913BFD /* azan_mishary.caf */,
+				7DB298DD410C3B6E25E058B5 /* README.md */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -244,6 +324,7 @@
 			buildConfigurationList = 8A350E98102CF103338C9BDC /* Build configuration list for PBXNativeTarget "Suhoor" */;
 			buildPhases = (
 				369C9A893907568435AD7846 /* Sources */,
+				9BE0892DC3153C05F7FD0F67 /* Resources */,
 				2931C6EB0AA359B8AE6647E3 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
@@ -336,6 +417,21 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		9BE0892DC3153C05F7FD0F67 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F9FCA6846A59616E0747295 /* README.md in Resources */,
+				23CF2E990282150B89266029 /* azan_alaqsa.caf in Resources */,
+				E9E4B1F721864506B9340B12 /* azan_madinah.caf in Resources */,
+				80D420DFF3EACD6B641BB68B /* azan_makkah.caf in Resources */,
+				5556D768DD2008386257DF99 /* azan_mishary.caf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		369C9A893907568435AD7846 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -345,9 +441,19 @@
 				333255421B6617A74816C8D2 /* Color+Extensions.swift in Sources */,
 				968FFAE261E32DB1F6681905 /* ContentView.swift in Sources */,
 				69314AFC51DD018764C94282 /* DashboardView.swift in Sources */,
+				157BB27FB71408DD9FBD6018 /* LiveActivityService.swift in Sources */,
+				ECC00A9314E38FCB929EAD52 /* NotificationManager.swift in Sources */,
+				E83ADA4E76C8A0771ABDB345 /* NotificationService.swift in Sources */,
+				70585134D35E71F80FFCC8E4 /* NotificationSettings.swift in Sources */,
+				42CDA59FC1953843934394DF /* NotificationSettingsView.swift in Sources */,
+				C5470ED549023B36A1DB4E53 /* PrayerTime.swift in Sources */,
 				426BBA0361EAA3929F036D95 /* QuranView.swift in Sources */,
+				41552B582924DB4AB398FA07 /* RamadanInfo.swift in Sources */,
 				3E0FDECEAC106F44EDD3A067 /* SettingsView.swift in Sources */,
+				D3D39297BAF0A1C5EC06C501 /* SharedData.swift in Sources */,
+				4EBE448172E2CACD8400F23E /* SuhoorActivityAttributes.swift in Sources */,
 				8D67EF5B621753A1693E9B7B /* SuhoorApp.swift in Sources */,
+				95B3FD122C864E1F7F293F0B /* SuhoorLiveActivityView.swift in Sources */,
 				5DFE548DFA768DD2EFC156EC /* TrackerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,6 +462,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB77EB90BAA1DFF8AE48AB29 /* PrayerTime.swift in Sources */,
+				660FF6180F62246B9AA58301 /* RamadanInfo.swift in Sources */,
+				7C649E7F76DBDCC57A55CD02 /* SharedData.swift in Sources */,
+				5D50036ABA3CA2D5E09FAFDA /* SuhoorComplication.swift in Sources */,
 				E55FFC201656F9E09FFF6445 /* SuhoorWatchApp.swift in Sources */,
 				EC21397B57E5C4FD36EE04EF /* WatchContentView.swift in Sources */,
 			);
@@ -365,6 +475,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9D0CDC912A02A2C50BA11FE /* PrayerTime.swift in Sources */,
+				C632CCB0E643982197AEF4FC /* RamadanInfo.swift in Sources */,
+				7426E418617CB12517ECE281 /* SharedData.swift in Sources */,
+				C4A1A83D8F9798C5BF3D22ED /* SuhoorActivityAttributes.swift in Sources */,
+				346EFA24D0765FEE13F1B7E5 /* SuhoorLiveActivityView.swift in Sources */,
 				A8A9DEF2A4AA9CD21676FC2E /* SuhoorWidgets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,6 +564,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SuhoorWatch/SuhoorWatch.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_GENERATION_MODE = GeneratedFile;
@@ -471,8 +587,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_GENERATION_MODE = GeneratedFile;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Suhoor can track your fasting hours in Apple Health.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Suhoor needs your location to calculate accurate prayer times and Qibla direction.";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -552,6 +670,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SuhoorWatch/SuhoorWatch.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_GENERATION_MODE = GeneratedFile;
@@ -574,8 +693,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_GENERATION_MODE = GeneratedFile;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Suhoor can track your fasting hours in Apple Health.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Suhoor needs your location to calculate accurate prayer times and Qibla direction.";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -600,6 +721,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_GENERATION_MODE = GeneratedFile;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -620,6 +742,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_GENERATION_MODE = GeneratedFile;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
