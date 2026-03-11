@@ -1,19 +1,10 @@
 import Foundation
 import StoreKit
 
-// MARK: - Product Identifiers
+// MARK: - Product Identifier
 
-enum SuhoorProduct: String, CaseIterable {
-    case proMonthly = "com.chadnewbry.suhoor.pro.monthly"
-    case proAnnual = "com.chadnewbry.suhoor.pro.annual"
-    case proLifetime = "com.chadnewbry.suhoor.pro.lifetime"
-
-    var isSubscription: Bool {
-        switch self {
-        case .proMonthly, .proAnnual: return true
-        case .proLifetime: return false
-        }
-    }
+enum SuhoorProduct: String {
+    case premium = "com.chadnewbry.suhoor.premium"
 }
 
 // MARK: - Store Service
@@ -22,30 +13,47 @@ enum SuhoorProduct: String, CaseIterable {
 final class StoreService: ObservableObject {
     static let shared = StoreService()
 
-    @Published private(set) var products: [Product] = []
-    @Published private(set) var purchasedProductIDs: Set<String> = []
+    // MARK: - Published State
+
+    @Published private(set) var product: Product?
+    @Published private(set) var isPurchased = false
     @Published private(set) var isLoading = false
     @Published private(set) var errorMessage: String?
 
+    // Free tier tracking
+    @Published private(set) var usedFreeDays: Int = 0
+
+    static let maxFreeDays = 5
+    private static let freeDaysKey = "suhoor_free_days_used"
+    private static let lastRecordedDateKey = "suhoor_last_recorded_date"
+
     private var transactionListener: Task<Void, Error>?
 
-    var isPro: Bool {
-        !purchasedProductIDs.intersection(SuhoorProduct.allCases.map(\.rawValue)).isEmpty
+    /// Whether the user has premium access (purchased or within free tier)
+    var isPremium: Bool {
+        isPurchased || isInFreeTier
     }
 
-    var monthlyProduct: Product? {
-        products.first { $0.id == SuhoorProduct.proMonthly.rawValue }
+    /// Whether user is still in the free trial period
+    var isInFreeTier: Bool {
+        !isPurchased && usedFreeDays < Self.maxFreeDays
     }
 
-    var annualProduct: Product? {
-        products.first { $0.id == SuhoorProduct.proAnnual.rawValue }
+    /// Days remaining in free tier
+    var freeDaysRemaining: Int {
+        max(0, Self.maxFreeDays - usedFreeDays)
     }
 
-    var lifetimeProduct: Product? {
-        products.first { $0.id == SuhoorProduct.proLifetime.rawValue }
+    /// Whether the paywall should be shown for premium features
+    var shouldShowPaywall: Bool {
+        !isPurchased && !isInFreeTier
     }
+
+    // Legacy compatibility
+    var isPro: Bool { isPremium }
 
     private init() {
+        loadFreeDays()
         transactionListener = listenForTransactions()
     }
 
@@ -56,15 +64,15 @@ final class StoreService: ObservableObject {
     // MARK: - Load Products
 
     func loadProducts() async {
-        guard products.isEmpty else { return }
+        guard product == nil else { return }
         isLoading = true
         defer { isLoading = false }
 
         do {
             let storeProducts = try await Product.products(
-                for: SuhoorProduct.allCases.map(\.rawValue)
+                for: [SuhoorProduct.premium.rawValue]
             )
-            products = storeProducts.sorted { $0.price < $1.price }
+            product = storeProducts.first
         } catch {
             errorMessage = "Failed to load products."
         }
@@ -72,7 +80,9 @@ final class StoreService: ObservableObject {
 
     // MARK: - Purchase
 
-    func purchase(_ product: Product) async throws -> Bool {
+    func purchase() async throws -> Bool {
+        guard let product else { return false }
+
         let result = try await product.purchase()
 
         switch result {
@@ -103,15 +113,38 @@ final class StoreService: ObservableObject {
     // MARK: - Entitlements
 
     func refreshEntitlements() async {
-        var ids: Set<String> = []
+        var found = false
 
         for await result in Transaction.currentEntitlements {
-            if let transaction = try? checkVerified(result) {
-                ids.insert(transaction.productID)
+            if let transaction = try? checkVerified(result),
+               transaction.productID == SuhoorProduct.premium.rawValue {
+                found = true
             }
         }
 
-        purchasedProductIDs = ids
+        isPurchased = found
+    }
+
+    // MARK: - Free Day Tracking
+
+    /// Record that the user used the app today. Call on app launch / when logging a fast.
+    func recordAppUsageDay() {
+        guard !isPurchased else { return }
+
+        let today = Calendar.current.startOfDay(for: Date())
+        let lastDate = UserDefaults.standard.object(forKey: Self.lastRecordedDateKey) as? Date
+
+        if let lastDate, Calendar.current.isDate(lastDate, inSameDayAs: today) {
+            return // Already recorded today
+        }
+
+        UserDefaults.standard.set(today, forKey: Self.lastRecordedDateKey)
+        usedFreeDays = min(usedFreeDays + 1, Self.maxFreeDays)
+        UserDefaults.standard.set(usedFreeDays, forKey: Self.freeDaysKey)
+    }
+
+    private func loadFreeDays() {
+        usedFreeDays = UserDefaults.standard.integer(forKey: Self.freeDaysKey)
     }
 
     // MARK: - Transaction Listener
