@@ -17,7 +17,7 @@ struct ContentView: View {
                 }
                 .tag(1)
             
-            QuranView()
+            QuranTabView()
                 .tabItem {
                     Label("Quran", systemImage: "book")
                 }
