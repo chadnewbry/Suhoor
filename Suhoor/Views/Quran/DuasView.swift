@@ -56,9 +56,12 @@ struct DuasView: View {
                             Text(category.rawValue)
                                 .font(.body.weight(.medium))
                                 .foregroundStyle(Color.suhoorTextPrimary)
-                            Text("\(duaService.duas(for: category).count) duas")
+                            Text(category.subtitle)
                                 .font(.caption)
                                 .foregroundStyle(Color.suhoorTextSecondary)
+                            Text("\(duaService.duas(for: category).count) duas")
+                                .font(.caption2)
+                                .foregroundStyle(Color.suhoorTextSecondary.opacity(0.7))
                         }
                         Spacer()
                         Image(systemName: "chevron.right")
@@ -77,15 +80,18 @@ struct DuasView: View {
 
 struct DuaCard: View {
     let dua: Dua
+    @State private var showShareSheet = false
+    @State private var shareImage: UIImage?
 
     var body: some View {
         VStack(alignment: .trailing, spacing: 12) {
             Text(dua.arabicText)
-                .font(.title3)
+                .font(.system(size: 26, weight: .regular, design: .serif))
                 .multilineTextAlignment(.trailing)
                 .foregroundStyle(Color.suhoorTextPrimary)
                 .frame(maxWidth: .infinity, alignment: .trailing)
                 .environment(\.layoutDirection, .rightToLeft)
+                .lineSpacing(8)
 
             Text(dua.transliteration)
                 .font(.subheadline)
@@ -98,17 +104,118 @@ struct DuaCard: View {
                 .foregroundStyle(Color.suhoorTextSecondary)
                 .frame(maxWidth: .infinity, alignment: .leading)
 
-            if let ref = dua.reference {
-                Text("— \(ref)")
-                    .font(.caption)
-                    .foregroundStyle(Color.suhoorTextSecondary.opacity(0.7))
-                    .frame(maxWidth: .infinity, alignment: .leading)
+            HStack {
+                if let ref = dua.reference {
+                    Text("— \(ref)")
+                        .font(.caption)
+                        .foregroundStyle(Color.suhoorTextSecondary.opacity(0.7))
+                }
+
+                Spacer()
+
+                Button {
+                    shareImage = renderDuaImage(dua)
+                    showShareSheet = true
+                } label: {
+                    Image(systemName: "square.and.arrow.up")
+                        .font(.body)
+                        .foregroundStyle(Color.suhoorGold)
+                }
             }
         }
         .padding()
         .background(Color.suhoorSurface)
         .clipShape(RoundedRectangle(cornerRadius: 12))
+        .sheet(isPresented: $showShareSheet) {
+            if let image = shareImage {
+                ShareSheet(items: [image])
+            }
+        }
     }
+
+    // MARK: - Render Dua as Image
+
+    private func renderDuaImage(_ dua: Dua) -> UIImage {
+        let renderer = ImageRenderer(content: DuaShareCard(dua: dua))
+        renderer.scale = 3.0
+        return renderer.uiImage ?? UIImage()
+    }
+}
+
+// MARK: - Dua Share Card (for image rendering)
+
+struct DuaShareCard: View {
+    let dua: Dua
+
+    var body: some View {
+        VStack(spacing: 20) {
+            // Decorative header
+            HStack {
+                Image(systemName: "star.fill")
+                    .foregroundStyle(Color.suhoorGold)
+                Text("☪")
+                    .font(.title)
+                Image(systemName: "star.fill")
+                    .foregroundStyle(Color.suhoorGold)
+            }
+
+            Text(dua.arabicText)
+                .font(.system(size: 28, weight: .regular, design: .serif))
+                .multilineTextAlignment(.center)
+                .foregroundStyle(.white)
+                .lineSpacing(10)
+
+            Rectangle()
+                .fill(Color.suhoorGold)
+                .frame(width: 60, height: 2)
+
+            Text(dua.transliteration)
+                .font(.system(size: 14))
+                .italic()
+                .foregroundStyle(Color.suhoorGold)
+                .multilineTextAlignment(.center)
+
+            Text(dua.englishTranslation)
+                .font(.system(size: 15))
+                .foregroundStyle(.white.opacity(0.85))
+                .multilineTextAlignment(.center)
+
+            if let ref = dua.reference {
+                Text("— \(ref)")
+                    .font(.system(size: 12))
+                    .foregroundStyle(.white.opacity(0.5))
+            }
+
+            Text("Suhoor — Ramadan Companion")
+                .font(.system(size: 10, weight: .medium))
+                .foregroundStyle(Color.suhoorGold.opacity(0.6))
+        }
+        .padding(32)
+        .frame(width: 400)
+        .background(
+            LinearGradient(
+                colors: [
+                    Color(red: 0.06, green: 0.05, blue: 0.18),
+                    Color(red: 0.10, green: 0.08, blue: 0.25),
+                    Color(red: 0.06, green: 0.05, blue: 0.18)
+                ],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+        )
+    }
+}
+
+// MARK: - Share Sheet
+
+struct ShareSheet: UIViewControllerRepresentable {
+    let items: [Any]
+
+    func makeUIViewController(context: Context) -> UIActivityViewController {
+        UIActivityViewController(activityItems: items, applicationActivities: nil)
+    }
+
+    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
 }
 
 // MARK: - Category Sheet
@@ -142,7 +249,6 @@ private struct DuaCategorySheet: View {
         }
     }
 }
-
 
 #Preview {
     NavigationStack {
