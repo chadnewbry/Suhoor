@@ -2,6 +2,8 @@ import SwiftUI
 
 struct DisplaySettingsView: View {
     @StateObject private var settings = AppSettings.shared
+    @ObservedObject private var store = StoreService.shared
+    @State private var showPaywall = false
 
     var body: some View {
         List {
@@ -30,8 +32,15 @@ struct DisplaySettingsView: View {
 
             Section {
                 ForEach(AppColorTheme.allCases) { theme in
+                    let isDefault = theme == .midnightBlue
+                    let isLocked = !isDefault && !store.isPro
+
                     Button {
-                        settings.colorTheme = theme
+                        if isLocked {
+                            showPaywall = true
+                        } else {
+                            settings.colorTheme = theme
+                        }
                     } label: {
                         HStack {
                             Circle()
@@ -43,6 +52,13 @@ struct DisplaySettingsView: View {
                                 )
                             Text(theme.displayName)
                                 .foregroundStyle(Color.suhoorTextPrimary)
+
+                            if isLocked {
+                                Image(systemName: "lock.fill")
+                                    .font(.caption2)
+                                    .foregroundStyle(Color.suhoorGold)
+                            }
+
                             Spacer()
                             if settings.colorTheme == theme {
                                 Image(systemName: "checkmark")
@@ -53,6 +69,11 @@ struct DisplaySettingsView: View {
                 }
             } header: {
                 Text("Color Theme")
+            } footer: {
+                if !store.isPro {
+                    Text("Upgrade to Pro to unlock all themes")
+                        .foregroundStyle(Color.suhoorTextSecondary)
+                }
             }
             .listRowBackground(Color.suhoorSurface)
 
@@ -69,6 +90,9 @@ struct DisplaySettingsView: View {
         .background(Color.suhoorIndigo)
         .foregroundStyle(Color.suhoorTextPrimary)
         .navigationTitle("Display")
+        .fullScreenCover(isPresented: $showPaywall) {
+            PaywallView()
+        }
     }
 }
 

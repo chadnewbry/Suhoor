@@ -1,0 +1,146 @@
+{
+  "identifier" : "8A3F4B2C-1D5E-4F6A-B7C8-9D0E1F2A3B4C",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "39.99",
+      "familyShareable" : false,
+      "internalID" : "lifetime001",
+      "localizations" : [
+        {
+          "description" : "Unlock all Pro features forever",
+          "displayName" : "Suhoor Pro Lifetime",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.chadnewbry.suhoor.pro.lifetime",
+      "referenceName" : "Suhoor Pro Lifetime",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "suhoor",
+    "_developerTeamID" : "XHKABG374",
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : null,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "suhoor_pro",
+      "localizations" : [
+
+      ],
+      "name" : "Suhoor Pro",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "19.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "annual001",
+          "introductoryOffer" : {
+            "internalID" : "annual_trial",
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P3D"
+          },
+          "localizations" : [
+            {
+              "description" : "Unlock all Pro features — best value",
+              "displayName" : "Suhoor Pro Annual",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.chadnewbry.suhoor.pro.annual",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Suhoor Pro Annual",
+          "subscriptionGroupID" : "suhoor_pro",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "4.99",
+          "familyShareable" : false,
+          "groupNumber" : 2,
+          "internalID" : "monthly001",
+          "introductoryOffer" : {
+            "internalID" : "monthly_trial",
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P3D"
+          },
+          "localizations" : [
+            {
+              "description" : "Unlock all Pro features monthly",
+              "displayName" : "Suhoor Pro Monthly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.chadnewbry.suhoor.pro.monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Suhoor Pro Monthly",
+          "subscriptionGroupID" : "suhoor_pro",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}
