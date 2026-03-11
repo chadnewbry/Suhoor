@@ -19,6 +19,15 @@ struct FastingSettingsView: View {
             .listRowBackground(Color.suhoorSurface)
 
             Section {
+                Stepper("\(settings.hydrationTarget) glasses per day", value: $settings.hydrationTarget, in: 1...20)
+            } header: {
+                Text("Hydration")
+            } footer: {
+                Text("Set your daily water intake goal between Iftar and Sehri.")
+            }
+            .listRowBackground(Color.suhoorSurface)
+
+            Section {
                 Toggle(isOn: $settings.healthKitSyncEnabled) {
                     Label("HealthKit Sync", systemImage: "heart.text.square")
                 }
