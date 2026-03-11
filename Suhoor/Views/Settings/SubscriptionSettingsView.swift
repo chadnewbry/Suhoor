@@ -48,7 +48,7 @@ struct SubscriptionSettingsView: View {
         }
         .scrollContentBackground(.hidden)
         .background(Color.suhoorIndigo)
-        .foregroundStyle(.suhoorTextPrimary)
+        .foregroundStyle(Color.suhoorTextPrimary)
         .navigationTitle("Subscription")
         .alert("Restore Purchases", isPresented: $showRestoreAlert) {
             Button("OK") {}

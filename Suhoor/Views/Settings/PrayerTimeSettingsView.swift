@@ -94,7 +94,7 @@ struct PrayerTimeSettingsView: View {
         }
         .scrollContentBackground(.hidden)
         .background(Color.suhoorIndigo)
-        .foregroundStyle(.suhoorTextPrimary)
+        .foregroundStyle(Color.suhoorTextPrimary)
         .navigationTitle("Prayer Times")
     }
 }

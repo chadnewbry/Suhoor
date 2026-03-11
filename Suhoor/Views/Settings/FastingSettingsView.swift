@@ -47,7 +47,7 @@ struct FastingSettingsView: View {
         }
         .scrollContentBackground(.hidden)
         .background(Color.suhoorIndigo)
-        .foregroundStyle(.suhoorTextPrimary)
+        .foregroundStyle(Color.suhoorTextPrimary)
         .navigationTitle("Fasting")
         .alert("HealthKit Access", isPresented: $showingHealthKitAlert) {
             Button("Open Settings") {

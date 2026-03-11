@@ -65,6 +65,16 @@
 		ECC00A9314E38FCB929EAD52 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD375CAE5EE0F801E8DD4B52 /* NotificationManager.swift */; };
 		F9D0CDC912A02A2C50BA11FE /* PrayerTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF08C8C5F265751315D6BDA /* PrayerTime.swift */; };
 		FB285F962B84DFE0519FB61C /* SuhoorWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1F00809967824B041BE1EA7A /* SuhoorWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		353590234279213512345455 /* HydrationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041203624039436634830954 /* HydrationData.swift */; };
+		261003160193410398531019 /* SuhoorMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355763200224345328405306 /* SuhoorMeal.swift */; };
+		025270500952273503587022 /* SehriChecklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204549278212661830027900 /* SehriChecklist.swift */; };
+		190328017514619758487485 /* HydrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451359278112455748006215 /* HydrationService.swift */; };
+		004289410425229031684184 /* SehriChecklistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628825823331393852408472 /* SehriChecklistService.swift */; };
+		302230445139735213415100 /* SuhoorPlanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749693128510430523400133 /* SuhoorPlanningView.swift */; };
+		658235482495855007654699 /* HydrationTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514544457300218026620044 /* HydrationTrackerView.swift */; };
+		489052256434455040040113 /* HydrationHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593996312320366008521140 /* HydrationHistoryView.swift */; };
+		200023508644720772092518 /* SuhoorMealCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238129571121403628297506 /* SuhoorMealCardView.swift */; };
+		644013481432609262675040 /* SehriChecklistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119070150509160218398033 /* SehriChecklistView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +168,16 @@
 		EEF6F5EE0DCF6BE7E9FD3F92 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		F34234A51FC680D834287D23 /* SuhoorWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuhoorWidgets.swift; sourceTree = "<group>"; };
 		F3A758AB15BDBA086B751874 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Quran.strings; sourceTree = "<group>"; };
+		041203624039436634830954 /* HydrationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydrationData.swift; sourceTree = "<group>"; };
+		355763200224345328405306 /* SuhoorMeal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuhoorMeal.swift; sourceTree = "<group>"; };
+		204549278212661830027900 /* SehriChecklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SehriChecklist.swift; sourceTree = "<group>"; };
+		451359278112455748006215 /* HydrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydrationService.swift; sourceTree = "<group>"; };
+		628825823331393852408472 /* SehriChecklistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SehriChecklistService.swift; sourceTree = "<group>"; };
+		749693128510430523400133 /* SuhoorPlanningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuhoorPlanningView.swift; sourceTree = "<group>"; };
+		514544457300218026620044 /* HydrationTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydrationTrackerView.swift; sourceTree = "<group>"; };
+		593996312320366008521140 /* HydrationHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydrationHistoryView.swift; sourceTree = "<group>"; };
+		238129571121403628297506 /* SuhoorMealCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuhoorMealCardView.swift; sourceTree = "<group>"; };
+		119070150509160218398033 /* SehriChecklistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SehriChecklistView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -172,7 +192,10 @@
 				E9AD9B225A7990BF03C2A5FF /* QuranReadingPlan.swift */,
 				60C16AEAAF62097168D0DD53 /* RamadanInfo.swift */,
 				D94314E1F5E051738BE6BF86 /* SharedData.swift */,
-			);
+			
+				041203624039436634830954 /* HydrationData.swift */,
+				355763200224345328405306 /* SuhoorMeal.swift */,
+				204549278212661830027900 /* SehriChecklist.swift */,);
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -339,7 +362,8 @@
 				A5FB9CF9D021D12C7A739F1F /* Quran */,
 				2B751A173388A29A041D5A82 /* Settings */,
 				8F6E35344737174046B38252 /* Tracker */,
-			);
+			
+				041350563347236325205325 /* SuhoorPlanning */,);
 			path = Views;
 			sourceTree = "<group>";
 		};
@@ -361,7 +385,9 @@
 				72F17C1A0B84584ED7990477 /* NotificationService.swift */,
 				601F1A8D6AFBE210304CA650 /* QuranAudioService.swift */,
 				48A7146075D57F6778514661 /* QuranReadingService.swift */,
-			);
+			
+				451359278112455748006215 /* HydrationService.swift */,
+				628825823331393852408472 /* SehriChecklistService.swift */,);
 			path = Services;
 			sourceTree = "<group>";
 		};
@@ -394,6 +420,18 @@
 				7DB298DD410C3B6E25E058B5 /* README.md */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		041350563347236325205325 /* SuhoorPlanning */ = {
+			isa = PBXGroup;
+			children = (
+				749693128510430523400133 /* SuhoorPlanningView.swift */,
+				514544457300218026620044 /* HydrationTrackerView.swift */,
+				593996312320366008521140 /* HydrationHistoryView.swift */,
+				238129571121403628297506 /* SuhoorMealCardView.swift */,
+				119070150509160218398033 /* SehriChecklistView.swift */,
+			);
+			path = SuhoorPlanning;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -563,7 +601,17 @@
 				95B3FD122C864E1F7F293F0B /* SuhoorLiveActivityView.swift in Sources */,
 				DFE7980894F83F48384D9D98 /* SupportView.swift in Sources */,
 				5DFE548DFA768DD2EFC156EC /* TrackerView.swift in Sources */,
-			);
+			
+				644013481432609262675040 /* SehriChecklistView.swift in Sources */,
+				200023508644720772092518 /* SuhoorMealCardView.swift in Sources */,
+				489052256434455040040113 /* HydrationHistoryView.swift in Sources */,
+				658235482495855007654699 /* HydrationTrackerView.swift in Sources */,
+				302230445139735213415100 /* SuhoorPlanningView.swift in Sources */,
+				004289410425229031684184 /* SehriChecklistService.swift in Sources */,
+				190328017514619758487485 /* HydrationService.swift in Sources */,
+				025270500952273503587022 /* SehriChecklist.swift in Sources */,
+				261003160193410398531019 /* SuhoorMeal.swift in Sources */,
+				353590234279213512345455 /* HydrationData.swift in Sources */,);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5E06C5A525F11FCE2F2E5BCA /* Sources */ = {
