@@ -789,7 +789,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_GENERATION_MODE = GeneratedFile;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "Suhoor can track your fasting hours in Apple Health.";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Suhoor reads your fasting data from Apple Health to display your fasting history.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Suhoor writes your fasting hours to Apple Health so you can track them alongside other health data.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Suhoor needs your location to calculate accurate prayer times and Qibla direction.";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -895,7 +896,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_GENERATION_MODE = GeneratedFile;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "Suhoor can track your fasting hours in Apple Health.";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Suhoor reads your fasting data from Apple Health to display your fasting history.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Suhoor writes your fasting hours to Apple Health so you can track them alongside other health data.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Suhoor needs your location to calculate accurate prayer times and Qibla direction.";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

@@ -23,8 +23,6 @@ Access essential Ramadan duas for sehri, iftar, and taraweeh. Notifications for 
 WIDGETS & APPLE WATCH
 Glanceable widgets for your Home Screen show countdown timers and prayer times. Apple Watch support keeps your fasting timer on your wrist. Whether you're at work or on the go, Suhoor stays with you.
 
-QIBLA COMPASS WITH AR
-Find the Qibla direction quickly using the built-in compass or point your camera for an augmented reality Qibla experience.
 
 PRIVACY-FIRST, NO ACCOUNT REQUIRED
 Suhoor is local-first with no accounts, no third-party analytics, and no data collection. Your Ramadan is yours alone.
