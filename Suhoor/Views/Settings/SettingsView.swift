@@ -1,34 +1,37 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State private var menstrualMode = UserDefaults.standard.bool(forKey: "suhoor_menstrual_mode")
-    
     var body: some View {
         NavigationStack {
             ZStack {
                 Color.suhoorIndigo.ignoresSafeArea()
-                
                 List {
-                    Section("Fasting") {
-                        Toggle(isOn: $menstrualMode) {
-                            Label("Menstrual Mode", systemImage: "heart.fill")
+                    Section {
+                        NavigationLink {
+                            NotificationSettingsView()
+                        } label: {
+                            Label("Notifications", systemImage: "bell.badge")
                         }
-                        .tint(.pink)
-                        .onChange(of: menstrualMode) { _, newValue in
-                            UserDefaults.standard.set(newValue, forKey: "suhoor_menstrual_mode")
-                        }
+                    }
+                    
+                    Section {
+                        Label("Location", systemImage: "location")
+                        Label("Calculation Method", systemImage: "function")
+                    } header: {
+                        Text("Prayer Times")
+                    }
+                    
+                    Section {
+                        Label("About Suhoor", systemImage: "info.circle")
                     }
                 }
                 .scrollContentBackground(.hidden)
             }
             .navigationTitle("Settings")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbarColorScheme(.dark, for: .navigationBar)
         }
     }
 }
 
 #Preview {
     SettingsView()
-        .preferredColorScheme(.dark)
 }
