@@ -1,0 +1,154 @@
+{
+  "duas": [
+    {
+      "id": "sehri_1",
+      "category": "Sehri",
+      "arabicText": "وَبِصَوْمِ غَدٍ نَّوَيْتُ مِنْ شَهْرِ رَمَضَانَ",
+      "transliteration": "Wa bisawmi ghadinn nawaiytu min shahri ramadan",
+      "englishTranslation": "I intend to keep the fast for tomorrow in the month of Ramadan.",
+      "reference": "Abu Dawud",
+      "audioFileName": null,
+      "audioURL": null
+    },
+    {
+      "id": "sehri_2",
+      "category": "Sehri",
+      "arabicText": "اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ فَضْلِكَ وَرَحْمَتِكَ فَإِنَّهُ لَا يَمْلِكُهَا إِلَّا أَنْتَ",
+      "transliteration": "Allahumma inni as'aluka min fadlika wa rahmatika fa innahu la yamlikuha illa anta",
+      "englishTranslation": "O Allah, I ask You for Your grace and mercy, for none possesses them but You.",
+      "reference": "Tabarani",
+      "audioFileName": null,
+      "audioURL": null
+    },
+    {
+      "id": "iftar_1",
+      "category": "Iftar",
+      "arabicText": "اللَّهُمَّ إِنِّي لَكَ صُمْتُ وَبِكَ آمَنْتُ وَعَلَى رِزْقِكَ أَفْطَرْتُ",
+      "transliteration": "Allahumma inni laka sumtu wa bika aamantu wa ala rizqika aftartu",
+      "englishTranslation": "O Allah! I fasted for You and I believe in You and I break my fast with Your sustenance.",
+      "reference": "Abu Dawud",
+      "audioFileName": null,
+      "audioURL": null
+    },
+    {
+      "id": "iftar_2",
+      "category": "Iftar",
+      "arabicText": "ذَهَبَ الظَّمَأُ وَابْتَلَّتِ الْعُرُوقُ وَثَبَتَ الْأَجْرُ إِنْ شَاءَ اللَّهُ",
+      "transliteration": "Dhahaba al-zhama'u wabtallatil-urooqu wa thabatal-ajru insha'Allah",
+      "englishTranslation": "The thirst has gone, the veins are moistened, and the reward is confirmed, if Allah wills.",
+      "reference": "Abu Dawud",
+      "audioFileName": null,
+      "audioURL": null
+    },
+    {
+      "id": "iftar_3",
+      "category": "Iftar",
+      "arabicText": "بِسْمِ اللَّهِ وَعَلَى بَرَكَةِ اللَّهِ",
+      "transliteration": "Bismillahi wa ala barakatillah",
+      "englishTranslation": "In the name of Allah and with the blessings of Allah.",
+      "reference": null,
+      "audioFileName": null,
+      "audioURL": null
+    },
+    {
+      "id": "laylat_1",
+      "category": "Laylat al-Qadr",
+      "arabicText": "اللَّهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي",
+      "transliteration": "Allahumma innaka afuwwun tuhibbul afwa fa'fu anni",
+      "englishTranslation": "O Allah, You are the Most Forgiving, and You love forgiveness, so forgive me.",
+      "reference": "Tirmidhi",
+      "audioFileName": null,
+      "audioURL": null
+    },
+    {
+      "id": "laylat_2",
+      "category": "Laylat al-Qadr",
+      "arabicText": "اللَّهُمَّ إِنِّي أَعُوذُ بِرِضَاكَ مِنْ سَخَطِكَ وَبِمُعَافَاتِكَ مِنْ عُقُوبَتِكَ",
+      "transliteration": "Allahumma inni a'udhu biridaka min sakhatika wa bimu'afatika min uqubatika",
+      "englishTranslation": "O Allah, I seek refuge in Your pleasure from Your displeasure, and in Your pardon from Your punishment.",
+      "reference": "Muslim",
+      "audioFileName": null,
+      "audioURL": null
+    },
+    {
+      "id": "ashra1_1",
+      "category": "First Ashra",
+      "arabicText": "رَبِّ اغْفِرْ وَارْحَمْ وَأَنتَ خَيْرُ الرَّاحِمِينَ",
+      "transliteration": "Rabbighfir warham wa anta khairur rahimeen",
+      "englishTranslation": "My Lord, forgive and have mercy, and You are the Best of the merciful.",
+      "reference": "Quran 23:118",
+      "audioFileName": null,
+      "audioURL": null
+    },
+    {
+      "id": "ashra2_1",
+      "category": "Second Ashra",
+      "arabicText": "أَسْتَغْفِرُ اللَّهَ رَبِّي مِنْ كُلِّ ذَنْبٍ وَأَتُوبُ إِلَيْهِ",
+      "transliteration": "Astaghfirullaha rabbi min kulli dhambin wa atubu ilayh",
+      "englishTranslation": "I ask forgiveness of Allah, my Lord, from every sin and I repent to Him.",
+      "reference": "Abu Dawud",
+      "audioFileName": null,
+      "audioURL": null
+    },
+    {
+      "id": "ashra3_1",
+      "category": "Third Ashra",
+      "arabicText": "اللَّهُمَّ أَجِرْنِي مِنَ النَّارِ",
+      "transliteration": "Allahumma ajirni minan-nar",
+      "englishTranslation": "O Allah, save me from the Fire.",
+      "reference": "Abu Dawud",
+      "audioFileName": null,
+      "audioURL": null
+    },
+    {
+      "id": "general_1",
+      "category": "General Ramadan",
+      "arabicText": "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ",
+      "transliteration": "Rabbana atina fid-dunya hasanatan wa fil-akhirati hasanatan wa qina adhaban-nar",
+      "englishTranslation": "Our Lord, give us good in this world and good in the Hereafter, and protect us from the punishment of the Fire.",
+      "reference": "Quran 2:201",
+      "audioFileName": null,
+      "audioURL": null
+    },
+    {
+      "id": "general_2",
+      "category": "General Ramadan",
+      "arabicText": "رَبَّنَا تَقَبَّلْ مِنَّا إِنَّكَ أَنتَ السَّمِيعُ الْعَلِيمُ",
+      "transliteration": "Rabbana taqabbal minna innaka antas-samee ul-aleem",
+      "englishTranslation": "Our Lord, accept from us. Indeed You are the All-Hearing, the All-Knowing.",
+      "reference": "Quran 2:127",
+      "audioFileName": null,
+      "audioURL": null
+    },
+    {
+      "id": "general_3",
+      "category": "General Ramadan",
+      "arabicText": "اللَّهُمَّ اجْعَلْنِي مِنَ التَّوَّابِينَ وَاجْعَلْنِي مِنَ الْمُتَطَهِّرِينَ",
+      "transliteration": "Allahummaj'alni minat-tawwabeena waj'alni minal-mutatah-hireen",
+      "englishTranslation": "O Allah, make me among those who repent and make me among those who purify themselves.",
+      "reference": "Tirmidhi",
+      "audioFileName": null,
+      "audioURL": null
+    },
+    {
+      "id": "general_4",
+      "category": "General Ramadan",
+      "arabicText": "رَبِّ زِدْنِي عِلْمًا",
+      "transliteration": "Rabbi zidni ilma",
+      "englishTranslation": "My Lord, increase me in knowledge.",
+      "reference": "Quran 20:114",
+      "audioFileName": null,
+      "audioURL": null
+    },
+    {
+      "id": "general_5",
+      "category": "General Ramadan",
+      "arabicText": "حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ",
+      "transliteration": "Hasbunallahu wa ni'mal wakeel",
+      "englishTranslation": "Allah is sufficient for us, and He is the Best Disposer of affairs.",
+      "reference": "Quran 3:173",
+      "audioFileName": null,
+      "audioURL": null
+    }
+  ]
+}

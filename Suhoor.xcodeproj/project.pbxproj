@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06583A2BBBC92ED5442F72B2 /* QuranReadingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A7146075D57F6778514661 /* QuranReadingService.swift */; };
+		152A170D9AD1293248156769 /* DuaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5834D319C24BD0CDCC415518 /* DuaService.swift */; };
 		157BB27FB71408DD9FBD6018 /* LiveActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21A31AE37DD253725F2D90B /* LiveActivityService.swift */; };
+		15AF53334146D59F7403383B /* juz_mapping.json in Resources */ = {isa = PBXBuildFile; fileRef = CC6A6D9C5A7C9891C2D0E6BC /* juz_mapping.json */; };
 		23CF2E990282150B89266029 /* azan_alaqsa.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1F001F18172952704DD5AF /* azan_alaqsa.caf */; };
 		333255421B6617A74816C8D2 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF6F5EE0DCF6BE7E9FD3F92 /* Color+Extensions.swift */; };
 		346EFA24D0765FEE13F1B7E5 /* SuhoorLiveActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7C18BF2EFECCEEA8472A64 /* SuhoorLiveActivityView.swift */; };
@@ -17,23 +20,30 @@
 		42CDA59FC1953843934394DF /* NotificationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0C19E611E528E5C70A1AED /* NotificationSettingsView.swift */; };
 		4EBE448172E2CACD8400F23E /* SuhoorActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0101E6EBDD8F0EC3D0A0CE9 /* SuhoorActivityAttributes.swift */; };
 		5556D768DD2008386257DF99 /* azan_mishary.caf in Resources */ = {isa = PBXBuildFile; fileRef = C6E492850103D798EB913BFD /* azan_mishary.caf */; };
+		58B8377EAC4E1E17A4647BF0 /* DuasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C5FA97728BF83B41EEE514 /* DuasView.swift */; };
 		5D50036ABA3CA2D5E09FAFDA /* SuhoorComplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F7710946BF8CDF713DF7C6 /* SuhoorComplication.swift */; };
 		5DFE548DFA768DD2EFC156EC /* TrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACDE62A96136D2F47425089 /* TrackerView.swift */; };
 		5F9FCA6846A59616E0747295 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7DB298DD410C3B6E25E058B5 /* README.md */; };
 		660FF6180F62246B9AA58301 /* RamadanInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C16AEAAF62097168D0DD53 /* RamadanInfo.swift */; };
 		69314AFC51DD018764C94282 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30236ED79DBDD9574CBA22CA /* DashboardView.swift */; };
 		70585134D35E71F80FFCC8E4 /* NotificationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BD5D21C70EACF15AAE46C7 /* NotificationSettings.swift */; };
+		71A54DDCB5F7CDDE42AE50E0 /* Quran.strings in Resources */ = {isa = PBXBuildFile; fileRef = 876D1314E82411FBAB36F672 /* Quran.strings */; };
 		7426E418617CB12517ECE281 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94314E1F5E051738BE6BF86 /* SharedData.swift */; };
+		7865B450A32BF84F3ED4C3B9 /* Dua.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F3E14048E8EDCA871635CE /* Dua.swift */; };
 		7C649E7F76DBDCC57A55CD02 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94314E1F5E051738BE6BF86 /* SharedData.swift */; };
 		80D420DFF3EACD6B641BB68B /* azan_makkah.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4084AFE9BF002A4E9AD41CE3 /* azan_makkah.caf */; };
 		8D67EF5B621753A1693E9B7B /* SuhoorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E0FA15D24BCE755C348384 /* SuhoorApp.swift */; };
 		95B3FD122C864E1F7F293F0B /* SuhoorLiveActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7C18BF2EFECCEEA8472A64 /* SuhoorLiveActivityView.swift */; };
 		968FFAE261E32DB1F6681905 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1994C9A1226302607D72E015 /* ContentView.swift */; };
+		9F7F3DF1F0FB7E133C63845C /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B2233AE1BC8EBC521B6F6F /* PreviewData.swift */; };
 		A8A9DEF2A4AA9CD21676FC2E /* SuhoorWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34234A51FC680D834287D23 /* SuhoorWidgets.swift */; };
 		AB77EB90BAA1DFF8AE48AB29 /* PrayerTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF08C8C5F265751315D6BDA /* PrayerTime.swift */; };
+		B4D55F5A62484D7BA2F1F5F8 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D29B89CE6AE7CD30E40AF9 /* AudioService.swift */; };
+		B754572540B549552BF718DE /* QuranReadingPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AD9B225A7990BF03C2A5FF /* QuranReadingPlan.swift */; };
 		C4A1A83D8F9798C5BF3D22ED /* SuhoorActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0101E6EBDD8F0EC3D0A0CE9 /* SuhoorActivityAttributes.swift */; };
 		C5470ED549023B36A1DB4E53 /* PrayerTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF08C8C5F265751315D6BDA /* PrayerTime.swift */; };
 		C632CCB0E643982197AEF4FC /* RamadanInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C16AEAAF62097168D0DD53 /* RamadanInfo.swift */; };
+		CBE91774B70CE58D0BE96B0A /* duas.json in Resources */ = {isa = PBXBuildFile; fileRef = 6302CC6B7CD5C82BE9BFACEF /* duas.json */; };
 		D3D39297BAF0A1C5EC06C501 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94314E1F5E051738BE6BF86 /* SharedData.swift */; };
 		E55FFC201656F9E09FFF6445 /* SuhoorWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAACFB950998F42377AFC07A /* SuhoorWatchApp.swift */; };
 		E83ADA4E76C8A0771ABDB345 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F17C1A0B84584ED7990477 /* NotificationService.swift */; };
@@ -70,22 +80,33 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1029A0A8A490BA1ACF423AD7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Quran.strings; sourceTree = "<group>"; };
+		11F3E14048E8EDCA871635CE /* Dua.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dua.swift; sourceTree = "<group>"; };
+		17C5FA97728BF83B41EEE514 /* DuasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuasView.swift; sourceTree = "<group>"; };
 		1994C9A1226302607D72E015 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1ACDE62A96136D2F47425089 /* TrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerView.swift; sourceTree = "<group>"; };
 		1C87D0F59921D049440DC48B /* QuranView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranView.swift; sourceTree = "<group>"; };
 		1D03953894A91AA211CAEDC4 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		1F00809967824B041BE1EA7A /* SuhoorWidgets.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = SuhoorWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		28DB1912C81387E1A135EB16 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Quran.strings; sourceTree = "<group>"; };
 		30236ED79DBDD9574CBA22CA /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		3CF08C8C5F265751315D6BDA /* PrayerTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTime.swift; sourceTree = "<group>"; };
 		3EC60840A2208E70889F66EE /* SuhoorWidgets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SuhoorWidgets.entitlements; sourceTree = "<group>"; };
 		4084AFE9BF002A4E9AD41CE3 /* azan_makkah.caf */ = {isa = PBXFileReference; path = azan_makkah.caf; sourceTree = "<group>"; };
 		43E0FA15D24BCE755C348384 /* SuhoorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuhoorApp.swift; sourceTree = "<group>"; };
+		48A7146075D57F6778514661 /* QuranReadingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranReadingService.swift; sourceTree = "<group>"; };
 		534BFA4E75CFAECEC7F930FA /* Suhoor.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Suhoor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5834D319C24BD0CDCC415518 /* DuaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuaService.swift; sourceTree = "<group>"; };
+		59D29B89CE6AE7CD30E40AF9 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
 		5B0C19E611E528E5C70A1AED /* NotificationSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsView.swift; sourceTree = "<group>"; };
 		60C16AEAAF62097168D0DD53 /* RamadanInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamadanInfo.swift; sourceTree = "<group>"; };
+		6302CC6B7CD5C82BE9BFACEF /* duas.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = duas.json; sourceTree = "<group>"; };
+		6788A5F9654B70523AA209E5 /* ur */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ur; path = ur.lproj/Quran.strings; sourceTree = "<group>"; };
 		6C66BE3453EF0C95D5E882D0 /* CalendarTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTabView.swift; sourceTree = "<group>"; };
+		71B2233AE1BC8EBC521B6F6F /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		72F17C1A0B84584ED7990477 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		79BD5D21C70EACF15AAE46C7 /* NotificationSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettings.swift; sourceTree = "<group>"; };
+		7A26C5B39D0C618F73A32851 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Quran.strings; sourceTree = "<group>"; };
 		7DB298DD410C3B6E25E058B5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8A92B9299771D9362CF11E26 /* azan_madinah.caf */ = {isa = PBXFileReference; path = azan_madinah.caf; sourceTree = "<group>"; };
 		90A7AE0D8ADBB32A82802F69 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
@@ -97,17 +118,22 @@
 		AE7D5003606C9FF39076D5C6 /* WatchContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchContentView.swift; sourceTree = "<group>"; };
 		B0101E6EBDD8F0EC3D0A0CE9 /* SuhoorActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuhoorActivityAttributes.swift; sourceTree = "<group>"; };
 		BBDD2EDA1D53537BAF5F848E /* Suhoor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Suhoor.entitlements; sourceTree = "<group>"; };
+		BD5FC053B31156B028980A09 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Quran.strings; sourceTree = "<group>"; };
 		BDCA5E9955AF6504F3498FFF /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		C057859B32EE5CFCD0E88011 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		C5013D2F9602338362B8EE10 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		C6E492850103D798EB913BFD /* azan_mishary.caf */ = {isa = PBXFileReference; path = azan_mishary.caf; sourceTree = "<group>"; };
+		CC6A6D9C5A7C9891C2D0E6BC /* juz_mapping.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = juz_mapping.json; sourceTree = "<group>"; };
 		CD375CAE5EE0F801E8DD4B52 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		CF547A2BAE03710D7B7A2165 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		CFB03C74DFC6302E8E931972 /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/Quran.strings; sourceTree = "<group>"; };
 		D21A31AE37DD253725F2D90B /* LiveActivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityService.swift; sourceTree = "<group>"; };
 		D94314E1F5E051738BE6BF86 /* SharedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
+		E9AD9B225A7990BF03C2A5FF /* QuranReadingPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranReadingPlan.swift; sourceTree = "<group>"; };
 		EAACFB950998F42377AFC07A /* SuhoorWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuhoorWatchApp.swift; sourceTree = "<group>"; };
 		EEF6F5EE0DCF6BE7E9FD3F92 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		F34234A51FC680D834287D23 /* SuhoorWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuhoorWidgets.swift; sourceTree = "<group>"; };
+		F3A758AB15BDBA086B751874 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Quran.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -115,8 +141,10 @@
 			isa = PBXGroup;
 			children = (
 				CF547A2BAE03710D7B7A2165 /* .gitkeep */,
+				11F3E14048E8EDCA871635CE /* Dua.swift */,
 				79BD5D21C70EACF15AAE46C7 /* NotificationSettings.swift */,
 				3CF08C8C5F265751315D6BDA /* PrayerTime.swift */,
+				E9AD9B225A7990BF03C2A5FF /* QuranReadingPlan.swift */,
 				60C16AEAAF62097168D0DD53 /* RamadanInfo.swift */,
 				D94314E1F5E051738BE6BF86 /* SharedData.swift */,
 			);
@@ -177,6 +205,15 @@
 			path = SuhoorWatch/SuhoorWatchApp;
 			sourceTree = "<group>";
 		};
+		7BE000F27C4821EFDB5A5D0A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				6302CC6B7CD5C82BE9BFACEF /* duas.json */,
+				CC6A6D9C5A7C9891C2D0E6BC /* juz_mapping.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		8F6E35344737174046B38252 /* Tracker */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				EEF6F5EE0DCF6BE7E9FD3F92 /* Color+Extensions.swift */,
+				71B2233AE1BC8EBC521B6F6F /* PreviewData.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -223,6 +261,7 @@
 		A5FB9CF9D021D12C7A739F1F /* Quran */ = {
 			isa = PBXGroup;
 			children = (
+				17C5FA97728BF83B41EEE514 /* DuasView.swift */,
 				1C87D0F59921D049440DC48B /* QuranView.swift */,
 			);
 			path = Quran;
@@ -282,7 +321,10 @@
 			isa = PBXGroup;
 			children = (
 				90A7AE0D8ADBB32A82802F69 /* .gitkeep */,
+				59D29B89CE6AE7CD30E40AF9 /* AudioService.swift */,
+				5834D319C24BD0CDCC415518 /* DuaService.swift */,
 				72F17C1A0B84584ED7990477 /* NotificationService.swift */,
+				48A7146075D57F6778514661 /* QuranReadingService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -291,6 +333,8 @@
 			isa = PBXGroup;
 			children = (
 				C057859B32EE5CFCD0E88011 /* .gitkeep */,
+				876D1314E82411FBAB36F672 /* Quran.strings */,
+				7BE000F27C4821EFDB5A5D0A /* Data */,
 				EABF0EFC42B15DBA248B695F /* Sounds */,
 			);
 			path = Resources;
@@ -402,7 +446,13 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
+				ar,
 				en,
+				fr,
+				id,
+				ms,
+				tr,
+				ur,
 			);
 			mainGroup = 2C93CDD6316C52EFF1C2E8B4;
 			minimizedProjectReferenceProxies = 1;
@@ -422,11 +472,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71A54DDCB5F7CDDE42AE50E0 /* Quran.strings in Resources */,
 				5F9FCA6846A59616E0747295 /* README.md in Resources */,
 				23CF2E990282150B89266029 /* azan_alaqsa.caf in Resources */,
 				E9E4B1F721864506B9340B12 /* azan_madinah.caf in Resources */,
 				80D420DFF3EACD6B641BB68B /* azan_makkah.caf in Resources */,
 				5556D768DD2008386257DF99 /* azan_mishary.caf in Resources */,
+				CBE91774B70CE58D0BE96B0A /* duas.json in Resources */,
+				15AF53334146D59F7403383B /* juz_mapping.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,16 +490,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4D55F5A62484D7BA2F1F5F8 /* AudioService.swift in Sources */,
 				EB748345639FF8D971925B8A /* CalendarTabView.swift in Sources */,
 				333255421B6617A74816C8D2 /* Color+Extensions.swift in Sources */,
 				968FFAE261E32DB1F6681905 /* ContentView.swift in Sources */,
 				69314AFC51DD018764C94282 /* DashboardView.swift in Sources */,
+				7865B450A32BF84F3ED4C3B9 /* Dua.swift in Sources */,
+				152A170D9AD1293248156769 /* DuaService.swift in Sources */,
+				58B8377EAC4E1E17A4647BF0 /* DuasView.swift in Sources */,
 				157BB27FB71408DD9FBD6018 /* LiveActivityService.swift in Sources */,
 				ECC00A9314E38FCB929EAD52 /* NotificationManager.swift in Sources */,
 				E83ADA4E76C8A0771ABDB345 /* NotificationService.swift in Sources */,
 				70585134D35E71F80FFCC8E4 /* NotificationSettings.swift in Sources */,
 				42CDA59FC1953843934394DF /* NotificationSettingsView.swift in Sources */,
 				C5470ED549023B36A1DB4E53 /* PrayerTime.swift in Sources */,
+				9F7F3DF1F0FB7E133C63845C /* PreviewData.swift in Sources */,
+				B754572540B549552BF718DE /* QuranReadingPlan.swift in Sources */,
+				06583A2BBBC92ED5442F72B2 /* QuranReadingService.swift in Sources */,
 				426BBA0361EAA3929F036D95 /* QuranView.swift in Sources */,
 				41552B582924DB4AB398FA07 /* RamadanInfo.swift in Sources */,
 				3E0FDECEAC106F44EDD3A067 /* SettingsView.swift in Sources */,
@@ -493,6 +553,23 @@
 			targetProxy = 1E298423BF8DD865FCB89EA0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		876D1314E82411FBAB36F672 /* Quran.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28DB1912C81387E1A135EB16 /* ar */,
+				F3A758AB15BDBA086B751874 /* en */,
+				1029A0A8A490BA1ACF423AD7 /* fr */,
+				BD5FC053B31156B028980A09 /* id */,
+				CFB03C74DFC6302E8E931972 /* ms */,
+				7A26C5B39D0C618F73A32851 /* tr */,
+				6788A5F9654B70523AA209E5 /* ur */,
+			);
+			name = Quran.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		0E85BA63EA73F7F9A2D82BF4 /* Debug */ = {

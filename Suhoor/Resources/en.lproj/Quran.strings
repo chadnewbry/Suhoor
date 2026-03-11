@@ -1,0 +1,28 @@
+/* Quran Reading Plan */
+"quran_tab" = "Quran";
+"khatam_progress" = "Khatam Progress";
+"reading_plan" = "30-Day Reading Plan";
+"juz" = "Juz";
+"day" = "Day";
+"pages_read" = "Pages Read";
+"mark_complete" = "Mark Complete";
+"update" = "Update";
+"est_completion" = "Est. completion: %@";
+
+/* Duas */
+"duas_tab" = "Duas";
+"suggested_now" = "Suggested Now";
+"categories" = "Categories";
+"dua_category_sehri" = "Sehri Duas";
+"dua_category_iftar" = "Iftar Duas";
+"dua_category_laylat" = "Laylat al-Qadr";
+"dua_category_first_ashra" = "First Ashra (Mercy)";
+"dua_category_second_ashra" = "Second Ashra (Forgiveness)";
+"dua_category_third_ashra" = "Third Ashra (Salvation)";
+"dua_category_general" = "General Ramadan";
+
+/* Audio */
+"audio_play" = "Play";
+"audio_pause" = "Pause";
+"audio_stop" = "Stop";
+"audio_loading" = "Loading...";
