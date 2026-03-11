@@ -103,7 +103,8 @@ struct NotificationSettingsView: View {
         }
         .navigationTitle("Notifications")
         .scrollContentBackground(.hidden)
-        .background(Color(red: 0.08, green: 0.07, blue: 0.20))
+        .background(Color.suhoorIndigo)
+        .foregroundStyle(.suhoorTextPrimary)
     }
     
     private func azanBinding(for prayer: Prayer) -> Binding<Bool> {

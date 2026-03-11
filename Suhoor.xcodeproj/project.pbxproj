@@ -56,6 +56,14 @@
 		ECC00A9314E38FCB929EAD52 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD375CAE5EE0F801E8DD4B52 /* NotificationManager.swift */; };
 		F9D0CDC912A02A2C50BA11FE /* PrayerTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF08C8C5F265751315D6BDA /* PrayerTime.swift */; };
 		FB285F962B84DFE0519FB61C /* SuhoorWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1F00809967824B041BE1EA7A /* SuhoorWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BB111111111111111111BB01 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA111111111111111111AA01 /* AppSettings.swift */; };
+		BB111111111111111111BB02 /* PrayerTimeSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA111111111111111111AA02 /* PrayerTimeSettingsView.swift */; };
+		BB111111111111111111BB03 /* FastingSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA111111111111111111AA03 /* FastingSettingsView.swift */; };
+		BB111111111111111111BB04 /* DisplaySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA111111111111111111AA04 /* DisplaySettingsView.swift */; };
+		BB111111111111111111BB05 /* SubscriptionSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA111111111111111111AA05 /* SubscriptionSettingsView.swift */; };
+		BB111111111111111111BB06 /* SupportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA111111111111111111AA06 /* SupportView.swift */; };
+		BB111111111111111111BB07 /* FeedbackFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA111111111111111111AA07 /* FeedbackFormView.swift */; };
+		BB111111111111111111BB08 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA111111111111111111AA08 /* AboutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +148,14 @@
 		EEF6F5EE0DCF6BE7E9FD3F92 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		F34234A51FC680D834287D23 /* SuhoorWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuhoorWidgets.swift; sourceTree = "<group>"; };
 		F3A758AB15BDBA086B751874 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Quran.strings; sourceTree = "<group>"; };
+		AA111111111111111111AA01 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		AA111111111111111111AA02 /* PrayerTimeSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimeSettingsView.swift; sourceTree = "<group>"; };
+		AA111111111111111111AA03 /* FastingSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastingSettingsView.swift; sourceTree = "<group>"; };
+		AA111111111111111111AA04 /* DisplaySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplaySettingsView.swift; sourceTree = "<group>"; };
+		AA111111111111111111AA05 /* SubscriptionSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionSettingsView.swift; sourceTree = "<group>"; };
+		AA111111111111111111AA06 /* SupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportView.swift; sourceTree = "<group>"; };
+		AA111111111111111111AA07 /* FeedbackFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackFormView.swift; sourceTree = "<group>"; };
+		AA111111111111111111AA08 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -148,6 +164,7 @@
 			children = (
 				CF547A2BAE03710D7B7A2165 /* .gitkeep */,
 				11F3E14048E8EDCA871635CE /* Dua.swift */,
+				AA111111111111111111AA01 /* AppSettings.swift */,
 				79BD5D21C70EACF15AAE46C7 /* NotificationSettings.swift */,
 				3CF08C8C5F265751315D6BDA /* PrayerTime.swift */,
 				E9AD9B225A7990BF03C2A5FF /* QuranReadingPlan.swift */,
@@ -161,6 +178,13 @@
 			isa = PBXGroup;
 			children = (
 				5B0C19E611E528E5C70A1AED /* NotificationSettingsView.swift */,
+								AA111111111111111111AA02 /* PrayerTimeSettingsView.swift */,
+				AA111111111111111111AA03 /* FastingSettingsView.swift */,
+				AA111111111111111111AA04 /* DisplaySettingsView.swift */,
+				AA111111111111111111AA05 /* SubscriptionSettingsView.swift */,
+				AA111111111111111111AA06 /* SupportView.swift */,
+				AA111111111111111111AA07 /* FeedbackFormView.swift */,
+				AA111111111111111111AA08 /* AboutView.swift */,
 				AE4ACAF6FC3E0BB1BF7F398C /* SettingsView.swift */,
 			);
 			path = Settings;
@@ -521,6 +545,14 @@
 				426BBA0361EAA3929F036D95 /* QuranView.swift in Sources */,
 				41552B582924DB4AB398FA07 /* RamadanInfo.swift in Sources */,
 				A82E5BF1080117FFE2FA86FD /* ReadingSessionView.swift in Sources */,
+								BB111111111111111111BB01 /* AppSettings.swift in Sources */,
+				BB111111111111111111BB02 /* PrayerTimeSettingsView.swift in Sources */,
+				BB111111111111111111BB03 /* FastingSettingsView.swift in Sources */,
+				BB111111111111111111BB04 /* DisplaySettingsView.swift in Sources */,
+				BB111111111111111111BB05 /* SubscriptionSettingsView.swift in Sources */,
+				BB111111111111111111BB06 /* SupportView.swift in Sources */,
+				BB111111111111111111BB07 /* FeedbackFormView.swift in Sources */,
+				BB111111111111111111BB08 /* AboutView.swift in Sources */,
 				3E0FDECEAC106F44EDD3A067 /* SettingsView.swift in Sources */,
 				D3D39297BAF0A1C5EC06C501 /* SharedData.swift in Sources */,
 				4EBE448172E2CACD8400F23E /* SuhoorActivityAttributes.swift in Sources */,
