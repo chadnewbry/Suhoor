@@ -8,6 +8,18 @@ struct DisplaySettingsView: View {
     var body: some View {
         List {
             Section {
+                Picker("Appearance", selection: $settings.appearanceMode) {
+                    ForEach(AppearanceMode.allCases) { mode in
+                        Text(mode.displayName).tag(mode)
+                    }
+                }
+                .pickerStyle(.segmented)
+            } header: {
+                Text("Theme")
+            }
+            .listRowBackground(Color.suhoorSurface)
+
+            Section {
                 Picker("Time Format", selection: $settings.use24HourFormat) {
                     Text("12-Hour").tag(false)
                     Text("24-Hour").tag(true)
@@ -68,7 +80,7 @@ struct DisplaySettingsView: View {
                     }
                 }
             } header: {
-                Text("Color Theme")
+                Text("Ramadan Color Palette")
             } footer: {
                 if !store.isPro {
                     Text("Upgrade to Pro to unlock all themes")

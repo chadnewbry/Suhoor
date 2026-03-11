@@ -16,6 +16,7 @@ enum CalculationMethod: String, CaseIterable, Identifiable, Codable {
     case singapore = "Singapore"
     case turkey = "Turkey"
     case northAmerica = "North America"
+    case jafari = "Jafari"
 
     var id: String { rawValue }
 
@@ -33,6 +34,7 @@ enum CalculationMethod: String, CaseIterable, Identifiable, Codable {
         case .singapore: return "Singapore"
         case .turkey: return "Diyanet İşleri Başkanlığı, Turkey"
         case .northAmerica: return "ISNA (North America)"
+        case .jafari: return "Shia Ithna-Ashari (Jafari)"
         }
     }
 }
@@ -125,6 +127,13 @@ class AppSettings: ObservableObject {
     @Published var appLanguage: AppLanguage { didSet { save() } }
     @Published var colorTheme: AppColorTheme { didSet { save() } }
     @Published var hapticFeedbackEnabled: Bool { didSet { save() } }
+    @Published var appearanceMode: AppearanceMode { didSet { save() } }
+
+    // Hijri
+    @Published var hijriDateAdjustment: Int { didSet { save() } }
+
+    // Hydration
+    @Published var hydrationTarget: Int { didSet { save() } }
 
     // iCloud Sync
     @Published var iCloudSyncEnabled: Bool { didSet { save() } }
@@ -146,6 +155,9 @@ class AppSettings: ObservableObject {
         self.colorTheme = stored.colorTheme
         self.hapticFeedbackEnabled = stored.hapticFeedbackEnabled
         self.iCloudSyncEnabled = stored.iCloudSyncEnabled
+        self.hijriDateAdjustment = stored.hijriDateAdjustment
+        self.hydrationTarget = stored.hydrationTarget
+        self.appearanceMode = stored.appearanceMode
     }
 
     func adjustmentMinutes(for prayer: Prayer) -> Int {
@@ -174,6 +186,9 @@ class AppSettings: ObservableObject {
         var colorTheme: AppColorTheme = .midnightBlue
         var hapticFeedbackEnabled: Bool = true
         var iCloudSyncEnabled: Bool = false
+        var hijriDateAdjustment: Int = 0
+        var hydrationTarget: Int = 8
+        var appearanceMode: AppearanceMode = .dark
     }
 
     private func save() {
@@ -192,7 +207,10 @@ class AppSettings: ObservableObject {
             appLanguage: appLanguage,
             colorTheme: colorTheme,
             hapticFeedbackEnabled: hapticFeedbackEnabled,
-            iCloudSyncEnabled: iCloudSyncEnabled
+            iCloudSyncEnabled: iCloudSyncEnabled,
+            hijriDateAdjustment: hijriDateAdjustment,
+            hydrationTarget: hydrationTarget,
+            appearanceMode: appearanceMode
         )
         if let data = try? JSONEncoder().encode(stored) {
             UserDefaults(suiteName: Self.suiteName)?.set(data, forKey: Self.storageKey)
@@ -205,5 +223,31 @@ class AppSettings: ObservableObject {
             return StoredSettings()
         }
         return stored
+    }
+}
+
+// MARK: - Appearance Mode
+
+enum AppearanceMode: String, CaseIterable, Identifiable, Codable {
+    case dark = "dark"
+    case light = "light"
+    case auto = "auto"
+
+    var id: String { rawValue }
+
+    var displayName: String {
+        switch self {
+        case .dark: return "Dark"
+        case .light: return "Light"
+        case .auto: return "Auto (System)"
+        }
+    }
+
+    var colorScheme: ColorScheme? {
+        switch self {
+        case .dark: return .dark
+        case .light: return .light
+        case .auto: return nil
+        }
     }
 }

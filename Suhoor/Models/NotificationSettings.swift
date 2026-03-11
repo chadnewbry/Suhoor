@@ -22,6 +22,7 @@ struct NotificationSettings: Codable {
         comps.minute = 30
         return Calendar.current.date(from: comps) ?? Date()
     }()
+    var hydrationRemindersEnabled: Bool = true
     
     static let storageKey = "notification_settings"
     
