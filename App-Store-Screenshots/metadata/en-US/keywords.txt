@@ -1,1 +1,1 @@
-sehri,taraweeh,sehar,iftar,ramzan,suhoor,fasting,ramadan,prayer,dua,islamic,calendar,imsakiya,qibla
+sehri,taraweeh,sehar,ramadan,iftar,fasting timer,prayer times,islamic calendar,ramzan,quran,athan,dua
