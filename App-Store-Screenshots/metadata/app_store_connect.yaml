@@ -9,12 +9,10 @@ age_rating: "4+"
 
 keywords: "sehri,taraweeh,sehar,ramadan,iftar,fasting timer,prayer times,islamic calendar,ramzan,quran,athan,dua"
 
-privacy_url: "https://suhoor.app/privacy"
-support_url: "https://suhoor.app/support"
+privacy_url: "https://chadnewbry.github.io/suhoor/privacy"
+support_url: "https://chadnewbry.github.io/suhoor/support"
 
 privacy_permissions:
-  camera:
-    purpose: "Qibla AR feature — overlays Qibla direction on camera view. Processed on-device only."
   location:
     purpose: "Prayer time calculation — computes accurate prayer times for your location. Processed locally."
   healthkit:
