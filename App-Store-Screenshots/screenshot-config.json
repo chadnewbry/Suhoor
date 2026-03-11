@@ -1,0 +1,87 @@
+{
+  "screenshotCount": 4,
+  "locale": "en-US",
+  "outputDirectory": "App-Store-Screenshots",
+  "screenshotsDirectory": "inputs",
+  "theme": {
+    "gradientTopColor": "#1A1640",
+    "gradientBottomColor": "#0F0E1A",
+    "pillColor": "#D9AD52",
+    "pillTextColor": "#0F0E1A",
+    "subtitleColor": "#FFFFFF",
+    "deviceFrameColor": "#1C1C1E",
+    "headerFontSizeFraction": 0.053,
+    "subtitleFontSizeFraction": 0.066,
+    "topPaddingFraction": 0.07,
+    "subtitleMaxWidthFraction": 0.85,
+    "shadowBlur": 30,
+    "shadowOpacity": 0.25,
+    "pillCornerRadiusFraction": 0.16,
+    "pillSubtitleGapFraction": 0.035,
+    "subtitleDeviceGapFraction": 0.08
+  },
+  "screenshots": [
+    {
+      "header": "🌙 Suhoor",
+      "subtitle": "Your Ramadan, Beautifully Simple",
+      "screenshotPath": "01-dashboard.png"
+    },
+    {
+      "header": "📖 Quran",
+      "subtitle": "Complete the Quran This Ramadan",
+      "screenshotPath": "03-quran.png"
+    },
+    {
+      "header": "🤲 Duas",
+      "subtitle": "Daily Duas for Every Moment",
+      "screenshotPath": "06-duas.png"
+    },
+    {
+      "header": "⚙️ Settings",
+      "subtitle": "Personalize Your Ramadan Experience",
+      "screenshotPath": "05-settings.png"
+    }
+  ],
+  "devices": [
+    {
+      "name": "iPhone 6.7",
+      "outputWidth": 1290,
+      "outputHeight": 2796,
+      "outputDirectory": "iPhone 6.7",
+      "deviceWidthFraction": 0.75,
+      "screenAspectRatio": 2.1674,
+      "frameCornerRadiusFraction": 0.13,
+      "bezelWidthFraction": 0.016
+    },
+    {
+      "name": "iPhone 6.5",
+      "outputWidth": 1242,
+      "outputHeight": 2688,
+      "outputDirectory": "iPhone 6.5",
+      "deviceWidthFraction": 0.75,
+      "screenAspectRatio": 2.1643,
+      "frameCornerRadiusFraction": 0.13,
+      "bezelWidthFraction": 0.016
+    },
+    {
+      "name": "iPhone 5.5",
+      "outputWidth": 1242,
+      "outputHeight": 2208,
+      "outputDirectory": "iPhone 5.5",
+      "deviceWidthFraction": 0.72,
+      "screenAspectRatio": 1.7778,
+      "frameCornerRadiusFraction": 0.08,
+      "bezelWidthFraction": 0.016
+    },
+    {
+      "name": "iPad Pro 12.9",
+      "outputWidth": 2048,
+      "outputHeight": 2732,
+      "outputDirectory": "iPad Pro 12.9",
+      "deviceWidthFraction": 0.82,
+      "screenAspectRatio": 1.3333,
+      "frameCornerRadiusFraction": 0.045,
+      "bezelWidthFraction": 0.008
+    }
+  ]
+}
