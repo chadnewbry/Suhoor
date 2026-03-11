@@ -25,6 +25,18 @@ enum DuaCategory: String, Codable, CaseIterable, Identifiable {
         }
     }
 
+    var subtitle: String {
+        switch self {
+        case .sehri: return "Pre-dawn meal prayers"
+        case .iftar: return "Breaking fast prayers"
+        case .laylatAlQadr: return "Night of Power"
+        case .firstAshra: return "Days 1-10 · Mercy"
+        case .secondAshra: return "Days 11-20 · Forgiveness"
+        case .thirdAshra: return "Days 21-30 · Freedom from Fire"
+        case .general: return "Throughout Ramadan"
+        }
+    }
+
     var localizedKey: String {
         switch self {
         case .sehri: return "dua_category_sehri"
