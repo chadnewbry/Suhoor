@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// Wraps content that requires Pro. Shows a blurred preview with upgrade prompt if not Pro.
+/// Wraps content that requires Premium. Shows a blurred preview with upgrade prompt if not premium.
 struct ProFeatureOverlayView<Content: View>: View {
     @ObservedObject private var store = StoreService.shared
     @State private var showPaywall = false
@@ -8,7 +8,7 @@ struct ProFeatureOverlayView<Content: View>: View {
     @ViewBuilder let content: () -> Content
 
     var body: some View {
-        if store.isPro {
+        if store.isPremium {
             content()
         } else {
             content()
@@ -20,7 +20,7 @@ struct ProFeatureOverlayView<Content: View>: View {
                             .font(.title2)
                             .foregroundStyle(Color.suhoorGold)
 
-                        Text("Pro Feature")
+                        Text("Premium Feature")
                             .font(.headline)
                             .foregroundStyle(.white)
 
@@ -31,7 +31,7 @@ struct ProFeatureOverlayView<Content: View>: View {
                         Button {
                             showPaywall = true
                         } label: {
-                            Text("Upgrade")
+                            Text("Upgrade — $2.99")
                                 .font(.caption.weight(.semibold))
                                 .foregroundStyle(.black)
                                 .padding(.horizontal, 20)

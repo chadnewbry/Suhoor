@@ -62,10 +62,10 @@ struct SettingsView: View {
                         NavigationLink {
                             SubscriptionSettingsView()
                         } label: {
-                            Label("Subscription", systemImage: "crown")
+                            Label("Premium", systemImage: "crown")
                         }
                     } header: {
-                        Text("Subscription")
+                        Text("Premium")
                     }
                     .listRowBackground(Color.suhoorSurface)
 

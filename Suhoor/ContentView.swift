@@ -4,9 +4,6 @@ struct ContentView: View {
     @EnvironmentObject var store: StoreService
     @State private var selectedTab = 0
     @State private var showPaywall = false
-    @State private var hasShownOnboardingPaywall = false
-
-    private let onboardingPaywallKey = "has_shown_onboarding_paywall"
 
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -41,17 +38,75 @@ struct ContentView: View {
                 .tag(4)
         }
         .tint(.suhoorGold)
+        .overlay(alignment: .top) {
+            if !store.isPurchased {
+                freeDaysBanner
+            }
+        }
         .fullScreenCover(isPresented: $showPaywall) {
             PaywallView()
         }
-        .onAppear {
-            // Show paywall after onboarding (first launch), soft/dismissible
-            if !UserDefaults.standard.bool(forKey: onboardingPaywallKey) && !store.isPro {
-                UserDefaults.standard.set(true, forKey: onboardingPaywallKey)
-                // Slight delay so the app loads first
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+        .task {
+            await store.refreshEntitlements()
+            await store.loadProducts()
+            store.recordAppUsageDay()
+        }
+    }
+
+    // MARK: - Free Days Banner
+
+    private var freeDaysBanner: some View {
+        Group {
+            if store.isInFreeTier {
+                Button {
                     showPaywall = true
+                } label: {
+                    HStack(spacing: 8) {
+                        Image(systemName: "sparkles")
+                            .font(.caption2)
+                        Text("\(store.freeDaysRemaining) free day\(store.freeDaysRemaining == 1 ? "" : "s") remaining")
+                            .font(.caption.weight(.medium))
+                        Image(systemName: "chevron.right")
+                            .font(.caption2)
+                    }
+                    .foregroundStyle(.black)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 8)
+                    .background(
+                        LinearGradient(
+                            colors: [Color.suhoorGold, Color.suhoorAmber],
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        )
+                    )
+                    .clipShape(Capsule())
+                    .shadow(color: Color.suhoorGold.opacity(0.3), radius: 8)
                 }
+                .padding(.top, 4)
+            } else if store.shouldShowPaywall {
+                Button {
+                    showPaywall = true
+                } label: {
+                    HStack(spacing: 8) {
+                        Image(systemName: "crown.fill")
+                            .font(.caption2)
+                        Text("Upgrade to Premium")
+                            .font(.caption.weight(.medium))
+                    }
+                    .foregroundStyle(.black)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 8)
+                    .background(
+                        LinearGradient(
+                            colors: [Color.suhoorGold, Color.suhoorAmber],
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        )
+                    )
+                    .clipShape(Capsule())
+                    .shadow(color: Color.suhoorGold.opacity(0.3), radius: 8)
+                }
+                .padding(.top, 4)
             }
         }
     }

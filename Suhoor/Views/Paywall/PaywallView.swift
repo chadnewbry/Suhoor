@@ -3,19 +3,18 @@ import StoreKit
 
 struct PaywallView: View {
     @Environment(\.dismiss) private var dismiss
-    @StateObject private var store = StoreService.shared
-    @State private var selectedProduct: Product?
+    @ObservedObject private var store = StoreService.shared
     @State private var isPurchasing = false
     @State private var showError = false
     @State private var errorText = ""
+    @State private var starPositions: [(x: CGFloat, y: CGFloat, opacity: Double, size: CGFloat)] = []
 
     var body: some View {
         ZStack {
-            // Background
             backgroundGradient
 
             ScrollView {
-                VStack(spacing: 24) {
+                VStack(spacing: 28) {
                     // Close button
                     HStack {
                         Spacer()
@@ -28,19 +27,12 @@ struct PaywallView: View {
                     }
                     .padding(.horizontal)
 
-                    // Header
                     headerSection
 
-                    // Feature comparison
                     featureComparisonSection
 
-                    // Subscription cards
-                    subscriptionCards
-
-                    // CTA Button
                     purchaseButton
 
-                    // Restore + Legal
                     footerLinks
                 }
                 .padding()
@@ -48,10 +40,9 @@ struct PaywallView: View {
         }
         .task {
             await store.loadProducts()
-            // Default select annual
-            if selectedProduct == nil {
-                selectedProduct = store.annualProduct
-            }
+        }
+        .onAppear {
+            generateStarPositions()
         }
         .alert("Purchase Error", isPresented: $showError) {
             Button("OK") {}
@@ -62,12 +53,23 @@ struct PaywallView: View {
 
     // MARK: - Background
 
+    private func generateStarPositions() {
+        starPositions = (0..<40).map { _ in
+            (
+                x: CGFloat.random(in: 0...1),
+                y: CGFloat.random(in: 0...0.5),
+                opacity: Double.random(in: 0.1...0.5),
+                size: CGFloat.random(in: 1...3)
+            )
+        }
+    }
+
     private var backgroundGradient: some View {
         ZStack {
             LinearGradient(
                 colors: [
                     Color(red: 0.04, green: 0.03, blue: 0.15),
-                    Color(red: 0.08, green: 0.07, blue: 0.22),
+                    Color(red: 0.08, green: 0.05, blue: 0.25),
                     Color(red: 0.05, green: 0.04, blue: 0.16)
                 ],
                 startPoint: .top,
@@ -77,13 +79,13 @@ struct PaywallView: View {
 
             // Stars
             GeometryReader { geo in
-                ForEach(0..<30, id: \.self) { i in
+                ForEach(Array(starPositions.enumerated()), id: \.offset) { _, star in
                     Circle()
-                        .fill(.white.opacity(Double.random(in: 0.1...0.4)))
-                        .frame(width: CGFloat.random(in: 1...3))
+                        .fill(.white.opacity(star.opacity))
+                        .frame(width: star.size)
                         .position(
-                            x: CGFloat.random(in: 0...geo.size.width),
-                            y: CGFloat.random(in: 0...geo.size.height * 0.5)
+                            x: star.x * geo.size.width,
+                            y: star.y * geo.size.height
                         )
                 }
             }
@@ -91,7 +93,7 @@ struct PaywallView: View {
             // Crescent moon
             VStack {
                 Image(systemName: "moon.stars.fill")
-                    .font(.system(size: 60))
+                    .font(.system(size: 70))
                     .foregroundStyle(
                         LinearGradient(
                             colors: [Color.suhoorGold, Color.suhoorAmber],
@@ -99,8 +101,8 @@ struct PaywallView: View {
                             endPoint: .bottomTrailing
                         )
                     )
-                    .shadow(color: Color.suhoorGold.opacity(0.4), radius: 20)
-                    .padding(.top, 40)
+                    .shadow(color: Color.suhoorGold.opacity(0.5), radius: 25)
+                    .padding(.top, 50)
                 Spacer()
             }
         }
@@ -109,17 +111,18 @@ struct PaywallView: View {
     // MARK: - Header
 
     private var headerSection: some View {
-        VStack(spacing: 12) {
-            Spacer().frame(height: 60)
+        VStack(spacing: 14) {
+            Spacer().frame(height: 70)
 
             Text("Make This Ramadan\nYour Best")
-                .font(.system(size: 28, weight: .bold))
+                .font(.system(size: 30, weight: .bold))
                 .multilineTextAlignment(.center)
                 .foregroundStyle(.white)
 
-            Text("Unlock the full Suhoor experience")
+            Text("One purchase. No subscriptions. No ads. Ever.")
                 .font(.subheadline)
                 .foregroundStyle(.white.opacity(0.7))
+                .multilineTextAlignment(.center)
         }
     }
 
@@ -136,11 +139,11 @@ struct PaywallView: View {
                 Text("Free")
                     .font(.caption.weight(.semibold))
                     .foregroundStyle(.white.opacity(0.5))
-                    .frame(width: 50)
-                Text("Pro")
+                    .frame(width: 55)
+                Text("Premium")
                     .font(.caption.weight(.bold))
                     .foregroundStyle(Color.suhoorGold)
-                    .frame(width: 50)
+                    .frame(width: 65)
             }
             .padding(.horizontal, 16)
             .padding(.vertical, 10)
@@ -154,9 +157,9 @@ struct PaywallView: View {
                         .foregroundStyle(.white.opacity(0.85))
                     Spacer()
                     featureIcon(row.free)
-                        .frame(width: 50)
+                        .frame(width: 55)
                     featureIcon(row.pro)
-                        .frame(width: 50)
+                        .frame(width: 65)
                 }
                 .padding(.horizontal, 16)
                 .padding(.vertical, 8)
@@ -185,157 +188,62 @@ struct PaywallView: View {
         }
     }
 
-    // MARK: - Subscription Cards
-
-    private var subscriptionCards: some View {
-        VStack(spacing: 12) {
-            if let monthly = store.monthlyProduct {
-                subscriptionCard(
-                    product: monthly,
-                    title: "Monthly",
-                    price: monthly.displayPrice,
-                    subtitle: "per month",
-                    badge: nil,
-                    hasTrial: true
-                )
-            }
-
-            if let annual = store.annualProduct {
-                subscriptionCard(
-                    product: annual,
-                    title: "Annual",
-                    price: annual.displayPrice,
-                    subtitle: "per year",
-                    badge: "BEST VALUE",
-                    hasTrial: true
-                )
-            }
-
-            if let lifetime = store.lifetimeProduct {
-                subscriptionCard(
-                    product: lifetime,
-                    title: "Lifetime",
-                    price: lifetime.displayPrice,
-                    subtitle: "one-time purchase",
-                    badge: nil,
-                    hasTrial: false
-                )
-            }
-        }
-    }
-
-    private func subscriptionCard(
-        product: Product,
-        title: String,
-        price: String,
-        subtitle: String,
-        badge: String?,
-        hasTrial: Bool
-    ) -> some View {
-        let isSelected = selectedProduct?.id == product.id
-        let isAnnual = product.id == SuhoorProduct.proAnnual.rawValue
-
-        return Button {
-            withAnimation(.easeInOut(duration: 0.2)) {
-                selectedProduct = product
-            }
-        } label: {
-            HStack {
-                VStack(alignment: .leading, spacing: 4) {
-                    HStack(spacing: 8) {
-                        Text(title)
-                            .font(.body.weight(.semibold))
-                            .foregroundStyle(.white)
-
-                        if let badge {
-                            Text(badge)
-                                .font(.system(size: 9, weight: .bold))
-                                .foregroundStyle(.black)
-                                .padding(.horizontal, 6)
-                                .padding(.vertical, 2)
-                                .background(Color.suhoorGold)
-                                .clipShape(Capsule())
-                        }
-
-                        if hasTrial {
-                            Text("3-day free trial")
-                                .font(.system(size: 9, weight: .medium))
-                                .foregroundStyle(Color.suhoorGold)
-                                .padding(.horizontal, 6)
-                                .padding(.vertical, 2)
-                                .background(Color.suhoorGold.opacity(0.15))
-                                .clipShape(Capsule())
-                        }
-                    }
-
-                    Text(subtitle)
-                        .font(.caption)
-                        .foregroundStyle(.white.opacity(0.5))
-                }
-
-                Spacer()
-
-                Text(price)
-                    .font(.title3.weight(.bold))
-                    .foregroundStyle(isSelected ? Color.suhoorGold : .white)
-            }
-            .padding()
-            .background(
-                RoundedRectangle(cornerRadius: 14)
-                    .fill(isSelected ? Color.suhoorGold.opacity(0.12) : Color.white.opacity(0.05))
-            )
-            .overlay(
-                RoundedRectangle(cornerRadius: 14)
-                    .stroke(
-                        isSelected ? Color.suhoorGold : Color.white.opacity(0.1),
-                        lineWidth: isSelected ? 2 : 1
-                    )
-            )
-        }
-        .scaleEffect(isAnnual && isSelected ? 1.02 : 1.0)
-    }
-
     // MARK: - Purchase Button
 
     private var purchaseButton: some View {
-        Button {
-            guard let product = selectedProduct else { return }
-            isPurchasing = true
-            Task {
-                do {
-                    let success = try await store.purchase(product)
-                    if success { dismiss() }
-                } catch {
-                    errorText = error.localizedDescription
-                    showError = true
+        VStack(spacing: 16) {
+            // Price badge
+            if let product = store.product {
+                Text("One-time purchase")
+                    .font(.caption)
+                    .foregroundStyle(.white.opacity(0.5))
+
+                Button {
+                    isPurchasing = true
+                    Task {
+                        do {
+                            let success = try await store.purchase()
+                            if success { dismiss() }
+                        } catch {
+                            errorText = error.localizedDescription
+                            showError = true
+                        }
+                        isPurchasing = false
+                    }
+                } label: {
+                    Group {
+                        if isPurchasing {
+                            ProgressView()
+                                .tint(.black)
+                        } else {
+                            VStack(spacing: 4) {
+                                Text("Unlock Suhoor Premium — \(product.displayPrice)")
+                                    .font(.body.weight(.bold))
+                                Text("Yours forever. No subscription.")
+                                    .font(.caption2)
+                                    .opacity(0.7)
+                            }
+                        }
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 16)
+                    .background(
+                        LinearGradient(
+                            colors: [Color.suhoorGold, Color.suhoorAmber],
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        )
+                    )
+                    .foregroundStyle(.black)
+                    .clipShape(RoundedRectangle(cornerRadius: 14))
+                    .shadow(color: Color.suhoorGold.opacity(0.3), radius: 12)
                 }
-                isPurchasing = false
+                .disabled(isPurchasing)
+            } else if store.isLoading {
+                ProgressView()
+                    .tint(.white)
             }
-        } label: {
-            Group {
-                if isPurchasing {
-                    ProgressView()
-                        .tint(.black)
-                } else {
-                    Text(selectedProduct?.id == SuhoorProduct.proLifetime.rawValue
-                        ? "Purchase Lifetime Access"
-                        : "Start Free Trial")
-                        .font(.body.weight(.bold))
-                }
-            }
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 16)
-            .background(
-                LinearGradient(
-                    colors: [Color.suhoorGold, Color.suhoorAmber],
-                    startPoint: .leading,
-                    endPoint: .trailing
-                )
-            )
-            .foregroundStyle(.black)
-            .clipShape(RoundedRectangle(cornerRadius: 14))
         }
-        .disabled(selectedProduct == nil || isPurchasing)
     }
 
     // MARK: - Footer
@@ -343,7 +251,10 @@ struct PaywallView: View {
     private var footerLinks: some View {
         VStack(spacing: 8) {
             Button("Restore Purchases") {
-                Task { await store.restorePurchases() }
+                Task {
+                    await store.restorePurchases()
+                    if store.isPurchased { dismiss() }
+                }
             }
             .font(.caption)
             .foregroundStyle(.white.opacity(0.5))
@@ -356,12 +267,6 @@ struct PaywallView: View {
             }
             .font(.caption2)
             .foregroundStyle(.white.opacity(0.35))
-
-            Text("Subscriptions auto-renew unless cancelled at least 24 hours before the end of the current period.")
-                .font(.system(size: 9))
-                .foregroundStyle(.white.opacity(0.25))
-                .multilineTextAlignment(.center)
-                .padding(.horizontal)
         }
         .padding(.bottom, 16)
     }
@@ -382,18 +287,17 @@ private struct FeatureRow {
 private let featureRows: [FeatureRow] = [
     .init(name: "Iftar/Sehri Countdown", free: .yes, pro: .yes),
     .init(name: "Prayer Times", free: .yes, pro: .yes),
-    .init(name: "Fasting History", free: .limited("Current"), pro: .yes),
-    .init(name: "Duas Collection", free: .limited("5"), pro: .yes),
-    .init(name: "Dua Audio", free: .no, pro: .yes),
-    .init(name: "Khatam Tracker", free: .no, pro: .yes),
-    .init(name: "Meal Suggestions", free: .no, pro: .yes),
+    .init(name: "Fasting Tracker", free: .limited("5 days"), pro: .yes),
+    .init(name: "Quran Reading", free: .limited("5 days"), pro: .yes),
+    .init(name: "Quran Khatam Plan", free: .no, pro: .yes),
+    .init(name: "Badges & Analytics", free: .no, pro: .yes),
+    .init(name: "Year-over-Year Stats", free: .no, pro: .yes),
+    .init(name: "Live Activity", free: .no, pro: .yes),
+    .init(name: "Widgets", free: .no, pro: .yes),
+    .init(name: "Audio Quran Recitation", free: .no, pro: .yes),
+    .init(name: "Suhoor Meal Planning", free: .no, pro: .yes),
     .init(name: "Hydration Tracker", free: .no, pro: .yes),
-    .init(name: "Deeds Checklist", free: .no, pro: .yes),
-    .init(name: "Laylat al-Qadr Content", free: .no, pro: .yes),
-    .init(name: "Widget Sizes", free: .limited("Small"), pro: .yes),
-    .init(name: "Watch Complication", free: .no, pro: .yes),
-    .init(name: "Azan Sounds", free: .limited("1"), pro: .yes),
-    .init(name: "Color Themes", free: .limited("1"), pro: .yes),
+    .init(name: "Apple Watch App", free: .no, pro: .yes),
 ]
 
 // MARK: - Paywall Trigger Modifier
@@ -405,11 +309,11 @@ struct ProFeatureGate: ViewModifier {
     func body(content: Content) -> some View {
         content
             .onTapGesture {
-                if !store.isPro {
+                if store.shouldShowPaywall {
                     showPaywall = true
                 }
             }
-            .allowsHitTesting(!store.isPro)
+            .allowsHitTesting(!store.shouldShowPaywall)
             .fullScreenCover(isPresented: $showPaywall) {
                 PaywallView()
             }
@@ -417,15 +321,15 @@ struct ProFeatureGate: ViewModifier {
 }
 
 extension View {
-    /// Gates this view behind a Pro subscription. Shows paywall on tap if not Pro.
+    /// Gates this view behind Premium. Shows paywall on tap if not premium.
     func requiresPro() -> some View {
         modifier(ProFeatureGate())
     }
 
-    /// Overlays a lock badge if not Pro.
+    /// Overlays a lock badge if not premium.
     func proLockOverlay() -> some View {
         overlay(alignment: .topTrailing) {
-            if !StoreService.shared.isPro {
+            if !StoreService.shared.isPremium {
                 Image(systemName: "lock.fill")
                     .font(.caption2)
                     .foregroundStyle(.white)

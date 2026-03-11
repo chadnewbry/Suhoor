@@ -12,30 +12,27 @@ struct SubscriptionSettingsView: View {
         List {
             Section {
                 HStack {
-                    Label("Current Plan", systemImage: "sparkles")
+                    Label("Status", systemImage: "sparkles")
                     Spacer()
-                    Text(currentPlanName)
-                        .foregroundStyle(store.isPro ? Color.suhoorGold : .secondary)
+                    Text(statusText)
+                        .foregroundStyle(store.isPurchased ? Color.suhoorGold : .secondary)
                 }
 
-                if !store.isPro {
+                if !store.isPurchased {
+                    if store.isInFreeTier {
+                        HStack {
+                            Label("Free Days Remaining", systemImage: "calendar.badge.clock")
+                            Spacer()
+                            Text("\(store.freeDaysRemaining) of \(StoreService.maxFreeDays)")
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+
                     Button {
                         showPaywall = true
                     } label: {
-                        Label("Upgrade to Pro", systemImage: "crown.fill")
+                        Label("Upgrade to Premium — $2.99", systemImage: "crown.fill")
                             .foregroundStyle(Color.suhoorGold)
-                    }
-                }
-
-                if store.isPro {
-                    Button {
-                        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-                            Task {
-                                try? await AppStore.showManageSubscriptions(in: windowScene)
-                            }
-                        }
-                    } label: {
-                        Label("Manage Subscription", systemImage: "creditcard")
                     }
                 }
 
@@ -54,14 +51,14 @@ struct SubscriptionSettingsView: View {
                 }
                 .disabled(isRestoring)
             } header: {
-                Text("Subscription")
+                Text("Premium")
             }
             .listRowBackground(Color.suhoorSurface)
         }
         .scrollContentBackground(.hidden)
         .background(Color.suhoorIndigo)
         .foregroundStyle(Color.suhoorTextPrimary)
-        .navigationTitle("Subscription")
+        .navigationTitle("Premium")
         .alert("Restore Purchases", isPresented: $showRestoreAlert) {
             Button("OK") {}
         } message: {
@@ -72,13 +69,11 @@ struct SubscriptionSettingsView: View {
         }
     }
 
-    private var currentPlanName: String {
-        if store.purchasedProductIDs.contains(SuhoorProduct.proLifetime.rawValue) {
-            return "Pro (Lifetime)"
-        } else if store.purchasedProductIDs.contains(SuhoorProduct.proAnnual.rawValue) {
-            return "Pro (Annual)"
-        } else if store.purchasedProductIDs.contains(SuhoorProduct.proMonthly.rawValue) {
-            return "Pro (Monthly)"
+    private var statusText: String {
+        if store.isPurchased {
+            return "Premium (Lifetime)"
+        } else if store.isInFreeTier {
+            return "Free Trial"
         }
         return "Free"
     }
@@ -87,9 +82,9 @@ struct SubscriptionSettingsView: View {
         isRestoring = true
         Task {
             await store.restorePurchases()
-            restoreMessage = store.isPro
-                ? "Purchases restored successfully! Welcome back."
-                : "No previous purchases found."
+            restoreMessage = store.isPurchased
+                ? "Purchase restored successfully! Welcome back."
+                : "No previous purchase found."
             isRestoring = false
             showRestoreAlert = true
         }
