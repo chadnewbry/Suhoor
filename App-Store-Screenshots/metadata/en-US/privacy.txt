@@ -1,0 +1,13 @@
+CAMERA
+Used for the Qibla AR feature, which overlays the Qibla direction on your camera view. Camera data is processed on-device only and is never stored or transmitted.
+
+LOCATION
+Used to calculate accurate prayer times (Fajr, Dhuhr, Asr, Maghrib, Isha) and sehri/iftar times based on your geographic coordinates. Location data is processed locally and never sent to any server.
+
+HEALTHKIT
+Used to sync fasting data with Apple Health, allowing you to track your fasting hours alongside other health metrics. HealthKit data is read and written locally through Apple's secure framework and is never accessed by third parties.
+
+NOTIFICATIONS
+Used to deliver timely reminders for sehri, iftar, prayer times, and athan alerts. All notification scheduling happens on-device.
+
+No third-party analytics. No accounts required. All data stays on your device.

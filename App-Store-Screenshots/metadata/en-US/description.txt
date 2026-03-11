@@ -3,29 +3,35 @@ Suhoor is the Ramadan companion you've been looking for — focused, beautiful, 
 Unlike bloated Islamic apps that try to do everything, Suhoor does one thing exceptionally well: it makes your Ramadan effortless. From sehri to iftar, every feature is designed to keep you focused on what matters.
 
 LIVE COUNTDOWNS & PRAYER TIMES
-Never miss sehri or iftar again. Live countdowns show exactly how long until your next meal, with accurate prayer times for your location. Live Activities keep the countdown on your Lock Screen and Dynamic Island — no need to open the app.
+Never miss sehri or iftar again. A live countdown shows exactly how long until your next meal, with accurate prayer times calculated for your location. Live Activities keep the countdown on your Lock Screen and Dynamic Island — no need to open the app.
 
 FASTING TRACKER WITH STREAKS
-Track every fast through Ramadan with a simple, satisfying tracker. Build streaks, see your progress, and stay motivated through the entire month. Detailed analytics show your fasting patterns and achievements.
+Track every fast through Ramadan with a simple, satisfying tracker. Build streaks, see your progress, and sync fasting data to Apple Health via HealthKit. Detailed analytics show your fasting patterns and achievements across the month.
 
 QURAN READING SCHEDULE
-Complete the Quran during Ramadan with a personalized reading plan. Track your daily progress through a structured khatam schedule that keeps you on pace.
+Complete the Quran during Ramadan with a personalized reading plan. Track your daily progress through a structured khatam schedule that keeps you on pace throughout the holy month.
 
-RAMADAN CALENDAR & IMSAKIYA
-A beautiful Ramadan calendar with all your sehri and iftar times at a glance. Plan your entire month with the traditional imsakiya view, including taraweeh times.
+RAMADAN CALENDAR & ISLAMIC CALENDAR
+A beautiful Ramadan calendar with all your sehri and iftar times at a glance. Plan your entire month with the traditional imsakiya view, including taraweeh times. Follow along with the Islamic calendar to stay connected to key dates.
 
 SUHOOR MEAL & HYDRATION PLANNING
-Plan your suhoor meals and track hydration to stay energized throughout your fast. Smart reminders help you prepare before sehar time.
+Plan your suhoor meals and track hydration to stay energized throughout your fast. Smart reminders help you prepare before sehar time so you never wake up unprepared.
+
+DUAS & DAILY REMINDERS
+Access essential Ramadan duas for sehri, iftar, and taraweeh. Notifications for prayer times, athan alerts, and fasting reminders keep you on track without effort.
 
 WIDGETS & APPLE WATCH
-Glanceable widgets for your Home Screen show countdown timers and prayer times. Apple Watch support keeps fasting times on your wrist. Notifications for sehri, iftar, and prayer times keep you on track.
+Glanceable widgets for your Home Screen show countdown timers and prayer times. Apple Watch support keeps your fasting timer on your wrist. Whether you're at work or on the go, Suhoor stays with you.
 
-QIBLA COMPASS
-Find the Qibla direction quickly and accurately, right from the app.
+QIBLA COMPASS WITH AR
+Find the Qibla direction quickly using the built-in compass or point your camera for an augmented reality Qibla experience.
 
-MINIMALIST PREMIUM DESIGN
-No ads. No subscriptions. No clutter. Suhoor is a one-time purchase that respects your time and your Ramadan. Every screen is crafted with care — because your Ramadan companion should feel as intentional as the month itself.
+PRIVACY-FIRST, NO ACCOUNT REQUIRED
+Suhoor is local-first with no accounts, no third-party analytics, and no data collection. Your Ramadan is yours alone.
 
-Whether you call it suhoor, sehri, or sehar — whether it's Ramadan or Ramzan — this is the fasting app that gets out of your way and lets you focus on what truly matters.
+SUHOOR PREMIUM
+Unlock the full experience with Suhoor Premium. Pricing details and subscription terms are shown before purchase. Subscriptions auto-renew unless cancelled at least 24 hours before the end of the current period. Manage subscriptions in Settings > Apple ID > Subscriptions.
+
+Whether you call it suhoor, sehri, or sehar — whether it's Ramadan or Ramzan — this is the fasting timer and prayer times app that gets out of your way and lets you focus on what truly matters.
 
 Download Suhoor and make this your best Ramadan yet.
