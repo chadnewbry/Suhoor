@@ -72,6 +72,17 @@ struct PrayerTimeSettingsView: View {
             }
             .listRowBackground(Color.suhoorSurface)
 
+            // MARK: - Hijri Date Adjustment
+            Section {
+                Stepper("\(settings.hijriDateAdjustment.formatted(.number.sign(strategy: .always()))) days",
+                        value: $settings.hijriDateAdjustment, in: -3...3)
+            } header: {
+                Text("Hijri Date Adjustment")
+            } footer: {
+                Text("Manually adjust the Hijri date if it differs from your local moon sighting.")
+            }
+            .listRowBackground(Color.suhoorSurface)
+
             // MARK: - Manual Adjustments
             Section {
                 ForEach(Prayer.allCases.filter(\.hasAzan)) { prayer in

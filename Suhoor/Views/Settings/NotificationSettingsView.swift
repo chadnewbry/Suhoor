@@ -36,10 +36,14 @@ struct NotificationSettingsView: View {
                 }
                 
                 if manager.settings.preSehriAlarmEnabled {
-                    Stepper("\(manager.settings.preSehriMinutesBefore) min before",
-                            value: $manager.settings.preSehriMinutesBefore,
-                            in: 10...60, step: 5)
-                        .font(.caption)
+                    Picker("Minutes Before", selection: $manager.settings.preSehriMinutesBefore) {
+                        Text("15 min").tag(15)
+                        Text("30 min").tag(30)
+                        Text("45 min").tag(45)
+                        Text("60 min").tag(60)
+                    }
+                    .pickerStyle(.segmented)
+                    .font(.caption)
                 }
                 
                 Toggle(isOn: $manager.settings.iftarWarningEnabled) {
@@ -66,6 +70,10 @@ struct NotificationSettingsView: View {
                         .font(.caption)
                 }
                 
+                Toggle(isOn: $manager.settings.hydrationRemindersEnabled) {
+                    Label("Hydration Reminders", systemImage: "drop")
+                }
+                
                 Toggle(isOn: $manager.settings.fastingLogReminderEnabled) {
                     Label("Fasting Log Reminder", systemImage: "pencil.circle")
                 }
@@ -78,6 +86,8 @@ struct NotificationSettingsView: View {
                 }
             } header: {
                 Text("Daily Reminders")
+            } footer: {
+                Text("Hydration reminders are sent every 30 minutes between Iftar and Sehri.")
             }
             
             // Permission status
