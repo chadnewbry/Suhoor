@@ -125,7 +125,7 @@ struct SettingsView: View {
                     .listRowBackground(Color.suhoorSurface)
                 }
                 .scrollContentBackground(.hidden)
-                .foregroundStyle(.suhoorTextPrimary)
+                .foregroundStyle(Color.suhoorTextPrimary)
             }
             .navigationTitle("Settings")
         }

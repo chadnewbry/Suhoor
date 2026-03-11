@@ -152,3 +152,18 @@ final class NotificationService {
         center.removeAllDeliveredNotifications()
     }
 }
+
+// MARK: - Public Scheduling for Suhoor Planning
+
+extension NotificationService {
+    func scheduleNotification(id: String, title: String, body: String, date: Date) async {
+        scheduleNotification(id: id, title: title, body: body, date: date, sound: .default, interruptionLevel: .active)
+    }
+    
+    func removeNotifications(withPrefix prefix: String) {
+        center.getPendingNotificationRequests { requests in
+            let ids = requests.map(\.identifier).filter { $0.hasPrefix(prefix) }
+            self.center.removePendingNotificationRequests(withIdentifiers: ids)
+        }
+    }
+}

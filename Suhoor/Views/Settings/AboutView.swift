@@ -17,7 +17,7 @@ struct AboutView: View {
                     VStack(spacing: 8) {
                         Image(systemName: "moon.stars.fill")
                             .font(.system(size: 48))
-                            .foregroundStyle(.suhoorGold)
+                            .foregroundStyle(Color.suhoorGold)
                         Text("Suhoor")
                             .font(.title2.bold())
                         Text("Your Ramadan Companion")
@@ -95,7 +95,7 @@ struct AboutView: View {
         }
         .scrollContentBackground(.hidden)
         .background(Color.suhoorIndigo)
-        .foregroundStyle(.suhoorTextPrimary)
+        .foregroundStyle(Color.suhoorTextPrimary)
         .navigationTitle("About")
     }
 

@@ -51,7 +51,7 @@ struct FeedbackFormView: View {
                     ))
                 }
                 .scrollContentBackground(.hidden)
-                .foregroundStyle(.suhoorTextPrimary)
+                .foregroundStyle(Color.suhoorTextPrimary)
             }
             .navigationTitle("Feedback")
             .navigationBarTitleDisplayMode(.inline)

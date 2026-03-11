@@ -41,7 +41,7 @@ struct SupportView: View {
         }
         .scrollContentBackground(.hidden)
         .background(Color.suhoorIndigo)
-        .foregroundStyle(.suhoorTextPrimary)
+        .foregroundStyle(Color.suhoorTextPrimary)
         .navigationTitle("Support")
         .sheet(isPresented: $showingShareSheet) {
             ShareSheet(items: [
