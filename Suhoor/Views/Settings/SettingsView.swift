@@ -2,16 +2,32 @@ import SwiftUI
 
 struct SettingsView: View {
     var body: some View {
-        ZStack {
-            Color.suhoorIndigo.ignoresSafeArea()
-            VStack(spacing: 16) {
-                Text("Settings")
-                    .font(.largeTitle.weight(.bold))
-                    .foregroundStyle(Color.suhoorTextPrimary)
-                Text("Coming soon")
-                    .font(.subheadline)
-                    .foregroundStyle(Color.suhoorTextSecondary)
+        NavigationStack {
+            ZStack {
+                Color.suhoorIndigo.ignoresSafeArea()
+                List {
+                    Section {
+                        NavigationLink {
+                            NotificationSettingsView()
+                        } label: {
+                            Label("Notifications", systemImage: "bell.badge")
+                        }
+                    }
+                    
+                    Section {
+                        Label("Location", systemImage: "location")
+                        Label("Calculation Method", systemImage: "function")
+                    } header: {
+                        Text("Prayer Times")
+                    }
+                    
+                    Section {
+                        Label("About Suhoor", systemImage: "info.circle")
+                    }
+                }
+                .scrollContentBackground(.hidden)
             }
+            .navigationTitle("Settings")
         }
     }
 }
