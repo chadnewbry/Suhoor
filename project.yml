@@ -40,6 +40,8 @@ targets:
       properties:
         com.apple.developer.healthkit: true
         com.apple.developer.healthkit.access: []
+        com.apple.developer.in-app-payments:
+          - merchant.com.chadnewbry.suhoor
         aps-environment: development
         com.apple.security.application-groups:
           - group.com.chadnewbry.suhoor
