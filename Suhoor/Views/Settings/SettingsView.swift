@@ -109,6 +109,9 @@ struct SettingsView: View {
                         Link(destination: URL(string: "https://chadnewbry.github.io/suhoor/terms")!) {
                             Label("Terms of Use", systemImage: "doc.text")
                         }
+                        Link(destination: URL(string: "https://chadnewbry.github.io/suhoor/support")!) {
+                            Label("Support Page", systemImage: "lifepreserver")
+                        }
                     } header: {
                         Text("Legal")
                     }
