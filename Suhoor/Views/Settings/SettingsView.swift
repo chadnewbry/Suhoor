@@ -3,6 +3,7 @@ import StoreKit
 
 struct SettingsView: View {
     @StateObject private var settings = AppSettings.shared
+    @State private var menstrualMode = UserDefaults.standard.bool(forKey: "suhoor_menstrual_mode")
 
     var body: some View {
         NavigationStack {
@@ -39,6 +40,14 @@ struct SettingsView: View {
                             FastingSettingsView()
                         } label: {
                             Label("Fasting Settings", systemImage: "moon.haze")
+                        }
+
+                        Toggle(isOn: $menstrualMode) {
+                            Label("Menstrual Mode", systemImage: "heart.fill")
+                        }
+                        .tint(.pink)
+                        .onChange(of: menstrualMode) { _, newValue in
+                            UserDefaults.standard.set(newValue, forKey: "suhoor_menstrual_mode")
                         }
                     } header: {
                         Text("Fasting")
@@ -131,10 +140,13 @@ struct SettingsView: View {
                 .foregroundStyle(Color.suhoorTextPrimary)
             }
             .navigationTitle("Settings")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbarColorScheme(.dark, for: .navigationBar)
         }
     }
 }
 
 #Preview {
     SettingsView()
+        .preferredColorScheme(.dark)
 }

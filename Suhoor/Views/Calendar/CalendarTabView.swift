@@ -1,78 +1,103 @@
 import SwiftUI
 
 struct CalendarTabView: View {
-    @StateObject private var settings = AppSettings.shared
-    
-    private var ramadanDays: [RamadanDay] {
-        let calendar = Calendar.current
-        // Ramadan 2026 starts approximately Feb 18
-        let startDate = calendar.date(from: DateComponents(year: 2026, month: 2, day: 18))!
-        
-        return (0..<30).map { offset in
-            let date = calendar.date(byAdding: .day, value: offset, to: startDate)!
-            let dayNum = offset + 1
-            return RamadanDay(
-                day: dayNum,
-                date: date,
-                sehriEnd: calendar.date(bySettingHour: 5, minute: 30 + (offset % 10), second: 0, of: date)!,
-                iftarTime: calendar.date(bySettingHour: 18, minute: 10 + (offset % 15), second: 0, of: date)!
-            )
-        }
+    @State private var viewModel = CalendarViewModel()
+    @State private var selectedSection: CalendarSection = .imsakiya
+
+    enum CalendarSection: String, CaseIterable {
+        case imsakiya = "Imsakiya"
+        case qadr = "Laylat al-Qadr"
+        case eid = "Eid"
     }
-    
+
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(ramadanDays) { day in
+            ZStack {
+                Color.suhoorIndigo.ignoresSafeArea()
+
+                VStack(spacing: 0) {
+                    // Header with Hijri-Gregorian dual display
                     HStack {
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text("Day \(day.day)")
-                                .font(.headline)
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("Ramadan Calendar")
+                                .font(.title2.weight(.bold))
                                 .foregroundStyle(Color.suhoorTextPrimary)
-                            Text(day.date, style: .date)
-                                .font(.caption)
-                                .foregroundStyle(Color.suhoorTextSecondary)
+                            HStack(spacing: 8) {
+                                if let day = viewModel.currentRamadanDay {
+                                    Text("Day \(day) of \(viewModel.rows.count)")
+                                        .font(.subheadline)
+                                        .foregroundStyle(Color.suhoorGold)
+                                    Text("•")
+                                        .foregroundStyle(Color.suhoorTextSecondary)
+                                }
+                                Text(HijriCalendarService.shared.hijriDateString(from: .now))
+                                    .font(.subheadline)
+                                    .foregroundStyle(Color.suhoorTextSecondary)
+                            }
                         }
-                        
                         Spacer()
-                        
-                        VStack(alignment: .trailing, spacing: 4) {
-                            HStack(spacing: 4) {
-                                Image(systemName: "sunrise")
-                                    .font(.caption2)
-                                Text(day.sehriEnd, style: .time)
-                                    .font(.caption.weight(.medium))
-                            }
-                            .foregroundStyle(Color.suhoorAmber)
-                            
-                            HStack(spacing: 4) {
-                                Image(systemName: "sunset")
-                                    .font(.caption2)
-                                Text(day.iftarTime, style: .time)
-                                    .font(.caption.weight(.medium))
-                            }
-                            .foregroundStyle(Color.suhoorGold)
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.top, 16)
+                    .padding(.bottom, 12)
+
+                    // Prominent Eid countdown in final 5 days
+                    if let days = viewModel.daysUntilEid, days <= 5 && days > 0 {
+                        eidBanner(days)
+                            .padding(.horizontal, 16)
+                            .padding(.bottom, 8)
+                    }
+
+                    Picker("Section", selection: $selectedSection) {
+                        ForEach(CalendarSection.allCases, id: \.self) { section in
+                            Text(section.rawValue).tag(section)
                         }
                     }
-                    .listRowBackground(Color.suhoorSurface)
+                    .pickerStyle(.segmented)
+                    .padding(.horizontal, 16)
+                    .padding(.bottom, 12)
+
+                    ScrollView {
+                        switch selectedSection {
+                        case .imsakiya:
+                            ImsakiyaView(viewModel: viewModel)
+                                .padding(.horizontal, 8)
+                        case .qadr:
+                            LaylatAlQadrView(viewModel: viewModel)
+                                .padding(.horizontal, 16)
+                        case .eid:
+                            EidCountdownView(viewModel: viewModel)
+                                .padding(.horizontal, 16)
+                        }
+                    }
                 }
             }
-            .scrollContentBackground(.hidden)
-            .background(Color.suhoorIndigo.ignoresSafeArea())
-            .navigationTitle("Ramadan Calendar")
-            .navigationBarTitleDisplayMode(.large)
         }
     }
-}
 
-private struct RamadanDay: Identifiable {
-    let day: Int
-    let date: Date
-    let sehriEnd: Date
-    let iftarTime: Date
-    var id: Int { day }
+    private func eidBanner(_ days: Int) -> some View {
+        HStack {
+            Image(systemName: "moon.stars.fill")
+                .foregroundStyle(Color.suhoorGold)
+            Text("Eid al-Fitr in \(days) day\(days == 1 ? "" : "s")!")
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(Color.suhoorTextPrimary)
+            Spacer()
+            Text("🎉")
+        }
+        .padding(12)
+        .background(
+            RoundedRectangle(cornerRadius: 12)
+                .fill(Color.suhoorGold.opacity(0.15))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 12)
+                        .strokeBorder(Color.suhoorGold.opacity(0.3), lineWidth: 1)
+                )
+        )
+    }
 }
 
 #Preview {
     CalendarTabView()
+        .preferredColorScheme(.dark)
 }

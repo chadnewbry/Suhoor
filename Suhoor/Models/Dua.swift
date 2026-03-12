@@ -114,3 +114,49 @@ extension Dua: PreviewData {
     }
 }
 #endif
+
+// MARK: - Ashra Dua (from main)
+
+struct AshraDua: Codable, Identifiable {
+    let ashra: Int
+    let name: String
+    let days: String
+    let arabic: String
+    let transliteration: String
+    let translation: String
+    let reference: String
+
+    var id: Int { ashra }
+}
+
+// MARK: - Excused Day Dua (from main)
+
+struct ExcusedDayDua: Codable, Identifiable {
+    var id: String { title }
+    let title: String
+    let arabic: String
+    let transliteration: String
+    let translation: String
+    let reference: String
+}
+
+// MARK: - Duas Collection (from main)
+
+struct DuasCollection: Codable {
+    let sehriDua: SimpleDua
+    let iftarDua: SimpleDua
+    let iftarDuaAlternate: SimpleDua
+    let ashras: [AshraDua]
+    let laylatAlQadr: [SimpleDua]
+    let excusedDays: [ExcusedDayDua]
+}
+
+// MARK: - Simple Dua (from main, renamed to avoid conflict)
+
+struct SimpleDua: Codable, Identifiable {
+    var id: String { transliteration }
+    let arabic: String
+    let transliteration: String
+    let translation: String
+    let reference: String
+}

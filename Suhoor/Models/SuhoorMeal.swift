@@ -1,5 +1,7 @@
 import Foundation
 
+// MARK: - SuhoorMeal (from HEAD - full version)
+
 struct SuhoorMeal: Identifiable, Codable {
     let id: UUID
     let name: String
@@ -8,14 +10,14 @@ struct SuhoorMeal: Identifiable, Codable {
     let ingredients: [String]
     let benefits: [String]
     let category: MealCategory
-    
+
     enum MealCategory: String, Codable, CaseIterable {
         case protein = "Protein"
         case hydrating = "Hydrating"
         case energySustaining = "Energy Sustaining"
         case balanced = "Balanced"
     }
-    
+
     static let bundledMeals: [SuhoorMeal] = [
         SuhoorMeal(id: UUID(), name: "Dates & Oatmeal Bowl", description: "Warm oatmeal topped with dates, honey, and a sprinkle of cinnamon. Slow-releasing carbs to sustain you through the fast.", emoji: "🥣", ingredients: ["Oats", "Dates", "Honey", "Cinnamon", "Milk"], benefits: ["Slow-release energy", "Rich in fiber", "Natural sweetness"], category: .energySustaining),
         SuhoorMeal(id: UUID(), name: "Egg & Avocado Toast", description: "Whole grain toast with mashed avocado and a boiled egg. Protein and healthy fats keep hunger at bay.", emoji: "🥑", ingredients: ["Whole grain bread", "Avocado", "Eggs", "Salt", "Pepper"], benefits: ["High protein", "Healthy fats", "Keeps you full"], category: .protein),
@@ -28,13 +30,13 @@ struct SuhoorMeal: Identifiable, Codable {
         SuhoorMeal(id: UUID(), name: "Lentil Soup", description: "Warm red lentil soup with bread. Easy to digest, high in protein, and deeply comforting.", emoji: "🍲", ingredients: ["Red lentils", "Onion", "Carrot", "Cumin", "Bread"], benefits: ["Easy to digest", "High protein", "Warming"], category: .protein),
         SuhoorMeal(id: UUID(), name: "Watermelon & Halloumi", description: "Fresh watermelon cubes with grilled halloumi cheese and mint. Maximizes hydration.", emoji: "🍉", ingredients: ["Watermelon", "Halloumi", "Mint", "Olive oil"], benefits: ["92% water content", "Protein from cheese", "Refreshing"], category: .hydrating),
     ]
-    
+
     /// Returns today's suggested meal (deterministic based on date)
     static func todaysMeal() -> SuhoorMeal {
         let dayOfYear = Calendar.current.ordinality(of: .day, in: .year, for: Date()) ?? 1
         return bundledMeals[dayOfYear % bundledMeals.count]
     }
-    
+
     /// Returns alternative meals (excluding today's)
     static func alternatives() -> [SuhoorMeal] {
         let today = todaysMeal()
@@ -48,3 +50,13 @@ extension SuhoorMeal: PreviewData {
     static var previewList: [SuhoorMeal] { Array(bundledMeals.prefix(5)) }
 }
 #endif
+
+// MARK: - SimpleSuhoorMeal (from main, renamed to avoid conflict)
+
+struct SimpleSuhoorMeal: Codable, Identifiable {
+    let day: Int
+    let name: String
+    let description: String
+
+    var id: Int { day }
+}
