@@ -4,7 +4,7 @@ import StoreKit
 // MARK: - Product Identifier
 
 enum SuhoorProduct: String {
-    case premium = "com.chadnewbry.suhoor.premium"
+    case premium = "com.chadnewbry.suhoor.lifetime"
 }
 
 // MARK: - Store Service
