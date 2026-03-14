@@ -3,8 +3,6 @@ import StoreKit
 
 struct SettingsView: View {
     @StateObject private var settings = AppSettings.shared
-    @State private var menstrualMode = UserDefaults.standard.bool(forKey: "suhoor_menstrual_mode")
-
     var body: some View {
         NavigationStack {
             ZStack {
@@ -42,13 +40,6 @@ struct SettingsView: View {
                             Label("Fasting Settings", systemImage: "moon.haze")
                         }
 
-                        Toggle(isOn: $menstrualMode) {
-                            Label("Menstrual Mode", systemImage: "heart.fill")
-                        }
-                        .tint(.pink)
-                        .onChange(of: menstrualMode) { _, newValue in
-                            UserDefaults.standard.set(newValue, forKey: "suhoor_menstrual_mode")
-                        }
                     } header: {
                         Text("Fasting")
                     }
