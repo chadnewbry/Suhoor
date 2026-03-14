@@ -5,18 +5,18 @@
   ],
   "products" : [
     {
-      "displayPrice" : "2.99",
+      "displayPrice" : "4.99",
       "familyShareable" : true,
-      "internalID" : "premium001",
+      "internalID" : "lifetime001",
       "localizations" : [
         {
-          "description" : "Unlock all premium features — full 30-day tracking, widgets, Live Activity, audio recitation, badges, and more",
+          "description" : "Unlock all features forever. No subscription. No ads.",
           "displayName" : "Suhoor Premium",
           "locale" : "en_US"
         }
       ],
-      "productID" : "com.chadnewbry.suhoor.premium",
-      "referenceName" : "Suhoor Premium",
+      "productID" : "com.chadnewbry.suhoor.lifetime",
+      "referenceName" : "Suhoor Lifetime Premium",
       "type" : "NonConsumable"
     }
   ],
