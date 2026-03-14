@@ -1,42 +1,42 @@
 import SwiftUI
 
 struct NotificationSettingsView: View {
-    @ObservedObject var manager = NotificationManager.shared
-    
+    @Environment(NotificationManager.self) private var manager
+    @Environment(UserPreferences.self) private var preferences
+
     var body: some View {
+        @Bindable var prefs = preferences
+
         List {
             // Azan Notifications
             Section {
-                ForEach(Prayer.allCases.filter(\.hasAzan)) { prayer in
-                    VStack(alignment: .leading, spacing: 8) {
-                        Toggle(isOn: azanBinding(for: prayer)) {
-                            Label("\(prayer.emoji) \(prayer.displayName) Azan", systemImage: "bell")
-                        }
-                        
-                        if manager.settings.azanEnabled[prayer.rawValue] == true {
-                            Picker("Sound", selection: azanSoundBinding(for: prayer)) {
-                                ForEach(AzanSound.allCases) { sound in
-                                    Text(sound.displayName).tag(sound.rawValue)
-                                }
-                            }
-                            .pickerStyle(.menu)
-                            .font(.caption)
-                        }
-                    }
-                    .padding(.vertical, 2)
+                Toggle(isOn: $prefs.fajrAzan) {
+                    Label("\(Prayer.fajr.emoji) Fajr Azan", systemImage: "bell")
+                }
+                Toggle(isOn: $prefs.dhuhrAzan) {
+                    Label("\(Prayer.dhuhr.emoji) Dhuhr Azan", systemImage: "bell")
+                }
+                Toggle(isOn: $prefs.asrAzan) {
+                    Label("\(Prayer.asr.emoji) Asr Azan", systemImage: "bell")
+                }
+                Toggle(isOn: $prefs.maghribAzan) {
+                    Label("\(Prayer.maghrib.emoji) Maghrib Azan", systemImage: "bell")
+                }
+                Toggle(isOn: $prefs.ishaAzan) {
+                    Label("\(Prayer.isha.emoji) Isha Azan", systemImage: "bell")
                 }
             } header: {
                 Text("Azan Notifications")
             }
-            
+
             // Sehri & Iftar
             Section {
-                Toggle(isOn: $manager.settings.preSehriAlarmEnabled) {
+                Toggle(isOn: $prefs.preSehriAlarmEnabled) {
                     Label("Pre-Sehri Wake Up", systemImage: "alarm")
                 }
-                
-                if manager.settings.preSehriAlarmEnabled {
-                    Picker("Minutes Before", selection: $manager.settings.preSehriMinutesBefore) {
+
+                if preferences.preSehriAlarmEnabled {
+                    Picker("Minutes Before", selection: $prefs.preSehriMinutesBefore) {
                         Text("15 min").tag(15)
                         Text("30 min").tag(30)
                         Text("45 min").tag(45)
@@ -45,62 +45,51 @@ struct NotificationSettingsView: View {
                     .pickerStyle(.segmented)
                     .font(.caption)
                 }
-                
-                Toggle(isOn: $manager.settings.iftarWarningEnabled) {
+
+                Toggle(isOn: $prefs.iftarWarningEnabled) {
                     Label("Iftar Warning", systemImage: "clock.badge.exclamationmark")
                 }
-                
-                Toggle(isOn: $manager.settings.iftarTimeEnabled) {
-                    Label("Iftar Time Alert", systemImage: "moon.stars")
+
+                Toggle(isOn: $prefs.iftarDuaEnabled) {
+                    Label("Iftar Dua Alert", systemImage: "moon.stars")
                 }
             } header: {
                 Text("Sehri & Iftar")
             }
-            
+
             // Reminders
             Section {
-                Toggle(isOn: $manager.settings.quranReminderEnabled) {
+                Toggle(isOn: $prefs.quranReminderEnabled) {
                     Label("Quran Reading", systemImage: "book")
                 }
-                
-                if manager.settings.quranReminderEnabled {
+
+                if preferences.quranReminderEnabled {
                     DatePicker("Reminder Time",
-                               selection: $manager.settings.quranReminderTime,
+                               selection: $prefs.quranReminderTime,
                                displayedComponents: .hourAndMinute)
                         .font(.caption)
                 }
-                
-                Toggle(isOn: $manager.settings.hydrationRemindersEnabled) {
+
+                Toggle(isOn: $prefs.hydrationRemindersEnabled) {
                     Label("Hydration Reminders", systemImage: "drop")
-                }
-                
-                Toggle(isOn: $manager.settings.fastingLogReminderEnabled) {
-                    Label("Fasting Log Reminder", systemImage: "pencil.circle")
-                }
-                
-                if manager.settings.fastingLogReminderEnabled {
-                    DatePicker("Reminder Time",
-                               selection: $manager.settings.fastingLogReminderTime,
-                               displayedComponents: .hourAndMinute)
-                        .font(.caption)
                 }
             } header: {
                 Text("Daily Reminders")
             } footer: {
-                Text("Hydration reminders are sent every 30 minutes between Iftar and Sehri.")
+                Text("Hydration reminders are sent every \(preferences.hydrationIntervalMinutes) minutes between Iftar and Sehri.")
             }
-            
+
             // Permission status
             Section {
                 HStack {
                     Text("Notification Permission")
                     Spacer()
-                    Text(manager.isPermissionGranted ? "Granted ✅" : "Not Granted ⚠️")
+                    Text(manager.isAuthorized ? "Granted" : "Not Granted")
                         .font(.caption)
-                        .foregroundStyle(manager.isPermissionGranted ? .green : .orange)
+                        .foregroundStyle(manager.isAuthorized ? .green : .orange)
                 }
-                
-                if !manager.isPermissionGranted {
+
+                if !manager.isAuthorized {
                     Button("Open Settings") {
                         if let url = URL(string: UIApplication.openSettingsURLString) {
                             UIApplication.shared.open(url)
@@ -116,24 +105,12 @@ struct NotificationSettingsView: View {
         .background(Color.suhoorIndigo)
         .foregroundStyle(Color.suhoorTextPrimary)
     }
-    
-    private func azanBinding(for prayer: Prayer) -> Binding<Bool> {
-        Binding(
-            get: { manager.settings.azanEnabled[prayer.rawValue] ?? true },
-            set: { manager.settings.azanEnabled[prayer.rawValue] = $0 }
-        )
-    }
-    
-    private func azanSoundBinding(for prayer: Prayer) -> Binding<String> {
-        Binding(
-            get: { manager.settings.azanSound[prayer.rawValue] ?? AzanSound.makkah.rawValue },
-            set: { manager.settings.azanSound[prayer.rawValue] = $0 }
-        )
-    }
 }
 
 #Preview {
     NavigationStack {
         NotificationSettingsView()
+            .environment(NotificationManager.shared)
+            .environment(UserPreferences.shared)
     }
 }

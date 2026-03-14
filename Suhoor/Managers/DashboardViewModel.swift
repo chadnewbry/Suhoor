@@ -110,12 +110,12 @@ final class DashboardViewModel: ObservableObject {
             sehri = timeToday(5, 15)
             iftar = timeToday(18, 32)
             prayers = [
-                PrayerTime(name: .fajr, time: timeToday(5, 15)),
-                PrayerTime(name: .sunrise, time: timeToday(6, 38)),
-                PrayerTime(name: .dhuhr, time: timeToday(12, 15)),
-                PrayerTime(name: .asr, time: timeToday(15, 42)),
-                PrayerTime(name: .maghrib, time: timeToday(18, 32)),
-                PrayerTime(name: .isha, time: timeToday(19, 55)),
+                PrayerTime(prayer: .fajr, date: today, time: timeToday(5, 15)),
+                PrayerTime(prayer: .sunrise, date: today, time: timeToday(6, 38)),
+                PrayerTime(prayer: .dhuhr, date: today, time: timeToday(12, 15)),
+                PrayerTime(prayer: .asr, date: today, time: timeToday(15, 42)),
+                PrayerTime(prayer: .maghrib, date: today, time: timeToday(18, 32)),
+                PrayerTime(prayer: .isha, date: today, time: timeToday(19, 55)),
             ]
         }
 

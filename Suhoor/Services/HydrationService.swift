@@ -5,14 +5,14 @@ import Combine
 final class HydrationService: ObservableObject {
     static let shared = HydrationService()
     
-    @Published var todayEntry: HydrationEntry
-    @Published var weeklyHistory: [HydrationEntry] = []
+    @Published var todayEntry: SimpleHydrationEntry
+    @Published var weeklyHistory: [SimpleHydrationEntry] = []
     
     private static let storageKey = "hydration_data"
     private static let suiteName = "group.com.chadnewbry.suhoor"
     
     private init() {
-        let today = HydrationEntry()
+        let today = SimpleHydrationEntry()
         self.todayEntry = today
         loadData()
     }
@@ -41,8 +41,8 @@ final class HydrationService: ObservableObject {
     
     private func loadData() {
         guard let data = UserDefaults(suiteName: Self.suiteName)?.data(forKey: Self.storageKey),
-              let entries = try? JSONDecoder().decode([HydrationEntry].self, from: data) else {
-            todayEntry = HydrationEntry()
+              let entries = try? JSONDecoder().decode([SimpleHydrationEntry].self, from: data) else {
+            todayEntry = SimpleHydrationEntry()
             weeklyHistory = []
             return
         }
@@ -51,7 +51,7 @@ final class HydrationService: ObservableObject {
         if let existing = entries.first(where: { $0.date == todayKey }) {
             todayEntry = existing
         } else {
-            todayEntry = HydrationEntry()
+            todayEntry = SimpleHydrationEntry()
         }
         
         let weekAgo = Calendar.current.date(byAdding: .day, value: -7, to: Date())!
@@ -81,9 +81,9 @@ final class HydrationService: ObservableObject {
             .sorted { $0.date < $1.date }
     }
     
-    private func loadAllEntries() -> [HydrationEntry] {
+    private func loadAllEntries() -> [SimpleHydrationEntry] {
         guard let data = UserDefaults(suiteName: Self.suiteName)?.data(forKey: Self.storageKey),
-              let entries = try? JSONDecoder().decode([HydrationEntry].self, from: data) else {
+              let entries = try? JSONDecoder().decode([SimpleHydrationEntry].self, from: data) else {
             return []
         }
         return entries
