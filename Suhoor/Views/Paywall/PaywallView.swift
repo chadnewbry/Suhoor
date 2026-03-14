@@ -292,8 +292,6 @@ private let featureRows: [FeatureRow] = [
     .init(name: "Fasting Tracker", free: .limited("5 days"), pro: .yes),
     .init(name: "Quran Reading", free: .limited("5 days"), pro: .yes),
     .init(name: "Quran Khatam Plan", free: .no, pro: .yes),
-    .init(name: "Badges & Analytics", free: .no, pro: .yes),
-    .init(name: "Year-over-Year Stats", free: .no, pro: .yes),
     .init(name: "Live Activity", free: .no, pro: .yes),
     .init(name: "Widgets", free: .no, pro: .yes),
     .init(name: "Audio Quran Recitation", free: .no, pro: .yes),
