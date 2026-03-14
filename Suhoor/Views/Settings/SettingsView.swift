@@ -2,22 +2,47 @@ import SwiftUI
 import StoreKit
 
 struct SettingsView: View {
-    @State private var menstrualMode = UserDefaults.standard.bool(forKey: "suhoor_menstrual_mode")
-    
+    @StateObject private var settings = AppSettings.shared
     var body: some View {
         NavigationStack {
             ZStack {
                 Color.suhoorIndigo.ignoresSafeArea()
                 
                 List {
-                    Section("Fasting") {
-                        Toggle(isOn: $menstrualMode) {
-                            Label("Menstrual Mode", systemImage: "heart.fill")
+                    // MARK: - Prayer Times
+                    Section {
+                        NavigationLink {
+                            PrayerTimeSettingsView()
+                        } label: {
+                            Label("Prayer Time Configuration", systemImage: "function")
                         }
-                        .tint(.pink)
-                        .onChange(of: menstrualMode) { _, newValue in
-                            UserDefaults.standard.set(newValue, forKey: "suhoor_menstrual_mode")
+                    } header: {
+                        Text("Prayer Times")
+                    }
+                    .listRowBackground(Color.suhoorSurface)
+
+                    // MARK: - Notifications
+                    Section {
+                        NavigationLink {
+                            NotificationSettingsView()
+                        } label: {
+                            Label("Notifications", systemImage: "bell.badge")
                         }
+                    } header: {
+                        Text("Notifications")
+                    }
+                    .listRowBackground(Color.suhoorSurface)
+
+                    // MARK: - Fasting
+                    Section {
+                        NavigationLink {
+                            FastingSettingsView()
+                        } label: {
+                            Label("Fasting Settings", systemImage: "moon.haze")
+                        }
+
+                    } header: {
+                        Text("Fasting")
                     }
                 }
                 .scrollContentBackground(.hidden)
