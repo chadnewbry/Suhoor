@@ -32,6 +32,23 @@ final class DashboardViewModel: ObservableObject {
         UserSettings.shared.selectedLocation?.name ?? "Unknown Location"
     }
 
+    /// Re-detect location from device and save to UserSettings.
+    func updateLocation() {
+        let service = LocationService.shared
+        if service.authorizationState == .authorized {
+            service.detectLocation()
+        } else {
+            service.requestPermission()
+        }
+    }
+
+    /// Called when LocationService finishes detecting. Saves and refreshes.
+    func applyDetectedLocation() {
+        guard let data = LocationService.shared.detectedLocationData else { return }
+        UserSettings.shared.selectedLocation = data
+        refresh()
+    }
+
     var sehriTimeFormatted: String {
         formatTime(fastingDay.sehriTime)
     }

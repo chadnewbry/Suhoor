@@ -28,6 +28,12 @@ struct DashboardView: View {
                         iftarTime: viewModel.iftarTimeFormatted,
                         streak: viewModel.currentStreak
                     )
+                    .onTapGesture {
+                        viewModel.updateLocation()
+                    }
+                    .onChange(of: LocationService.shared.currentLocation?.latitude) { _, _ in
+                        viewModel.applyDetectedLocation()
+                    }
 
                     if viewModel.isRamadan {
                         ramadanContent
@@ -41,6 +47,11 @@ struct DashboardView: View {
             }
             .refreshable {
                 viewModel.refresh()
+            }
+            .task {
+                if UserSettings.shared.selectedLocation == nil {
+                    viewModel.updateLocation()
+                }
             }
             .background(
                 (viewModel.isNightMode ? Color.suhoorNight : Color.suhoorIndigo)
