@@ -38,7 +38,8 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES">
+      allowLocationSimulation = "YES"
+      storeKitConfigurationFileReference = "Suhoor/SuhoorProducts.storekit">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
