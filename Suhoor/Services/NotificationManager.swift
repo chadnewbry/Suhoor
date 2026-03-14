@@ -1,5 +1,6 @@
 import Foundation
 import UserNotifications
+import CoreLocation
 
 /// Manages all local notifications for prayer times, sehri/iftar alerts,
 /// Quran reminders, and hydration reminders.
@@ -17,6 +18,24 @@ final class NotificationManager {
 
     @ObservationIgnored
     private let preferences = UserPreferences.shared
+
+    /// Calculate real prayer times from user's saved location, falling back to hardcoded times.
+    private func todayPrayerTimes() -> SamplePrayerTimes {
+        let settings = UserSettings.shared
+        if let location = settings.selectedLocation {
+            let coord = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+            let tz = location.timeZone ?? .current
+            let daily = PrayerTimesCalculator.shared.calculate(
+                for: Date(), coordinate: coord, timeZone: tz,
+                method: settings.calculationMethod, madhhab: settings.madhhab
+            )
+            return SamplePrayerTimes(
+                fajr: daily.fajr, sunrise: daily.sunrise, dhuhr: daily.dhuhr,
+                asr: daily.asr, maghrib: daily.maghrib, isha: daily.isha
+            )
+        }
+        return SamplePrayerTimes.todayTimes()
+    }
 
     // MARK: - Notification Identifiers
 
@@ -67,7 +86,7 @@ final class NotificationManager {
     func scheduleAllNotifications() {
         cancelAllNotifications()
 
-        let prayerTimes = SamplePrayerTimes.todayTimes()
+        let prayerTimes = todayPrayerTimes()
 
         // Azan notifications
         if preferences.azanNotificationsEnabled {
