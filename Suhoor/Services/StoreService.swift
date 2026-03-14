@@ -73,8 +73,19 @@ final class StoreService: ObservableObject {
                 for: [SuhoorProduct.premium.rawValue]
             )
             product = storeProducts.first
+            #if DEBUG
+            if product == nil {
+                print("[StoreService] No product found for ID: \(SuhoorProduct.premium.rawValue)")
+                print("[StoreService] Returned products: \(storeProducts)")
+            } else {
+                print("[StoreService] Loaded product: \(product!.displayName) — \(product!.displayPrice)")
+            }
+            #endif
         } catch {
             errorMessage = "Failed to load products."
+            #if DEBUG
+            print("[StoreService] Error loading products: \(error)")
+            #endif
         }
     }
 
