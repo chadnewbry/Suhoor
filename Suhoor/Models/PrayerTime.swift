@@ -30,6 +30,17 @@ enum Prayer: String, CaseIterable, Codable, Identifiable {
         default: return true
         }
     }
+
+    var systemImage: String {
+        switch self {
+        case .fajr: return "sun.horizon"
+        case .sunrise: return "sunrise"
+        case .dhuhr: return "sun.max"
+        case .asr: return "sun.min"
+        case .maghrib: return "sunset"
+        case .isha: return "moon.stars"
+        }
+    }
 }
 
 // MARK: - PrayerName (from main)
@@ -65,6 +76,23 @@ struct PrayerTime: Identifiable, Codable {
     let time: Date
 
     var isPassed: Bool { time < Date() }
+
+    var formattedTime: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "h:mm a"
+        return formatter.string(from: time)
+    }
+
+    func countdown(from now: Date) -> String {
+        let interval = time.timeIntervalSince(now)
+        guard interval > 0 else { return "Passed" }
+        let hours = Int(interval) / 3600
+        let minutes = (Int(interval) % 3600) / 60
+        if hours > 0 {
+            return "\(hours)h \(minutes)m"
+        }
+        return "\(minutes)m"
+    }
 }
 
 // MARK: - DailyPrayerTimes (from HEAD)
@@ -77,6 +105,9 @@ struct DailyPrayerTimes: Codable {
     let asr: Date
     let maghrib: Date
     let isha: Date
+    let imsak: Date
+    let iftar: Date
+    let taraweeh: Date
 
     var sehriTime: Date { fajr }
     var iftarTime: Date { maghrib }

@@ -88,11 +88,6 @@ enum Ashra: Int, CaseIterable, Identifiable {
 }
 
 #if DEBUG
-protocol PreviewData {
-    static var preview: Self { get }
-    static var previewList: [Self] { get }
-}
-
 extension FastingDay: PreviewData {
     static var preview: FastingDay {
         FastingDay(id: 1, status: .fasted,

@@ -3,7 +3,7 @@ import SwiftUI
 struct HydrationTrackerView: View {
     @ObservedObject var hydrationService: HydrationService
     
-    private var entry: HydrationEntry { hydrationService.todayEntry }
+    private var entry: SimpleHydrationEntry { hydrationService.todayEntry }
     
     var body: some View {
         VStack(spacing: 16) {

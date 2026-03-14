@@ -1,80 +1,6 @@
 import Foundation
 import SwiftUI
 
-// MARK: - Calculation Method
-
-enum CalculationMethod: String, CaseIterable, Identifiable, Codable {
-    case isna = "ISNA"
-    case mwl = "MWL"
-    case egyptian = "Egyptian"
-    case ummAlQura = "Umm Al-Qura"
-    case karachi = "Karachi"
-    case tehran = "Tehran"
-    case gulf = "Gulf"
-    case kuwait = "Kuwait"
-    case qatar = "Qatar"
-    case singapore = "Singapore"
-    case turkey = "Turkey"
-    case northAmerica = "North America"
-    case jafari = "Jafari"
-
-    var id: String { rawValue }
-
-    var displayName: String {
-        switch self {
-        case .isna: return "ISNA (Islamic Society of North America)"
-        case .mwl: return "Muslim World League"
-        case .egyptian: return "Egyptian General Authority"
-        case .ummAlQura: return "Umm Al-Qura (Makkah)"
-        case .karachi: return "University of Islamic Sciences, Karachi"
-        case .tehran: return "Institute of Geophysics, Tehran"
-        case .gulf: return "Gulf Region"
-        case .kuwait: return "Kuwait"
-        case .qatar: return "Qatar"
-        case .singapore: return "Singapore"
-        case .turkey: return "Diyanet İşleri Başkanlığı, Turkey"
-        case .northAmerica: return "ISNA (North America)"
-        case .jafari: return "Shia Ithna-Ashari (Jafari)"
-        }
-    }
-}
-
-// MARK: - Madhhab
-
-enum Madhhab: String, CaseIterable, Identifiable, Codable {
-    case shafi = "Shafi"
-    case hanafi = "Hanafi"
-
-    var id: String { rawValue }
-    var displayName: String { rawValue }
-}
-
-// MARK: - App Language
-
-enum AppLanguage: String, CaseIterable, Identifiable, Codable {
-    case english = "en"
-    case arabic = "ar"
-    case urdu = "ur"
-    case turkish = "tr"
-    case malay = "ms"
-    case indonesian = "id"
-    case french = "fr"
-
-    var id: String { rawValue }
-
-    var displayName: String {
-        switch self {
-        case .english: return "English"
-        case .arabic: return "العربية"
-        case .urdu: return "اردو"
-        case .turkish: return "Türkçe"
-        case .malay: return "Bahasa Melayu"
-        case .indonesian: return "Bahasa Indonesia"
-        case .french: return "Français"
-        }
-    }
-}
-
 // MARK: - Color Theme
 
 enum AppColorTheme: String, CaseIterable, Identifiable, Codable {
@@ -171,7 +97,7 @@ class AppSettings: ObservableObject {
     // MARK: - Persistence
 
     private struct StoredSettings: Codable {
-        var calculationMethod: CalculationMethod = .isna
+        var calculationMethod: CalculationMethod = .northAmerica
         var madhhab: Madhhab = .shafi
         var useCurrentLocation: Bool = true
         var manualLocationName: String = ""

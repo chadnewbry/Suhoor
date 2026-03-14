@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-019B1E89742D41DEEB0AB9EB /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE41814A3326DF280A368D /* CalendarViewModel.swift */; };
+		019B1E89742D41DEEB0AB9EB /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE41814A3326DF280A368D /* CalendarViewModel.swift */; };
 		0273FAAFC8CC4B820E6909D5 /* suhoor_meals.json in Resources */ = {isa = PBXBuildFile; fileRef = 7FFE054C00D2C1057767F668 /* suhoor_meals.json */; };
-0304AA59B130120C118CDD12 /* FeedbackFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C51460C83F23480524A69DC /* FeedbackFormView.swift */; };
+		0304AA59B130120C118CDD12 /* FeedbackFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C51460C83F23480524A69DC /* FeedbackFormView.swift */; };
 		03BEBB0CDA32AC7E0B356D59 /* HydrationEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0EB512514FCD9E067824DE /* HydrationEntry.swift */; };
 		06583A2BBBC92ED5442F72B2 /* QuranReadingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A7146075D57F6778514661 /* QuranReadingService.swift */; };
 		08C163672F7A5BB6A83F0F74 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330EBD12ED238268377189D3 /* DashboardViewModel.swift */; };
@@ -42,7 +42,6 @@
 		378A9240E62DA02557DF215A /* QuranAudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601F1A8D6AFBE210304CA650 /* QuranAudioService.swift */; };
 		37AAF56D355DCB3718EB17F1 /* PrayerTimesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E25DEC38FBDA1280818A5C /* PrayerTimesView.swift */; };
 		3E0FDECEAC106F44EDD3A067 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4ACAF6FC3E0BB1BF7F398C /* SettingsView.swift */; };
-		3EFC5B3646A2383755D54F2F /* duas.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B69A06B8601E95AFB928FCD /* duas.json */; };
 		4070A4D94916576FD3B93FEC /* DailyVerseCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600E823130393E5295D1C1FA /* DailyVerseCard.swift */; };
 		41552B582924DB4AB398FA07 /* RamadanInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C16AEAAF62097168D0DD53 /* RamadanInfo.swift */; };
 		426BBA0361EAA3929F036D95 /* QuranView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C87D0F59921D049440DC48B /* QuranView.swift */; };
@@ -117,6 +116,7 @@
 		A8A9DEF2A4AA9CD21676FC2E /* SuhoorWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34234A51FC680D834287D23 /* SuhoorWidgets.swift */; };
 		AB21E7805B494744B02FC791 /* CalculationMethodStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C5C3FE83E2BC381395C43F /* CalculationMethodStepView.swift */; };
 		AB77EB90BAA1DFF8AE48AB29 /* PrayerTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF08C8C5F265751315D6BDA /* PrayerTime.swift */; };
+		AF6CE04EB570D640EE665C3D /* essential_duas.json in Resources */ = {isa = PBXBuildFile; fileRef = 97DDE92533319FC9BF0F6710 /* essential_duas.json */; };
 		B4D55F5A62484D7BA2F1F5F8 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D29B89CE6AE7CD30E40AF9 /* AudioService.swift */; };
 		B754572540B549552BF718DE /* QuranReadingPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AD9B225A7990BF03C2A5FF /* QuranReadingPlan.swift */; };
 		BB513039962CBDB92FE81520 /* MakeupFastSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C6883389067091F9871DC8 /* MakeupFastSection.swift */; };
@@ -148,7 +148,6 @@
 		EA6A7CA80F9B2E9FD8BE13BB /* NextPrayerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A28892FF74A74EE2AF4E9AE /* NextPrayerCard.swift */; };
 		EB748345639FF8D971925B8A /* CalendarTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C66BE3453EF0C95D5E882D0 /* CalendarTabView.swift */; };
 		EC21397B57E5C4FD36EE04EF /* WatchContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7D5003606C9FF39076D5C6 /* WatchContentView.swift */; };
-		ECC00A9314E38FCB929EAD52 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD375CAE5EE0F801E8DD4B52 /* NotificationManager.swift */; };
 		F3BE096F783B6DC89DB0936E /* FastingDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADA77EB52EF21705D6FA187 /* FastingDay.swift */; };
 		F8D530F08B7C5DA23556EA4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F17E860E2F4C9291D52C133 /* Assets.xcassets */; };
 		F9D0CDC912A02A2C50BA11FE /* PrayerTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF08C8C5F265751315D6BDA /* PrayerTime.swift */; };
@@ -181,11 +180,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-0469C658692F7339D0743615 /* EidCountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EidCountdownView.swift; sourceTree = "<group>"; };
+		0469C658692F7339D0743615 /* EidCountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EidCountdownView.swift; sourceTree = "<group>"; };
 		08E43A334540805C07553A63 /* RamadanGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamadanGridView.swift; sourceTree = "<group>"; };
 		0A0B223E20275D3ACD89E2F6 /* MakeupFast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeupFast.swift; sourceTree = "<group>"; };
 		0BC21C4D629E17A78C328F5A /* HijriCalendarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HijriCalendarService.swift; sourceTree = "<group>"; };
-0CCC27EE2AAB25BE0F719D09 /* HydrationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydrationData.swift; sourceTree = "<group>"; };
+		0CCC27EE2AAB25BE0F719D09 /* HydrationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydrationData.swift; sourceTree = "<group>"; };
 		1029A0A8A490BA1ACF423AD7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Quran.strings; sourceTree = "<group>"; };
 		116A278256B68E3F0717138C /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		11F3E14048E8EDCA871635CE /* Dua.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dua.swift; sourceTree = "<group>"; };
@@ -201,11 +200,11 @@
 		1C87D0F59921D049440DC48B /* QuranView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranView.swift; sourceTree = "<group>"; };
 		1D03953894A91AA211CAEDC4 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		1F00809967824B041BE1EA7A /* SuhoorWidgets.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = SuhoorWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-207D527C4CDB846E2D2AB07A /* DashboardDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardDay.swift; sourceTree = "<group>"; };
+		207D527C4CDB846E2D2AB07A /* DashboardDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardDay.swift; sourceTree = "<group>"; };
 		2569270F1AF5E5349D8B11C4 /* QuranVerse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranVerse.swift; sourceTree = "<group>"; };
 		263A192C119785596CA89FF7 /* NearbyMosquesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyMosquesView.swift; sourceTree = "<group>"; };
 		276A3910D68B3234B0160F24 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
-28DB1912C81387E1A135EB16 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Quran.strings; sourceTree = "<group>"; };
+		28DB1912C81387E1A135EB16 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Quran.strings; sourceTree = "<group>"; };
 		2A69DF798639D7C84F5307E6 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		2C34A9B55FCA6C9809D373BF /* Juz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Juz.swift; sourceTree = "<group>"; };
 		2F08D6455AEC6A144CAB6DB7 /* QuranProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranProgress.swift; sourceTree = "<group>"; };
@@ -221,9 +220,9 @@
 		4084AFE9BF002A4E9AD41CE3 /* azan_makkah.caf */ = {isa = PBXFileReference; path = azan_makkah.caf; sourceTree = "<group>"; };
 		436DC7CFF964ED7243C4A1D2 /* HydrationTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydrationTrackerView.swift; sourceTree = "<group>"; };
 		43E0FA15D24BCE755C348384 /* SuhoorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuhoorApp.swift; sourceTree = "<group>"; };
-46D54EF465D5E1BD3FCA1F5A /* LocationStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStepView.swift; sourceTree = "<group>"; };
+		46D54EF465D5E1BD3FCA1F5A /* LocationStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStepView.swift; sourceTree = "<group>"; };
 		476BEC8C95FD4D27645835E5 /* LaylatAlQadrView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaylatAlQadrView.swift; sourceTree = "<group>"; };
-4865129417A74EB67F4D1B0B /* ReadingSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingSessionView.swift; sourceTree = "<group>"; };
+		4865129417A74EB67F4D1B0B /* ReadingSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingSessionView.swift; sourceTree = "<group>"; };
 		48A7146075D57F6778514661 /* QuranReadingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranReadingService.swift; sourceTree = "<group>"; };
 		534BFA4E75CFAECEC7F930FA /* Suhoor.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Suhoor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		561EC8FCBD4B193B7D94FC2E /* FastingStreakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastingStreakView.swift; sourceTree = "<group>"; };
@@ -273,10 +272,10 @@
 		95CAA0F3AC9DF65C180AEF72 /* NotificationsStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsStepView.swift; sourceTree = "<group>"; };
 		97116C9574E0E4B8964FAF0E /* RamadanCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamadanCalendarView.swift; sourceTree = "<group>"; };
 		9751684CE1E9A499B97AFF5D /* SehriChecklistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SehriChecklistView.swift; sourceTree = "<group>"; };
+		97DDE92533319FC9BF0F6710 /* essential_duas.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = essential_duas.json; sourceTree = "<group>"; };
 		988CFDF375C77C7B2955DB92 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		9AEAF0C16B7D4A95886317C9 /* SuhoorWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuhoorWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B1BA76D20430144D26840E0 /* BackgroundTaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTaskManager.swift; sourceTree = "<group>"; };
-		9B69A06B8601E95AFB928FCD /* duas.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = duas.json; sourceTree = "<group>"; };
 		9D1F001F18172952704DD5AF /* azan_alaqsa.caf */ = {isa = PBXFileReference; path = azan_alaqsa.caf; sourceTree = "<group>"; };
 		9D3E150178FEF258FD67A838 /* SehriChecklistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SehriChecklistService.swift; sourceTree = "<group>"; };
 		A05C299C68C863F67D400011 /* DailyDeedsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDeedsView.swift; sourceTree = "<group>"; };
@@ -299,15 +298,14 @@
 		BDCA5E9955AF6504F3498FFF /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		C000845BF26A48ECEBBC1E63 /* SuhoorMealCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuhoorMealCardView.swift; sourceTree = "<group>"; };
 		C057859B32EE5CFCD0E88011 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
-C2248908EAE8DF505A427C23 /* HealthKitSyncView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSyncView.swift; sourceTree = "<group>"; };
+		C2248908EAE8DF505A427C23 /* HealthKitSyncView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSyncView.swift; sourceTree = "<group>"; };
 		C23A194B0E75960FB82B090C /* BadgesGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesGridView.swift; sourceTree = "<group>"; };
-C2F44A423F0B93D607105807 /* QuranTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranTabView.swift; sourceTree = "<group>"; };
+		C2F44A423F0B93D607105807 /* QuranTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranTabView.swift; sourceTree = "<group>"; };
 		C5013D2F9602338362B8EE10 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		C6441CCC0D1E2285A4A052E9 /* daily_verses.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = daily_verses.json; sourceTree = "<group>"; };
 		C6E492850103D798EB913BFD /* azan_mishary.caf */ = {isa = PBXFileReference; path = azan_mishary.caf; sourceTree = "<group>"; };
 		C76BA11429514F068241CAF2 /* DailyVerse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyVerse.swift; sourceTree = "<group>"; };
 		CC6A6D9C5A7C9891C2D0E6BC /* juz_mapping.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = juz_mapping.json; sourceTree = "<group>"; };
-		CD375CAE5EE0F801E8DD4B52 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		CF547A2BAE03710D7B7A2165 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		CFAE41814A3326DF280A368D /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		CFB03C74DFC6302E8E931972 /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/Quran.strings; sourceTree = "<group>"; };
@@ -334,8 +332,8 @@ C2F44A423F0B93D607105807 /* QuranTabView.swift */ = {isa = PBXFileReference; las
 		EF0CAE61A3E6FA830EFD0EFE /* ModelContainer+Suhoor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModelContainer+Suhoor.swift"; sourceTree = "<group>"; };
 		EF407F09AC20F9E3946458F7 /* ContentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentService.swift; sourceTree = "<group>"; };
 		F34234A51FC680D834287D23 /* SuhoorWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuhoorWidgets.swift; sourceTree = "<group>"; };
-F3A758AB15BDBA086B751874 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Quran.strings; sourceTree = "<group>"; };
-F7BC0A676EFB8F834BB58AF2 /* QuickStatsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickStatsRow.swift; sourceTree = "<group>"; };
+		F3A758AB15BDBA086B751874 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Quran.strings; sourceTree = "<group>"; };
+		F7BC0A676EFB8F834BB58AF2 /* QuickStatsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickStatsRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -343,32 +341,32 @@ F7BC0A676EFB8F834BB58AF2 /* QuickStatsRow.swift */ = {isa = PBXFileReference; la
 			isa = PBXGroup;
 			children = (
 				CF547A2BAE03710D7B7A2165 /* .gitkeep */,
-				0A0B223E20275D3ACD89E2F6 /* MakeupFast.swift */,
-				0CCC27EE2AAB25BE0F719D09 /* HydrationData.swift */,
-116A278256B68E3F0717138C /* AppSettings.swift */,
-				11F3E14048E8EDCA871635CE /* Dua.swift */,
-				13B740109A8DFAAE7FCD4561 /* SehriChecklist.swift */,
-144106AB2CB1102F5C6E8C66 /* Badge.swift */,
+				116A278256B68E3F0717138C /* AppSettings.swift */,
+				144106AB2CB1102F5C6E8C66 /* Badge.swift */,
+				C76BA11429514F068241CAF2 /* DailyVerse.swift */,
 				207D527C4CDB846E2D2AB07A /* DashboardDay.swift */,
-				2569270F1AF5E5349D8B11C4 /* QuranVerse.swift */,
-				2C34A9B55FCA6C9809D373BF /* Juz.swift */,
-				2F08D6455AEC6A144CAB6DB7 /* QuranProgress.swift */,
-				2F72A2927A1332A46E4BD784 /* UserPreferences.swift */,
-				3CF08C8C5F265751315D6BDA /* PrayerTime.swift */,
-				60C16AEAAF62097168D0DD53 /* RamadanInfo.swift */,
-				6DA27A9F106C54F2841958D8 /* FastingRecord.swift */,
-				7671ED893369D8295DEA8C94 /* SuhoorMeal.swift */,
-				79BD5D21C70EACF15AAE46C7 /* NotificationSettings.swift */,
 				8758898E99D4F034F9FB7E3A /* DeedEntry.swift */,
 				8FE9FB3D089E65C997108FA3 /* DeedOfTheDay.swift */,
-				988CFDF375C77C7B2955DB92 /* UserSettings.swift */,
-				AA0EB512514FCD9E067824DE /* HydrationEntry.swift */,
-				C76BA11429514F068241CAF2 /* DailyVerse.swift */,
-				D94314E1F5E051738BE6BF86 /* SharedData.swift */,
-				E511D30CDE08A56AF0B24EB4 /* LocationData.swift */,
-				E9AD9B225A7990BF03C2A5FF /* QuranReadingPlan.swift */,
+				11F3E14048E8EDCA871635CE /* Dua.swift */,
 				EADA77EB52EF21705D6FA187 /* FastingDay.swift */,
+				6DA27A9F106C54F2841958D8 /* FastingRecord.swift */,
+				0CCC27EE2AAB25BE0F719D09 /* HydrationData.swift */,
+				AA0EB512514FCD9E067824DE /* HydrationEntry.swift */,
+				2C34A9B55FCA6C9809D373BF /* Juz.swift */,
+				E511D30CDE08A56AF0B24EB4 /* LocationData.swift */,
+				0A0B223E20275D3ACD89E2F6 /* MakeupFast.swift */,
 				EF0CAE61A3E6FA830EFD0EFE /* ModelContainer+Suhoor.swift */,
+				79BD5D21C70EACF15AAE46C7 /* NotificationSettings.swift */,
+				3CF08C8C5F265751315D6BDA /* PrayerTime.swift */,
+				2F08D6455AEC6A144CAB6DB7 /* QuranProgress.swift */,
+				E9AD9B225A7990BF03C2A5FF /* QuranReadingPlan.swift */,
+				2569270F1AF5E5349D8B11C4 /* QuranVerse.swift */,
+				60C16AEAAF62097168D0DD53 /* RamadanInfo.swift */,
+				13B740109A8DFAAE7FCD4561 /* SehriChecklist.swift */,
+				D94314E1F5E051738BE6BF86 /* SharedData.swift */,
+				7671ED893369D8295DEA8C94 /* SuhoorMeal.swift */,
+				2F72A2927A1332A46E4BD784 /* UserPreferences.swift */,
+				988CFDF375C77C7B2955DB92 /* UserSettings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -601,8 +599,8 @@ F7BC0A676EFB8F834BB58AF2 /* QuickStatsRow.swift */ = {isa = PBXFileReference; la
 				EA4FB43B531B253B21ED907C /* Calendar */,
 				B4CDF749F271395AC6CCD96C /* Dashboard */,
 				58A99168D02A7B37E7E06081 /* Onboarding */,
-27542C924071CFC0BFC2A45E /* PrayerTimes */,
-45127BA0A43E95EBCFF8640F /* Paywall */,
+				45127BA0A43E95EBCFF8640F /* Paywall */,
+				27542C924071CFC0BFC2A45E /* PrayerTimes */,
 				42A0EF07BF8645B9123F04EA /* Qibla */,
 				A5FB9CF9D021D12C7A739F1F /* Quran */,
 				2B751A173388A29A041D5A82 /* Settings */,
@@ -616,9 +614,8 @@ F7BC0A676EFB8F834BB58AF2 /* QuickStatsRow.swift */ = {isa = PBXFileReference; la
 			isa = PBXGroup;
 			children = (
 				C5013D2F9602338362B8EE10 /* .gitkeep */,
+				CFAE41814A3326DF280A368D /* CalendarViewModel.swift */,
 				330EBD12ED238268377189D3 /* DashboardViewModel.swift */,
-CD375CAE5EE0F801E8DD4B52 /* NotificationManager.swift */,
-CFAE41814A3326DF280A368D /* CalendarViewModel.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -640,26 +637,26 @@ CFAE41814A3326DF280A368D /* CalendarViewModel.swift */,
 			isa = PBXGroup;
 			children = (
 				90A7AE0D8ADBB32A82802F69 /* .gitkeep */,
-				0BC21C4D629E17A78C328F5A /* HijriCalendarService.swift */,
-				17F50BB07B600D4FF16B64F1 /* StoreService.swift */,
-				1B8BB747AFBB911E25BF5D94 /* ReviewService.swift */,
-				276A3910D68B3234B0160F24 /* DataService.swift */,
-				2A69DF798639D7C84F5307E6 /* NotificationManager.swift */,
-				48A7146075D57F6778514661 /* QuranReadingService.swift */,
-				5834D319C24BD0CDCC415518 /* DuaService.swift */,
-59D29B89CE6AE7CD30E40AF9 /* AudioService.swift */,
-				5C36683F804926FCC10634AD /* HealthKitService.swift */,
-				5C7BA26A4E6D11890F94DB2C /* DataManager.swift */,
-				601F1A8D6AFBE210304CA650 /* QuranAudioService.swift */,
-				72F17C1A0B84584ED7990477 /* NotificationService.swift */,
-				82BA16FDF331BB55BEAED67D /* FastingStore.swift */,
-				8A8598E9D3BFE625FA49B679 /* LocationService.swift */,
-				954E6E5E4C40F69E14C50274 /* PrayerTimesCalculator.swift */,
-9B1BA76D20430144D26840E0 /* BackgroundTaskManager.swift */,
-				9D3E150178FEF258FD67A838 /* SehriChecklistService.swift */,
-				B25D281A21A1A7E815F139C4 /* HydrationService.swift */,
-				D64F45B47AF686D4E9001296 /* CountdownEngine.swift */,
+				59D29B89CE6AE7CD30E40AF9 /* AudioService.swift */,
+				9B1BA76D20430144D26840E0 /* BackgroundTaskManager.swift */,
 				EF407F09AC20F9E3946458F7 /* ContentService.swift */,
+				D64F45B47AF686D4E9001296 /* CountdownEngine.swift */,
+				5C7BA26A4E6D11890F94DB2C /* DataManager.swift */,
+				276A3910D68B3234B0160F24 /* DataService.swift */,
+				5834D319C24BD0CDCC415518 /* DuaService.swift */,
+				82BA16FDF331BB55BEAED67D /* FastingStore.swift */,
+				5C36683F804926FCC10634AD /* HealthKitService.swift */,
+				0BC21C4D629E17A78C328F5A /* HijriCalendarService.swift */,
+				B25D281A21A1A7E815F139C4 /* HydrationService.swift */,
+				8A8598E9D3BFE625FA49B679 /* LocationService.swift */,
+				2A69DF798639D7C84F5307E6 /* NotificationManager.swift */,
+				72F17C1A0B84584ED7990477 /* NotificationService.swift */,
+				954E6E5E4C40F69E14C50274 /* PrayerTimesCalculator.swift */,
+				601F1A8D6AFBE210304CA650 /* QuranAudioService.swift */,
+				48A7146075D57F6778514661 /* QuranReadingService.swift */,
+				1B8BB747AFBB911E25BF5D94 /* ReviewService.swift */,
+				9D3E150178FEF258FD67A838 /* SehriChecklistService.swift */,
+				17F50BB07B600D4FF16B64F1 /* StoreService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -668,13 +665,13 @@ CFAE41814A3326DF280A368D /* CalendarViewModel.swift */,
 			isa = PBXGroup;
 			children = (
 				C057859B32EE5CFCD0E88011 /* .gitkeep */,
-				67A28D395C5795BFBBC1A8F7 /* juz_data.json */,
-				7BE000F27C4821EFDB5A5D0A /* Data */,
-7F17E860E2F4C9291D52C133 /* Assets.xcassets */,
-				7FFE054C00D2C1057767F668 /* suhoor_meals.json */,
-876D1314E82411FBAB36F672 /* Quran.strings */,
-				9B69A06B8601E95AFB928FCD /* duas.json */,
+				7F17E860E2F4C9291D52C133 /* Assets.xcassets */,
 				C6441CCC0D1E2285A4A052E9 /* daily_verses.json */,
+				97DDE92533319FC9BF0F6710 /* essential_duas.json */,
+				67A28D395C5795BFBBC1A8F7 /* juz_data.json */,
+				876D1314E82411FBAB36F672 /* Quran.strings */,
+				7FFE054C00D2C1057767F668 /* suhoor_meals.json */,
+				7BE000F27C4821EFDB5A5D0A /* Data */,
 				EABF0EFC42B15DBA248B695F /* Sounds */,
 			);
 			path = Resources;
@@ -815,20 +812,20 @@ CFAE41814A3326DF280A368D /* CalendarViewModel.swift */,
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0273FAAFC8CC4B820E6909D5 /* suhoor_meals.json in Resources */,
-				15AF53334146D59F7403383B /* juz_mapping.json in Resources */,
-				23CF2E990282150B89266029 /* azan_alaqsa.caf in Resources */,
-				3EFC5B3646A2383755D54F2F /* duas.json in Resources */,
-				5556D768DD2008386257DF99 /* azan_mishary.caf in Resources */,
-5E28384B49E0DF7755F9F317 /* Configuration.storekit in Resources */,
-				5F9FCA6846A59616E0747295 /* README.md in Resources */,
+				F8D530F08B7C5DA23556EA4B /* Assets.xcassets in Resources */,
+				5E28384B49E0DF7755F9F317 /* Configuration.storekit in Resources */,
 				71A54DDCB5F7CDDE42AE50E0 /* Quran.strings in Resources */,
-				80D420DFF3EACD6B641BB68B /* azan_makkah.caf in Resources */,
-				A527FFD64C64D5DFF07DF384 /* juz_data.json in Resources */,
-				CBE91774B70CE58D0BE96B0A /* duas.json in Resources */,
-				DCB80A4767F0F6ACA066954F /* daily_verses.json in Resources */,
+				5F9FCA6846A59616E0747295 /* README.md in Resources */,
+				23CF2E990282150B89266029 /* azan_alaqsa.caf in Resources */,
 				E9E4B1F721864506B9340B12 /* azan_madinah.caf in Resources */,
-F8D530F08B7C5DA23556EA4B /* Assets.xcassets in Resources */,
+				80D420DFF3EACD6B641BB68B /* azan_makkah.caf in Resources */,
+				5556D768DD2008386257DF99 /* azan_mishary.caf in Resources */,
+				DCB80A4767F0F6ACA066954F /* daily_verses.json in Resources */,
+				CBE91774B70CE58D0BE96B0A /* duas.json in Resources */,
+				AF6CE04EB570D640EE665C3D /* essential_duas.json in Resources */,
+				A527FFD64C64D5DFF07DF384 /* juz_data.json in Resources */,
+				15AF53334146D59F7403383B /* juz_mapping.json in Resources */,
+				0273FAAFC8CC4B820E6909D5 /* suhoor_meals.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -839,15 +836,15 @@ F8D530F08B7C5DA23556EA4B /* Assets.xcassets in Resources */,
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				348B8B45F61CCBF216BDF67F /* BadgesGridView.swift in Sources */,
+				356DED4BBB69988633A05DD5 /* AboutView.swift in Sources */,
 				35224605A31FB43BCD5D82A6 /* AppSettings.swift in Sources */,
-356DED4BBB69988633A05DD5 /* AboutView.swift in Sources */,
-52FD3D1339F9417F293853B8 /* AshraCard.swift in Sources */,
-				5303EF07CD3BD379BFBA2FE6 /* Badge.swift in Sources */,
-				606B5F5C05988AA23057AEBA /* BackgroundTaskManager.swift in Sources */,
+				52FD3D1339F9417F293853B8 /* AshraCard.swift in Sources */,
 				7B8F02649760F5B9245F8BD4 /* AshraProgressView.swift in Sources */,
-				AB21E7805B494744B02FC791 /* CalculationMethodStepView.swift in Sources */,
 				B4D55F5A62484D7BA2F1F5F8 /* AudioService.swift in Sources */,
+				606B5F5C05988AA23057AEBA /* BackgroundTaskManager.swift in Sources */,
+				5303EF07CD3BD379BFBA2FE6 /* Badge.swift in Sources */,
+				348B8B45F61CCBF216BDF67F /* BadgesGridView.swift in Sources */,
+				AB21E7805B494744B02FC791 /* CalculationMethodStepView.swift in Sources */,
 				EB748345639FF8D971925B8A /* CalendarTabView.swift in Sources */,
 				019B1E89742D41DEEB0AB9EB /* CalendarViewModel.swift in Sources */,
 				333255421B6617A74816C8D2 /* Color+Extensions.swift in Sources */,
@@ -862,98 +859,97 @@ F8D530F08B7C5DA23556EA4B /* Assets.xcassets in Resources */,
 				4070A4D94916576FD3B93FEC /* DailyVerseCard.swift in Sources */,
 				23A734D6086469452C24699B /* DashboardDay.swift in Sources */,
 				69314AFC51DD018764C94282 /* DashboardView.swift in Sources */,
-				0304AA59B130120C118CDD12 /* FeedbackFormView.swift in Sources */,
-				03BEBB0CDA32AC7E0B356D59 /* HydrationEntry.swift in Sources */,
-				06583A2BBBC92ED5442F72B2 /* QuranReadingService.swift in Sources */,
-08C163672F7A5BB6A83F0F74 /* DashboardViewModel.swift in Sources */,
-				0A592E6B80370CF29778A597 /* OnboardingViewModel.swift in Sources */,
-				1261B9FA8CC478AACC70ED02 /* RamadanScorecardView.swift in Sources */,
-12C91A36B16999779F561148 /* DisplaySettingsView.swift in Sources */,
-				152A170D9AD1293248156769 /* DuaService.swift in Sources */,
-				157BB27FB71408DD9FBD6018 /* LiveActivityService.swift in Sources */,
-				1682792BEB73FF024DF17397 /* MenstrualModeStepView.swift in Sources */,
-				16A8495E2F5947493AE38B3D /* DeedOfTheDayCard.swift in Sources */,
-				1777BACB5FD384011AA60DB0 /* MadhhabStepView.swift in Sources */,
-				19457772ED6A89552D466865 /* HijriCalendarService.swift in Sources */,
-				1E6E0272BACBC33E2627ACED /* LocationData.swift in Sources */,
-				21B056B1844CDAA9B2A28FAA /* HydrationHistoryView.swift in Sources */,
-				22DA4C55DD4F2991A7C31B5C /* Juz.swift in Sources */,
-				27B13F3160C50C87FC9487AE /* RingChartView.swift in Sources */,
-				2B6D42837A98343216195454 /* FastingStore.swift in Sources */,
-				2D3957C3E05E0EBDBDAD1586 /* SubscriptionSettingsView.swift in Sources */,
-				2E6E986B7910E18720FEE85C /* QuranVerse.swift in Sources */,
-				378A9240E62DA02557DF215A /* QuranAudioService.swift in Sources */,
-				37AAF56D355DCB3718EB17F1 /* PrayerTimesView.swift in Sources */,
-				3E0FDECEAC106F44EDD3A067 /* SettingsView.swift in Sources */,
-				41552B582924DB4AB398FA07 /* RamadanInfo.swift in Sources */,
-				426BBA0361EAA3929F036D95 /* QuranView.swift in Sources */,
-				42CDA59FC1953843934394DF /* NotificationSettingsView.swift in Sources */,
-				43FEFDF6CACD7AED2FBBC5DE /* RamadanGridView.swift in Sources */,
-				4698B81B379A6B34FAE9DBC6 /* ShareableSummaryView.swift in Sources */,
-				4B52656DB65A36A9A10F6078 /* ModelContainer+Suhoor.swift in Sources */,
-				4EBE448172E2CACD8400F23E /* SuhoorActivityAttributes.swift in Sources */,
-				50E600F6CDECF032BDCCE031 /* HydrationService.swift in Sources */,
-				52D7B8EFB0A787E4AF454F2D /* QiblaCompassView.swift in Sources */,
-				54BB138A8B246081183BCC37 /* SehriChecklistService.swift in Sources */,
-				55A0E74D37D8797FD1625D69 /* FastingSettingsView.swift in Sources */,
-				56FD1FD45F5D8E63947FAD74 /* RamadanDayCard.swift in Sources */,
-				58B8377EAC4E1E17A4647BF0 /* DuasView.swift in Sources */,
-				58EC9B9C2D0BBBD26A1331D5 /* LaylatAlQadrView.swift in Sources */,
-				5BD96DF17EBB1B5E72326870 /* SuhoorMealCardView.swift in Sources */,
-				5CBC9B94D0CEEAC22BEF2A2C /* LocationStepView.swift in Sources */,
-				5D0A8A12D8EFA2CF72021D6D /* StoreService.swift in Sources */,
-				607D2EB83607C790966593A6 /* ProFeatureOverlayView.swift in Sources */,
-				617647B1F6EFFDC4149BE73F /* MakeupFastTrackerView.swift in Sources */,
-				6244A0B2D807B9A81107AAF6 /* DeedEntry.swift in Sources */,
-				652FFDBAE4005508CBC86FFE /* SuhoorPlanningView.swift in Sources */,
-				6EE5B6BB3EF97E07AF08048C /* ImsakiyaView.swift in Sources */,
-				70585134D35E71F80FFCC8E4 /* NotificationSettings.swift in Sources */,
-				7650A7B7101C8C242D7FF6A6 /* FastingStreakView.swift in Sources */,
-				7865B450A32BF84F3ED4C3B9 /* Dua.swift in Sources */,
-				78CEEA638E9C1948A0204B62 /* MenstrualModeSection.swift in Sources */,
-				7A8D17530FA7875D3E1D6FC2 /* QuranReadingPlanView.swift in Sources */,
-				7D0D16D4F454CCBB12186204 /* PrayerTimesViewModel.swift in Sources */,
-				7ECBCF5B75340DB4346B2621 /* DataService.swift in Sources */,
-				8024DB05F76C67DD0213D59C /* RamadanCalendarView.swift in Sources */,
-				81B55EE0884B38AA721DBB20 /* PrayerTimeSettingsView.swift in Sources */,
-				8B68BDF6FC5B08C6004EAE22 /* SuhoorMeal.swift in Sources */,
-				8D67EF5B621753A1693E9B7B /* SuhoorApp.swift in Sources */,
-				8F968D11EBE301A53F2D2858 /* DeedOfTheDay.swift in Sources */,
-				8FEEEC6E03701D614A789642 /* SehriChecklistView.swift in Sources */,
-				9364403E5217846DCAFDF898 /* FastingRecord.swift in Sources */,
-				95B3FD122C864E1F7F293F0B /* SuhoorLiveActivityView.swift in Sources */,
+				08C163672F7A5BB6A83F0F74 /* DashboardViewModel.swift in Sources */,
 				990D7827085086AB2F92EE4E /* DataManager.swift in Sources */,
+				7ECBCF5B75340DB4346B2621 /* DataService.swift in Sources */,
+				6244A0B2D807B9A81107AAF6 /* DeedEntry.swift in Sources */,
+				8F968D11EBE301A53F2D2858 /* DeedOfTheDay.swift in Sources */,
+				16A8495E2F5947493AE38B3D /* DeedOfTheDayCard.swift in Sources */,
+				12C91A36B16999779F561148 /* DisplaySettingsView.swift in Sources */,
+				7865B450A32BF84F3ED4C3B9 /* Dua.swift in Sources */,
+				152A170D9AD1293248156769 /* DuaService.swift in Sources */,
+				58B8377EAC4E1E17A4647BF0 /* DuasView.swift in Sources */,
 				9A032FF30CF177037EF5B864 /* EidCountdownView.swift in Sources */,
-				9A1CCE90242596DD7C453A6A /* HydrationTrackerView.swift in Sources */,
-				9E12AC6E057EB7AE68CCD1A1 /* LanguageStepView.swift in Sources */,
-				9F7F3DF1F0FB7E133C63845C /* PreviewData.swift in Sources */,
-				A4F7514D6DF2A810807F2913 /* NearbyMosquesView.swift in Sources */,
-				A769D1DC831228A22B8EA78F /* HydrationData.swift in Sources */,
-				A795EEAD993DAD9C89F41478 /* OnboardingView.swift in Sources */,
-				A82E5BF1080117FFE2FA86FD /* ReadingSessionView.swift in Sources */,
-				B754572540B549552BF718DE /* QuranReadingPlan.swift in Sources */,
-				BB513039962CBDB92FE81520 /* MakeupFastSection.swift in Sources */,
-				BBEC033AA8F66250E500376D /* SehriChecklist.swift in Sources */,
-				BF9290D84E6FC8C210805CA9 /* NotificationManager.swift in Sources */,
-				C512E862DE4909A5894E1841 /* ReviewService.swift in Sources */,
-				C5470ED549023B36A1DB4E53 /* PrayerTime.swift in Sources */,
-				C916D0DA752BBEEE691586D2 /* MakeupFast.swift in Sources */,
-				CA69DFDC9E41D71A695E0072 /* PaywallView.swift in Sources */,
-				CCB566D9860E929FF505C81E /* NotificationsStepView.swift in Sources */,
-				D271143A64A71F43E612E9A2 /* QuranTabView.swift in Sources */,
-				D39E22C40DB30941112B222B /* QuranProgress.swift in Sources */,
-				D3D39297BAF0A1C5EC06C501 /* SharedData.swift in Sources */,
-				D67CE39D514B6522F3397394 /* QuickStatsRow.swift in Sources */,
-				D788562D45A778150ABAC74C /* HealthKitSyncView.swift in Sources */,
-				DBCEDA88C668B432E2F16F15 /* PrayerTimesCalculator.swift in Sources */,
-				DC3712F22878827122DA44F6 /* LocationService.swift in Sources */,
-				DFE7980894F83F48384D9D98 /* SupportView.swift in Sources */,
-				E445BFA023786A646C327069 /* HealthKitService.swift in Sources */,
-				E83ADA4E76C8A0771ABDB345 /* NotificationService.swift in Sources */,
-				E997EF9D40C1981A86E2FC9B /* FastingLogSheet.swift in Sources */,
-				EA6A7CA80F9B2E9FD8BE13BB /* NextPrayerCard.swift in Sources */,
-				ECC00A9314E38FCB929EAD52 /* NotificationManager.swift in Sources */,
 				F3BE096F783B6DC89DB0936E /* FastingDay.swift in Sources */,
+				E997EF9D40C1981A86E2FC9B /* FastingLogSheet.swift in Sources */,
+				9364403E5217846DCAFDF898 /* FastingRecord.swift in Sources */,
+				55A0E74D37D8797FD1625D69 /* FastingSettingsView.swift in Sources */,
+				2B6D42837A98343216195454 /* FastingStore.swift in Sources */,
+				7650A7B7101C8C242D7FF6A6 /* FastingStreakView.swift in Sources */,
+				0304AA59B130120C118CDD12 /* FeedbackFormView.swift in Sources */,
+				E445BFA023786A646C327069 /* HealthKitService.swift in Sources */,
+				D788562D45A778150ABAC74C /* HealthKitSyncView.swift in Sources */,
+				19457772ED6A89552D466865 /* HijriCalendarService.swift in Sources */,
+				A769D1DC831228A22B8EA78F /* HydrationData.swift in Sources */,
+				03BEBB0CDA32AC7E0B356D59 /* HydrationEntry.swift in Sources */,
+				21B056B1844CDAA9B2A28FAA /* HydrationHistoryView.swift in Sources */,
+				50E600F6CDECF032BDCCE031 /* HydrationService.swift in Sources */,
+				9A1CCE90242596DD7C453A6A /* HydrationTrackerView.swift in Sources */,
+				6EE5B6BB3EF97E07AF08048C /* ImsakiyaView.swift in Sources */,
+				22DA4C55DD4F2991A7C31B5C /* Juz.swift in Sources */,
+				9E12AC6E057EB7AE68CCD1A1 /* LanguageStepView.swift in Sources */,
+				58EC9B9C2D0BBBD26A1331D5 /* LaylatAlQadrView.swift in Sources */,
+				157BB27FB71408DD9FBD6018 /* LiveActivityService.swift in Sources */,
+				1E6E0272BACBC33E2627ACED /* LocationData.swift in Sources */,
+				DC3712F22878827122DA44F6 /* LocationService.swift in Sources */,
+				5CBC9B94D0CEEAC22BEF2A2C /* LocationStepView.swift in Sources */,
+				1777BACB5FD384011AA60DB0 /* MadhhabStepView.swift in Sources */,
+				C916D0DA752BBEEE691586D2 /* MakeupFast.swift in Sources */,
+				BB513039962CBDB92FE81520 /* MakeupFastSection.swift in Sources */,
+				617647B1F6EFFDC4149BE73F /* MakeupFastTrackerView.swift in Sources */,
+				78CEEA638E9C1948A0204B62 /* MenstrualModeSection.swift in Sources */,
+				1682792BEB73FF024DF17397 /* MenstrualModeStepView.swift in Sources */,
+				4B52656DB65A36A9A10F6078 /* ModelContainer+Suhoor.swift in Sources */,
+				A4F7514D6DF2A810807F2913 /* NearbyMosquesView.swift in Sources */,
+				EA6A7CA80F9B2E9FD8BE13BB /* NextPrayerCard.swift in Sources */,
+				BF9290D84E6FC8C210805CA9 /* NotificationManager.swift in Sources */,
+				E83ADA4E76C8A0771ABDB345 /* NotificationService.swift in Sources */,
+				70585134D35E71F80FFCC8E4 /* NotificationSettings.swift in Sources */,
+				42CDA59FC1953843934394DF /* NotificationSettingsView.swift in Sources */,
+				CCB566D9860E929FF505C81E /* NotificationsStepView.swift in Sources */,
+				A795EEAD993DAD9C89F41478 /* OnboardingView.swift in Sources */,
+				0A592E6B80370CF29778A597 /* OnboardingViewModel.swift in Sources */,
+				CA69DFDC9E41D71A695E0072 /* PaywallView.swift in Sources */,
+				C5470ED549023B36A1DB4E53 /* PrayerTime.swift in Sources */,
+				81B55EE0884B38AA721DBB20 /* PrayerTimeSettingsView.swift in Sources */,
+				DBCEDA88C668B432E2F16F15 /* PrayerTimesCalculator.swift in Sources */,
+				37AAF56D355DCB3718EB17F1 /* PrayerTimesView.swift in Sources */,
+				7D0D16D4F454CCBB12186204 /* PrayerTimesViewModel.swift in Sources */,
+				9F7F3DF1F0FB7E133C63845C /* PreviewData.swift in Sources */,
+				607D2EB83607C790966593A6 /* ProFeatureOverlayView.swift in Sources */,
+				52D7B8EFB0A787E4AF454F2D /* QiblaCompassView.swift in Sources */,
+				D67CE39D514B6522F3397394 /* QuickStatsRow.swift in Sources */,
+				378A9240E62DA02557DF215A /* QuranAudioService.swift in Sources */,
+				D39E22C40DB30941112B222B /* QuranProgress.swift in Sources */,
+				B754572540B549552BF718DE /* QuranReadingPlan.swift in Sources */,
+				7A8D17530FA7875D3E1D6FC2 /* QuranReadingPlanView.swift in Sources */,
+				06583A2BBBC92ED5442F72B2 /* QuranReadingService.swift in Sources */,
+				D271143A64A71F43E612E9A2 /* QuranTabView.swift in Sources */,
+				2E6E986B7910E18720FEE85C /* QuranVerse.swift in Sources */,
+				426BBA0361EAA3929F036D95 /* QuranView.swift in Sources */,
+				8024DB05F76C67DD0213D59C /* RamadanCalendarView.swift in Sources */,
+				56FD1FD45F5D8E63947FAD74 /* RamadanDayCard.swift in Sources */,
+				43FEFDF6CACD7AED2FBBC5DE /* RamadanGridView.swift in Sources */,
+				41552B582924DB4AB398FA07 /* RamadanInfo.swift in Sources */,
+				1261B9FA8CC478AACC70ED02 /* RamadanScorecardView.swift in Sources */,
+				A82E5BF1080117FFE2FA86FD /* ReadingSessionView.swift in Sources */,
+				C512E862DE4909A5894E1841 /* ReviewService.swift in Sources */,
+				27B13F3160C50C87FC9487AE /* RingChartView.swift in Sources */,
+				BBEC033AA8F66250E500376D /* SehriChecklist.swift in Sources */,
+				54BB138A8B246081183BCC37 /* SehriChecklistService.swift in Sources */,
+				8FEEEC6E03701D614A789642 /* SehriChecklistView.swift in Sources */,
+				3E0FDECEAC106F44EDD3A067 /* SettingsView.swift in Sources */,
+				4698B81B379A6B34FAE9DBC6 /* ShareableSummaryView.swift in Sources */,
+				D3D39297BAF0A1C5EC06C501 /* SharedData.swift in Sources */,
+				5D0A8A12D8EFA2CF72021D6D /* StoreService.swift in Sources */,
+				2D3957C3E05E0EBDBDAD1586 /* SubscriptionSettingsView.swift in Sources */,
+				4EBE448172E2CACD8400F23E /* SuhoorActivityAttributes.swift in Sources */,
+				8D67EF5B621753A1693E9B7B /* SuhoorApp.swift in Sources */,
+				95B3FD122C864E1F7F293F0B /* SuhoorLiveActivityView.swift in Sources */,
+				8B68BDF6FC5B08C6004EAE22 /* SuhoorMeal.swift in Sources */,
+				5BD96DF17EBB1B5E72326870 /* SuhoorMealCardView.swift in Sources */,
+				652FFDBAE4005508CBC86FFE /* SuhoorPlanningView.swift in Sources */,
+				DFE7980894F83F48384D9D98 /* SupportView.swift in Sources */,
 				5DFE548DFA768DD2EFC156EC /* TrackerView.swift in Sources */,
 				5779BABFDCCACFC3D740DF04 /* UserPreferences.swift in Sources */,
 				D21A0BE5D5A9331CA50EDAAC /* UserSettings.swift in Sources */,
@@ -1109,8 +1105,7 @@ F8D530F08B7C5DA23556EA4B /* Assets.xcassets in Resources */,
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_GENERATION_MODE = GeneratedFile;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "Suhoor reads your fasting data from Apple Health to display your fasting history.";
-				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Suhoor writes your fasting hours to Apple Health so you can track them alongside other health data.";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Suhoor can track your fasting hours in Apple Health.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Suhoor needs your location to calculate accurate prayer times and Qibla direction.";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1217,8 +1212,7 @@ F8D530F08B7C5DA23556EA4B /* Assets.xcassets in Resources */,
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_GENERATION_MODE = GeneratedFile;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "Suhoor reads your fasting data from Apple Health to display your fasting history.";
-				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Suhoor writes your fasting hours to Apple Health so you can track them alongside other health data.";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Suhoor can track your fasting hours in Apple Health.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Suhoor needs your location to calculate accurate prayer times and Qibla direction.";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

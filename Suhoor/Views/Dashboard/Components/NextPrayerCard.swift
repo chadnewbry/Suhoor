@@ -17,13 +17,13 @@ struct NextPrayerCard: View {
             } label: {
                 HStack(spacing: 14) {
                     if let prayer = nextPrayer {
-                        Image(systemName: prayer.name.systemImage)
+                        Image(systemName: prayer.prayer.systemImage)
                             .font(.title2)
                             .foregroundStyle(Color.suhoorGold)
                             .frame(width: 40)
                         
                         VStack(alignment: .leading, spacing: 2) {
-                            Text(prayer.name.rawValue)
+                            Text(prayer.prayer.rawValue)
                                 .font(.headline)
                                 .foregroundStyle(Color.suhoorTextPrimary)
                             Text(prayer.formattedTime)
@@ -62,12 +62,12 @@ struct NextPrayerCard: View {
                         let isNext = prayer.id == nextPrayer?.id
                         
                         HStack(spacing: 14) {
-                            Image(systemName: prayer.name.systemImage)
+                            Image(systemName: prayer.prayer.systemImage)
                                 .font(.body)
                                 .foregroundStyle(isNext ? Color.suhoorGold : Color.suhoorTextSecondary)
                                 .frame(width: 30)
                             
-                            Text(prayer.name.rawValue)
+                            Text(prayer.prayer.rawValue)
                                 .font(.subheadline)
                                 .foregroundStyle(isNext ? Color.suhoorTextPrimary : Color.suhoorTextSecondary)
                             

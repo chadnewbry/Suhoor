@@ -1,6 +1,6 @@
 import Foundation
 
-struct HydrationEntry: Codable, Identifiable {
+struct SimpleHydrationEntry: Codable, Identifiable {
     let id: UUID
     let date: Date
     var glasses: Int
@@ -20,17 +20,17 @@ struct HydrationEntry: Codable, Identifiable {
 }
 
 #if DEBUG
-extension HydrationEntry: PreviewData {
-    static var preview: HydrationEntry {
-        HydrationEntry(glasses: 5, target: 8)
+extension SimpleHydrationEntry: PreviewData {
+    static var preview: SimpleHydrationEntry {
+        SimpleHydrationEntry(glasses: 5, target: 8)
     }
     
-    static var previewList: [HydrationEntry] {
+    static var previewList: [SimpleHydrationEntry] {
         let cal = Calendar.current
         let today = Date()
         return (0..<7).map { dayOffset in
             let date = cal.date(byAdding: .day, value: -dayOffset, to: today)!
-            return HydrationEntry(date: date, glasses: Int.random(in: 3...8), target: 8)
+            return SimpleHydrationEntry(date: date, glasses: Int.random(in: 3...8), target: 8)
         }
     }
 }

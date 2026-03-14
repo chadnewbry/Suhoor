@@ -3,7 +3,7 @@ import SwiftUI
 struct HydrationHistoryView: View {
     @ObservedObject var hydrationService: HydrationService
     
-    private var allDays: [HydrationEntry] {
+    private var allDays: [SimpleHydrationEntry] {
         var days = hydrationService.weeklyHistory
         days.append(hydrationService.todayEntry)
         return days.suffix(7).sorted { $0.date < $1.date }
@@ -52,12 +52,12 @@ struct HydrationHistoryView: View {
         )
     }
     
-    private func barHeight(for entry: HydrationEntry) -> CGFloat {
+    private func barHeight(for entry: SimpleHydrationEntry) -> CGFloat {
         guard maxGlasses > 0 else { return 10 }
         return max(CGFloat(entry.glasses) / CGFloat(maxGlasses) * 80, 4)
     }
     
-    private func barColor(for entry: HydrationEntry) -> Color {
+    private func barColor(for entry: SimpleHydrationEntry) -> Color {
         entry.progress >= 1.0 ? .cyan : .blue.opacity(0.6)
     }
     

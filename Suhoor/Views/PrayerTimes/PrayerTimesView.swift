@@ -168,17 +168,17 @@ struct PrayerTimesView: View {
 
     private var prayerListCard: some View {
         VStack(spacing: 0) {
-            ForEach(Array(viewModel.allPrayers.enumerated()), id: \.element.id) { index, prayer in
+            ForEach(viewModel.allPrayers) { prayer in
                 let isNext = prayer.id == viewModel.nextPrayer?.id
                 let isPast = viewModel.isToday && prayer.time <= viewModel.now
 
                 HStack(spacing: 14) {
-                    Image(systemName: prayer.name.systemImage)
+                    Image(systemName: prayer.prayer.systemImage)
                         .font(.body)
                         .foregroundStyle(isNext ? Color.suhoorGold : Color.suhoorTextSecondary)
                         .frame(width: 28)
 
-                    Text(prayer.name.rawValue)
+                    Text(prayer.prayer.rawValue)
                         .font(.subheadline.weight(isNext ? .semibold : .regular))
                         .foregroundStyle(isNext ? Color.suhoorTextPrimary : Color.suhoorTextSecondary)
 
@@ -197,11 +197,11 @@ struct PrayerTimesView: View {
                         .font(.subheadline.monospacedDigit())
                         .foregroundStyle(isNext ? Color.suhoorGold : Color.suhoorTextSecondary)
 
-                    Button { viewModel.toggleAzan(for: prayer.name) } label: {
-                        Image(systemName: viewModel.isAzanEnabled(for: prayer.name) ? "bell.fill" : "bell.slash")
+                    Button { viewModel.toggleAzan(for: PrayerName(rawValue: prayer.prayer.rawValue)!) } label: {
+                        Image(systemName: viewModel.isAzanEnabled(for: PrayerName(rawValue: prayer.prayer.rawValue)!) ? "bell.fill" : "bell.slash")
                             .font(.caption)
                             .foregroundStyle(
-                                viewModel.isAzanEnabled(for: prayer.name) ? Color.suhoorGold : Color.suhoorTextSecondary.opacity(0.5)
+                                viewModel.isAzanEnabled(for: PrayerName(rawValue: prayer.prayer.rawValue)!) ? Color.suhoorGold : Color.suhoorTextSecondary.opacity(0.5)
                             )
                     }
                     .buttonStyle(.plain)
@@ -216,7 +216,7 @@ struct PrayerTimesView: View {
                 .padding(.vertical, 12)
                 .background(isNext ? Color.suhoorGold.opacity(0.06) : .clear)
 
-                if index < viewModel.allPrayers.count - 1 {
+                if prayer.id != viewModel.allPrayers.last?.id {
                     Divider().background(Color.suhoorDivider).padding(.leading, 58)
                 }
             }

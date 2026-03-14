@@ -20,6 +20,8 @@ enum CalculationMethod: String, Codable, CaseIterable, Identifiable {
 
     var id: String { rawValue }
 
+    var displayName: String { rawValue }
+
     var shortDescription: String {
         switch self {
         case .northAmerica: return "Used in North America"
@@ -65,6 +67,7 @@ enum Madhhab: String, Codable, CaseIterable, Identifiable {
     case hanafi = "Hanafi"
 
     var id: String { rawValue }
+    var displayName: String { rawValue }
 }
 
 // MARK: - App Language

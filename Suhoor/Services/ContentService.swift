@@ -7,11 +7,11 @@ final class ContentService {
     let juzData: [Juz]
     let duas: DuasCollection
     let dailyVerses: [DailyVerse]
-    let suhoorMeals: [SuhoorMeal]
+    let suhoorMeals: [SimpleSuhoorMeal]
 
     private init() {
         juzData = Self.load("juz_data")
-        duas = Self.loadSingle("duas")
+        duas = Self.loadSingle("essential_duas")
         dailyVerses = Self.load("daily_verses")
         suhoorMeals = Self.load("suhoor_meals")
     }
@@ -48,7 +48,7 @@ final class ContentService {
     // MARK: - Suhoor Meals
 
     /// Returns the meal suggestion for a given Ramadan day (1–30).
-    func meal(forRamadanDay day: Int) -> SuhoorMeal? {
+    func meal(forRamadanDay day: Int) -> SimpleSuhoorMeal? {
         suhoorMeals.first { $0.day == day }
     }
 

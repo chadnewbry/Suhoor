@@ -41,32 +41,6 @@ struct CalculationParameters {
     }
 }
 
-// MARK: - Daily Prayer Times Result
-
-struct DailyPrayerTimes {
-    let date: Date
-    let fajr: Date
-    let sunrise: Date
-    let dhuhr: Date
-    let asr: Date
-    let maghrib: Date
-    let isha: Date
-    let imsak: Date
-    let iftar: Date
-    let taraweeh: Date
-
-    var allPrayers: [PrayerTime] {
-        [
-            PrayerTime(name: .fajr, time: fajr),
-            PrayerTime(name: .sunrise, time: sunrise),
-            PrayerTime(name: .dhuhr, time: dhuhr),
-            PrayerTime(name: .asr, time: asr),
-            PrayerTime(name: .maghrib, time: maghrib),
-            PrayerTime(name: .isha, time: isha),
-        ]
-    }
-}
-
 // MARK: - Prayer Times Calculator
 
 /// Astronomical prayer times calculation engine using standard solar position algorithms.
