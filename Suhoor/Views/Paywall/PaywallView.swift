@@ -192,8 +192,10 @@ struct PaywallView: View {
 
     private var purchaseButton: some View {
         VStack(spacing: 16) {
-            // Price badge
-            if let product = store.product {
+            if store.isLoading {
+                ProgressView()
+                    .tint(.white)
+            } else {
                 Text("One-time purchase")
                     .font(.caption)
                     .foregroundStyle(.white.opacity(0.5))
@@ -201,6 +203,9 @@ struct PaywallView: View {
                 Button {
                     isPurchasing = true
                     Task {
+                        if store.product == nil {
+                            await store.loadProducts()
+                        }
                         do {
                             let success = try await store.purchase()
                             if success { dismiss() }
@@ -217,7 +222,7 @@ struct PaywallView: View {
                                 .tint(.black)
                         } else {
                             VStack(spacing: 4) {
-                                Text("Unlock Suhoor Premium — \(product.displayPrice)")
+                                Text("Unlock Suhoor Premium — \(store.product?.displayPrice ?? "$4.99")")
                                     .font(.body.weight(.bold))
                                 Text("Yours forever. No subscription.")
                                     .font(.caption2)
@@ -239,9 +244,6 @@ struct PaywallView: View {
                     .shadow(color: Color.suhoorGold.opacity(0.3), radius: 12)
                 }
                 .disabled(isPurchasing)
-            } else if store.isLoading {
-                ProgressView()
-                    .tint(.white)
             }
         }
     }
