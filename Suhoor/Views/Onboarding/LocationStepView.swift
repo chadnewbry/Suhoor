@@ -87,13 +87,6 @@ struct LocationStepView: View {
 
             Spacer()
 
-            // Listen for auto-detect completion
-            if vm.selectedLocation == nil && vm.locationService.detectedLocationData != nil {
-                Color.clear.onAppear {
-                    vm.useDetectedLocation()
-                }
-            }
-
             OnboardingButton(title: "Continue", isEnabled: vm.selectedLocation != nil) {
                 vm.advance()
             }
@@ -103,6 +96,11 @@ struct LocationStepView: View {
             }
 
             Spacer().frame(height: 20)
+        }
+        .onChange(of: vm.locationService.detectedLocationData?.latitude) { _, _ in
+            if vm.selectedLocation == nil, vm.locationService.detectedLocationData != nil {
+                vm.useDetectedLocation()
+            }
         }
     }
 }

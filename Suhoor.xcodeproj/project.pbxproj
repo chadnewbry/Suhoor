@@ -1385,6 +1385,7 @@ C6E492850103D798EB913BFD /* azan_mishary.caf */ = {isa = PBXFileReference; path 
 				INFOPLIST_GENERATION_MODE = GeneratedFile;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Suhoor can track your fasting hours in Apple Health.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Suhoor can log mindful minutes and fasting sessions to Apple Health.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Suhoor needs your location to calculate accurate prayer times and Qibla direction.";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1494,6 +1495,7 @@ C6E492850103D798EB913BFD /* azan_mishary.caf */ = {isa = PBXFileReference; path 
 				INFOPLIST_GENERATION_MODE = GeneratedFile;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Suhoor can track your fasting hours in Apple Health.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Suhoor can log mindful minutes and fasting sessions to Apple Health.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Suhoor needs your location to calculate accurate prayer times and Qibla direction.";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

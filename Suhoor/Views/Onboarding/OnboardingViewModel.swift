@@ -115,5 +115,17 @@ final class OnboardingViewModel {
         settings.quranReminderNotification = quranReminderNotification
         settings.isMenstrualModeEnabled = menstrualModeEnabled
         settings.hasCompletedOnboarding = true
+
+        // Bridge onboarding choices to UserPreferences (used by NotificationManager)
+        let prefs = UserPreferences.shared
+        prefs.fajrAzan = prayerTimesNotification
+        prefs.dhuhrAzan = prayerTimesNotification
+        prefs.asrAzan = prayerTimesNotification
+        prefs.maghribAzan = prayerTimesNotification
+        prefs.ishaAzan = prayerTimesNotification
+        prefs.preSehriAlarmEnabled = suhoorNotification
+        prefs.iftarWarningEnabled = iftarNotification
+        prefs.iftarDuaEnabled = iftarNotification
+        prefs.quranReminderEnabled = quranReminderNotification
     }
 }
