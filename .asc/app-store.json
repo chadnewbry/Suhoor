@@ -1,0 +1,17 @@
+{
+  "bundleId": "com.chadnewbry.suhoor",
+  "urls": {
+    "website": "https://chadnewbry.github.io/Suhoor/",
+    "privacyPolicy": "https://chadnewbry.github.io/Suhoor/privacy",
+    "termsOfService": "https://chadnewbry.github.io/Suhoor/terms",
+    "support": "https://chadnewbry.github.io/Suhoor/support"
+  },
+  "copyright": "© 2026 Chad Newbry",
+  "review": {
+    "demoAccountRequired": false,
+    "contactFirstName": "Chad",
+    "contactLastName": "Newbry",
+    "contactEmail": "chad.newbry@gmail.com",
+    "contactPhone": "+15417605021"
+  }
+}
