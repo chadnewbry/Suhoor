@@ -1,0 +1,8 @@
+appId: com.chadnewbry.suhoor
+---
+- launchApp
+- tapOn:
+    id: "Settings"
+- tapOn: "Upgrade to Premium — $2.99"
+- waitForAnimationToEnd
+- takeScreenshot: paywall
