@@ -153,6 +153,7 @@
 		F9D0CDC912A02A2C50BA11FE /* PrayerTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF08C8C5F265751315D6BDA /* PrayerTime.swift */; };
 		FB285F962B84DFE0519FB61C /* SuhoorWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1F00809967824B041BE1EA7A /* SuhoorWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FCE8C0A4C98B75ED4EA36D1E /* DailyVerse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76BA11429514F068241CAF2 /* DailyVerse.swift */; };
+		B1D9FD4AA3D2439DA8B815F0 /* ScreenshotSampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307F4BE9B0014E479E0C4611 /* ScreenshotSampleData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -334,6 +335,7 @@
 		F34234A51FC680D834287D23 /* SuhoorWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuhoorWidgets.swift; sourceTree = "<group>"; };
 		F3A758AB15BDBA086B751874 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Quran.strings; sourceTree = "<group>"; };
 		F7BC0A676EFB8F834BB58AF2 /* QuickStatsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickStatsRow.swift; sourceTree = "<group>"; };
+		307F4BE9B0014E479E0C4611 /* ScreenshotSampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotSampleData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -529,6 +531,7 @@
 				0150ED23522E7A7A08CFEB73 /* Models */,
 				E9A0AACE477F090C255DC44B /* Resources */,
 				E7D608BD8DADC6586B114E99 /* Services */,
+				A2E68FBDED6E47C0B3A0B57E /* Utilities */,
 				D9E2BA64F7719CC64E7C1F6D /* Views */,
 			);
 			path = Suhoor;
@@ -700,6 +703,14 @@
 			path = Sounds;
 			sourceTree = "<group>";
 		};
+		A2E68FBDED6E47C0B3A0B57E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				307F4BE9B0014E479E0C4611 /* ScreenshotSampleData.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -832,6 +843,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1D9FD4AA3D2439DA8B815F0 /* ScreenshotSampleData.swift in Sources */,
 				356DED4BBB69988633A05DD5 /* AboutView.swift in Sources */,
 				35224605A31FB43BCD5D82A6 /* AppSettings.swift in Sources */,
 				52FD3D1339F9417F293853B8 /* AshraCard.swift in Sources */,
