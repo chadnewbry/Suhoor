@@ -1,5 +1,5 @@
 {
-  "screenshotCount": 4,
+  "screenshotCount": 5,
   "locale": "en-US",
   "outputDirectory": "App-Store-Screenshots",
   "screenshotsDirectory": "inputs",
@@ -27,18 +27,23 @@
       "screenshotPath": "01-dashboard.png"
     },
     {
+      "header": "📊 Tracker",
+      "subtitle": "Track Your Fasting Journey",
+      "screenshotPath": "02-tracker.png"
+    },
+    {
       "header": "📖 Quran",
       "subtitle": "Complete the Quran This Ramadan",
       "screenshotPath": "03-quran.png"
     },
     {
-      "header": "🤲 Duas",
-      "subtitle": "Daily Duas for Every Moment",
-      "screenshotPath": "06-duas.png"
+      "header": "📅 Calendar",
+      "subtitle": "Your Ramadan at a Glance",
+      "screenshotPath": "04-calendar.png"
     },
     {
       "header": "⚙️ Settings",
-      "subtitle": "Personalize Your Ramadan Experience",
+      "subtitle": "Personalize Your Experience",
       "screenshotPath": "05-settings.png"
     }
   ],
