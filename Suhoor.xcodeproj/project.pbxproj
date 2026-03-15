@@ -184,12 +184,10 @@
 		A795EEAD993DAD9C89F41478 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD47B9F5EA9F71046C288315 /* OnboardingView.swift */; };
 		A8A9DEF2A4AA9CD21676FC2E /* SuhoorWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34234A51FC680D834287D23 /* SuhoorWidgets.swift */; };
 		AB21E7805B494744B02FC791 /* CalculationMethodStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C5C3FE83E2BC381395C43F /* CalculationMethodStepView.swift */; };
-=======
 		AB77EB90BAA1DFF8AE48AB29 /* PrayerTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF08C8C5F265751315D6BDA /* PrayerTime.swift */; };
 		AF6CE04EB570D640EE665C3D /* essential_duas.json in Resources */ = {isa = PBXBuildFile; fileRef = 97DDE92533319FC9BF0F6710 /* essential_duas.json */; };
 		B4D55F5A62484D7BA2F1F5F8 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D29B89CE6AE7CD30E40AF9 /* AudioService.swift */; };
 		B754572540B549552BF718DE /* QuranReadingPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AD9B225A7990BF03C2A5FF /* QuranReadingPlan.swift */; };
->>>>>>> 036228e (refactor: simplify models, remove NotificationManager, and update duas resource)
 		BB513039962CBDB92FE81520 /* MakeupFastSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C6883389067091F9871DC8 /* MakeupFastSection.swift */; };
 		BF9290D84E6FC8C210805CA9 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A69DF798639D7C84F5307E6 /* NotificationManager.swift */; };
 		C5470ED549023B36A1DB4E53 /* PrayerTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF08C8C5F265751315D6BDA /* PrayerTime.swift */; };
@@ -387,9 +385,7 @@
 		8758898E99D4F034F9FB7E3A /* DeedEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeedEntry.swift; sourceTree = "<group>"; };
 		89C7670C0060F158F5DDE04D /* YearComparisonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearComparisonView.swift; sourceTree = "<group>"; };
 		8A8598E9D3BFE625FA49B679 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
-=======
 		8A92B9299771D9362CF11E26 /* azan_madinah.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = azan_madinah.caf; sourceTree = "<group>"; };
->>>>>>> 104c090 (fix: add shared scheme and widget NSExtension for device install)
 		8AFF62EC611461E79ADFA586 /* RamadanScorecardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamadanScorecardView.swift; sourceTree = "<group>"; };
 		8B12E87D82D9C972904AB207 /* WelcomeStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeStepView.swift; sourceTree = "<group>"; };
 		8FE9FB3D089E65C997108FA3 /* DeedOfTheDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeedOfTheDay.swift; sourceTree = "<group>"; };
@@ -419,7 +415,6 @@
 		B6C6883389067091F9871DC8 /* MakeupFastSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeupFastSection.swift; sourceTree = "<group>"; };
 		B70243E777C7E1E9B27C5E22 /* RamadanDayCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamadanDayCard.swift; sourceTree = "<group>"; };
 		BBDD2EDA1D53537BAF5F848E /* Suhoor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Suhoor.entitlements; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		BDCA5E9955AF6504F3498FFF /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		C000845BF26A48ECEBBC1E63 /* SuhoorMealCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuhoorMealCardView.swift; sourceTree = "<group>"; };
 		C057859B32EE5CFCD0E88011 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
@@ -463,7 +458,6 @@ C6E492850103D798EB913BFD /* azan_mishary.caf */ = {isa = PBXFileReference; path 
 		4D85EB19BED4D3710CCFB829 /* NextPrayerCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextPrayerCard.swift; sourceTree = "<group>"; };
 		48E04842DECD1F1FADDB7D56 /* PrayerTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTime.swift; sourceTree = "<group>"; };
 		F0F1A0132DCA08EA80378981 /* QuickStatsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickStatsRow.swift; sourceTree = "<group>"; };
->>>>>>> 5c8af0e (feat: add analytics scorecard, daily deeds checklist, badges grid, year-over-year comparison, and shareable summary)
 		CEE52F4FAE62C9C4D56161B7 /* QuranVerse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranVerse.swift; sourceTree = "<group>"; };
 		D3285D987B0A405AB0B8E2D3 /* ModelContainer+Suhoor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ModelContainer+Suhoor.swift"; sourceTree = "<group>"; };
 		E165EF471D74E0FAD12C8947 /* UserSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
@@ -524,7 +518,6 @@ C6E492850103D798EB913BFD /* azan_mishary.caf */ = {isa = PBXFileReference; path 
 				D3285D987B0A405AB0B8E2D3 /* ModelContainer+Suhoor.swift */,
 				40F0AD522D66D4967B55C442 /* QuranProgress.swift */,
 				E165EF471D74E0FAD12C8947 /* UserSettings.swift */,
->>>>>>> 036228e (refactor: simplify models, remove NotificationManager, and update duas resource)
 				144106AB2CB1102F5C6E8C66 /* Badge.swift */,
 				C76BA11429514F068241CAF2 /* DailyVerse.swift */,
 				207D527C4CDB846E2D2AB07A /* DashboardDay.swift */,
@@ -618,7 +611,6 @@ C6E492850103D798EB913BFD /* azan_mishary.caf */ = {isa = PBXFileReference; path 
 			path = Complications;
 		58A99168D02A7B37E7E06081 /* Onboarding */ = {
 				1D03953894A91AA211CAEDC4 /* .gitkeep */,
-=======
 				E7C5C3FE83E2BC381395C43F /* CalculationMethodStepView.swift */,
 				69A1367874271F1BB347C91E /* LanguageStepView.swift */,
 				46D54EF465D5E1BD3FCA1F5A /* LocationStepView.swift */,
@@ -774,7 +766,6 @@ C6E492850103D798EB913BFD /* azan_mishary.caf */ = {isa = PBXFileReference; path 
 				C5013D2F9602338362B8EE10 /* .gitkeep */,
 				CD375CAE5EE0F801E8DD4B52 /* NotificationManager.swift */,
 				3CB2D94B64703D30909B00E9 /* DashboardViewModel.swift */,
->>>>>>> 036228e (refactor: simplify models, remove NotificationManager, and update duas resource)
 				CFAE41814A3326DF280A368D /* CalendarViewModel.swift */,
 				330EBD12ED238268377189D3 /* DashboardViewModel.swift */,
 			);
@@ -886,7 +877,6 @@ C6E492850103D798EB913BFD /* azan_mishary.caf */ = {isa = PBXFileReference; path 
 			path = Sounds;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
 		F8FA97568019E5D9CCA6FE41 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -1014,7 +1004,6 @@ C6E492850103D798EB913BFD /* azan_mishary.caf */ = {isa = PBXFileReference; path 
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-=======
 				F8D530F08B7C5DA23556EA4B /* Assets.xcassets in Resources */,
 				5E28384B49E0DF7755F9F317 /* Configuration.storekit in Resources */,
 				71A54DDCB5F7CDDE42AE50E0 /* Quran.strings in Resources */,
@@ -1045,8 +1034,6 @@ C6E492850103D798EB913BFD /* azan_mishary.caf */ = {isa = PBXFileReference; path 
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
-<<<<<<< HEAD
 				356DED4BBB69988633A05DD5 /* AboutView.swift in Sources */,
 				35224605A31FB43BCD5D82A6 /* AppSettings.swift in Sources */,
 				B4D55F5A62484D7BA2F1F5F8 /* AudioService.swift in Sources */,
@@ -1150,7 +1137,6 @@ C6E492850103D798EB913BFD /* azan_mishary.caf */ = {isa = PBXFileReference; path 
 				22DA4C55DD4F2991A7C31B5C /* Juz.swift in Sources */,
 				9E12AC6E057EB7AE68CCD1A1 /* LanguageStepView.swift in Sources */,
 				58EC9B9C2D0BBBD26A1331D5 /* LaylatAlQadrView.swift in Sources */,
-=======
 				157BB27FB71408DD9FBD6018 /* LiveActivityService.swift in Sources */,
 				1E6E0272BACBC33E2627ACED /* LocationData.swift in Sources */,
 				DC3712F22878827122DA44F6 /* LocationService.swift in Sources */,
@@ -1199,7 +1185,6 @@ C6E492850103D798EB913BFD /* azan_mishary.caf */ = {isa = PBXFileReference; path 
 				8024DB05F76C67DD0213D59C /* RamadanCalendarView.swift in Sources */,
 				56FD1FD45F5D8E63947FAD74 /* RamadanDayCard.swift in Sources */,
 				43FEFDF6CACD7AED2FBBC5DE /* RamadanGridView.swift in Sources */,
-<<<<<<< HEAD
 				1261B9FA8CC478AACC70ED02 /* RamadanScorecardView.swift in Sources */,
 				27B13F3160C50C87FC9487AE /* RingChartView.swift in Sources */,
 				3E0FDECEAC106F44EDD3A067 /* SettingsView.swift in Sources */,
@@ -1224,10 +1209,7 @@ C6E492850103D798EB913BFD /* azan_mishary.caf */ = {isa = PBXFileReference; path 
 				5BD96DF17EBB1B5E72326870 /* SuhoorMealCardView.swift in Sources */,
 				652FFDBAE4005508CBC86FFE /* SuhoorPlanningView.swift in Sources */,
 				DFE7980894F83F48384D9D98 /* SupportView.swift in Sources */,
-<<<<<<< HEAD
 				8B68BDF6FC5B08C6004EAE22 /* SuhoorMeal.swift in Sources */,
-=======
->>>>>>> 036228e (refactor: simplify models, remove NotificationManager, and update duas resource)
 				5DFE548DFA768DD2EFC156EC /* TrackerView.swift in Sources */,
 				5779BABFDCCACFC3D740DF04 /* UserPreferences.swift in Sources */,
 				D21A0BE5D5A9331CA50EDAAC /* UserSettings.swift in Sources */,
