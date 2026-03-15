@@ -1,0 +1,47 @@
+# Maestro Screenshot Capture Flow — Suhoor
+# Captures App Store screenshot input images with sample data populated.
+
+appId: com.chadnewbry.suhoor
+name: "Capture App Store Screenshots"
+---
+
+# 1. Launch with clean state + screenshot mode to seed data
+- launchApp:
+    appId: com.chadnewbry.suhoor
+    clearState: true
+    arguments:
+      - "--screenshot-mode"
+
+# 2. Relaunch without clearing state so @Query views pick up seeded data
+- launchApp:
+    appId: com.chadnewbry.suhoor
+    clearState: false
+    arguments:
+      - "--screenshot-mode"
+
+# 3. Wait for app to fully load
+- waitForAnimationToEnd
+
+# -- Screenshot 1: Dashboard --
+- waitForAnimationToEnd
+- takeScreenshot: "01-dashboard"
+
+# -- Screenshot 2: Tracker --
+- tapOn: "Tracker"
+- waitForAnimationToEnd
+- takeScreenshot: "02-tracker"
+
+# -- Screenshot 3: Quran --
+- tapOn: "Quran"
+- waitForAnimationToEnd
+- takeScreenshot: "03-quran"
+
+# -- Screenshot 4: Calendar --
+- tapOn: "Calendar"
+- waitForAnimationToEnd
+- takeScreenshot: "04-calendar"
+
+# -- Screenshot 5: Settings --
+- tapOn: "Settings"
+- waitForAnimationToEnd
+- takeScreenshot: "05-settings"

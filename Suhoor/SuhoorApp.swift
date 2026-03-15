@@ -15,6 +15,14 @@ struct SuhoorApp: App {
 
     init() {
         BackgroundTaskManager.shared.registerBackgroundTask()
+
+        #if DEBUG
+        if ScreenshotSampleData.isScreenshotMode {
+            ScreenshotSampleData.populate(context: DataManager.shared.modelContext)
+            // Skip onboarding in screenshot mode
+            UserDefaults.standard.set(true, forKey: "hasCompletedOnboarding")
+        }
+        #endif
     }
 
     var body: some Scene {
