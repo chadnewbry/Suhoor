@@ -7,7 +7,6 @@ struct SettingsView: View {
         NavigationStack {
             ZStack {
                 Color.suhoorIndigo.ignoresSafeArea()
-                
                 List {
                     // MARK: - Prayer Times
                     Section {
@@ -44,8 +43,92 @@ struct SettingsView: View {
                     } header: {
                         Text("Fasting")
                     }
+                    .listRowBackground(Color.suhoorSurface)
+
+                    // MARK: - Display
+                    Section {
+                        NavigationLink {
+                            DisplaySettingsView()
+                        } label: {
+                            Label("Display & Appearance", systemImage: "paintbrush")
+                        }
+                    } header: {
+                        Text("Display")
+                    }
+                    .listRowBackground(Color.suhoorSurface)
+
+                    // MARK: - Subscription
+                    Section {
+                        NavigationLink {
+                            SubscriptionSettingsView()
+                        } label: {
+                            Label("Premium", systemImage: "crown")
+                        }
+                    } header: {
+                        Text("Premium")
+                    }
+                    .listRowBackground(Color.suhoorSurface)
+
+                    // MARK: - iCloud Sync
+                    Section {
+                        HStack {
+                            Label("iCloud Sync", systemImage: "icloud")
+                            Spacer()
+                            Text("Coming Soon")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 4)
+                                .background(Color.suhoorSurface)
+                                .clipShape(Capsule())
+                        }
+                    } header: {
+                        Text("Sync")
+                    } footer: {
+                        Text("CloudKit sync will be available in v1.1")
+                    }
+                    .listRowBackground(Color.suhoorSurface)
+
+                    // MARK: - Support
+                    Section {
+                        NavigationLink {
+                            SupportView()
+                        } label: {
+                            Label("Help & Support", systemImage: "questionmark.circle")
+                        }
+                    } header: {
+                        Text("Support")
+                    }
+                    .listRowBackground(Color.suhoorSurface)
+
+                    // MARK: - Legal
+                    Section {
+                        Link(destination: URL(string: "https://chadnewbry.github.io/Suhoor/privacy")!) {
+                            Label("Privacy Policy", systemImage: "hand.raised")
+                        }
+                        Link(destination: URL(string: "https://chadnewbry.github.io/Suhoor/terms")!) {
+                            Label("Terms of Use", systemImage: "doc.text")
+                        }
+                        Link(destination: URL(string: "https://chadnewbry.github.io/Suhoor/support")!) {
+                            Label("Support Page", systemImage: "lifepreserver")
+                        }
+                    } header: {
+                        Text("Legal")
+                    }
+                    .listRowBackground(Color.suhoorSurface)
+
+                    // MARK: - About
+                    Section {
+                        NavigationLink {
+                            AboutView()
+                        } label: {
+                            Label("About Suhoor", systemImage: "info.circle")
+                        }
+                    }
+                    .listRowBackground(Color.suhoorSurface)
                 }
                 .scrollContentBackground(.hidden)
+                .foregroundStyle(Color.suhoorTextPrimary)
             }
             .navigationTitle("Settings")
             .navigationBarTitleDisplayMode(.inline)

@@ -5,14 +5,23 @@ import Combine
 
 // MARK: - Quran Audio Service
 
-/// Streams Quran recitation audio per Juz using the Quran.com API
+/// Streams Quran recitation audio per Juz using the Quran.com API and Al Quran Cloud API.
+/// Supports background playback, play/pause/seek, and Now Playing integration.
+@MainActor
 final class QuranAudioService: NSObject, ObservableObject {
     static let shared = QuranAudioService()
+
+    // MARK: - Published State
 
     @Published private(set) var playbackState: JuzPlaybackState = .idle
     @Published private(set) var currentJuz: Int?
     @Published private(set) var currentTime: TimeInterval = 0
     @Published private(set) var duration: TimeInterval = 0
+    @Published var isPlaying = false
+    @Published var isLoading = false
+    @Published var error: String?
+
+    // MARK: - Private
 
     private var player: AVPlayer?
     private var timeObserver: Any?
@@ -20,6 +29,19 @@ final class QuranAudioService: NSObject, ObservableObject {
 
     /// Reciter ID for Mishary Rashid Alafasy on Quran.com API
     private let reciterId = 7
+
+    /// Base URL for Al Quran Cloud API audio.
+    /// Provides per-ayah audio; we stream the first ayah of each Juz as a starting point.
+    private let baseURL = "https://cdn.islamic.network/quran/audio/128/ar.alafasy"
+
+    /// Mapping of Juz number to the global ayah number of its first ayah.
+    private static let juzStartAyah: [Int: Int] = [
+        1: 1, 2: 142, 3: 253, 4: 385, 5: 470, 6: 555, 7: 640, 8: 722,
+        9: 800, 10: 879, 11: 957, 12: 1041, 13: 1127, 14: 1200, 15: 1282,
+        16: 1363, 17: 1442, 18: 1522, 19: 1602, 20: 1680, 21: 1757,
+        22: 1833, 23: 1905, 24: 1975, 25: 2048, 26: 2122, 27: 2196,
+        28: 2266, 29: 2337, 30: 2402
+    ]
 
     private override init() {
         super.init()
@@ -31,14 +53,16 @@ final class QuranAudioService: NSObject, ObservableObject {
 
     private func configureAudioSession() {
         do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-            try AVAudioSession.sharedInstance().setActive(true)
+            let session = AVAudioSession.sharedInstance()
+            try session.setCategory(.playback, mode: .default, options: [])
+            try session.setActive(true)
         } catch {
+            self.error = "Failed to configure audio session: \(error.localizedDescription)"
             print("QuranAudioService: Audio session error: \(error)")
         }
     }
 
-    // MARK: - Playback
+    // MARK: - Playback Controls
 
     func play(juz: Int) {
         guard juz >= 1 && juz <= 30 else { return }
@@ -46,6 +70,8 @@ final class QuranAudioService: NSObject, ObservableObject {
         stop()
         currentJuz = juz
         playbackState = .loading(juz: juz)
+        isLoading = true
+        self.error = nil
 
         Task {
             do {
@@ -55,7 +81,9 @@ final class QuranAudioService: NSObject, ObservableObject {
                 }
             } catch {
                 await MainActor.run {
+                    isLoading = false
                     playbackState = .error(juz: juz, message: error.localizedDescription)
+                    self.error = error.localizedDescription
                 }
             }
         }
@@ -72,9 +100,18 @@ final class QuranAudioService: NSObject, ObservableObject {
         }
     }
 
+    func togglePlayback() {
+        if isPlaying {
+            pause()
+        } else {
+            resume()
+        }
+    }
+
     func pause() {
         guard let juz = currentJuz else { return }
         player?.pause()
+        isPlaying = false
         playbackState = .paused(juz: juz)
         updateNowPlaying()
     }
@@ -82,6 +119,7 @@ final class QuranAudioService: NSObject, ObservableObject {
     func resume() {
         guard let juz = currentJuz else { return }
         player?.play()
+        isPlaying = true
         playbackState = .playing(juz: juz)
         updateNowPlaying()
     }
@@ -96,9 +134,29 @@ final class QuranAudioService: NSObject, ObservableObject {
         currentJuz = nil
         currentTime = 0
         duration = 0
+        isPlaying = false
+        isLoading = false
         playbackState = .idle
         cancellables.removeAll()
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nil
+    }
+
+    /// Seek to a specific time in seconds.
+    func seek(to seconds: TimeInterval) {
+        let time = CMTime(seconds: seconds, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
+        player?.seek(to: time)
+    }
+
+    /// Seek forward by the given number of seconds (default 10).
+    func seekForward(by seconds: TimeInterval = 10) {
+        let target = min(currentTime + seconds, duration)
+        seek(to: target)
+    }
+
+    /// Seek backward by the given number of seconds (default 10).
+    func seekBackward(by seconds: TimeInterval = 10) {
+        let target = max(currentTime - seconds, 0)
+        seek(to: target)
     }
 
     // MARK: - Private
@@ -131,33 +189,41 @@ final class QuranAudioService: NSObject, ObservableObject {
                 guard let self else { return }
                 switch status {
                 case .readyToPlay:
+                    self.isLoading = false
                     self.player?.play()
+                    self.isPlaying = true
                     self.playbackState = .playing(juz: juz)
                     if let dur = self.player?.currentItem?.duration, dur.isNumeric {
                         self.duration = CMTimeGetSeconds(dur)
                     }
                     self.updateNowPlaying()
                 case .failed:
-                    self.playbackState = .error(juz: juz, message: "Failed to load audio")
+                    self.isLoading = false
+                    self.playbackState = .error(juz: juz, message: playerItem.error?.localizedDescription ?? "Playback failed")
+                    self.error = playerItem.error?.localizedDescription ?? "Playback failed"
                 default:
                     break
                 }
             }
             .store(in: &cancellables)
 
+        let interval = CMTime(seconds: 0.5, preferredTimescale: 600)
         timeObserver = player?.addPeriodicTimeObserver(
-            forInterval: CMTime(seconds: 0.5, preferredTimescale: 600),
+            forInterval: interval,
             queue: .main
         ) { [weak self] time in
-            self?.currentTime = CMTimeGetSeconds(time)
-            if let dur = self?.player?.currentItem?.duration, dur.isNumeric {
-                self?.duration = CMTimeGetSeconds(dur)
+            Task { @MainActor in
+                self?.currentTime = CMTimeGetSeconds(time)
+                if let dur = self?.player?.currentItem?.duration, dur.isNumeric {
+                    self?.duration = CMTimeGetSeconds(dur)
+                }
             }
         }
 
         NotificationCenter.default.publisher(for: .AVPlayerItemDidPlayToEndTime, object: playerItem)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
+                self?.isPlaying = false
                 self?.stop()
             }
             .store(in: &cancellables)
@@ -212,6 +278,14 @@ final class QuranAudioService: NSObject, ObservableObject {
             MPNowPlayingInfoPropertyPlaybackRate: playbackState.isPlaying ? 1.0 : 0.0
         ]
         MPNowPlayingInfoCenter.default().nowPlayingInfo = info
+    }
+
+    // MARK: - Audio URL Builder
+
+    /// Returns the streaming URL for a specific ayah within a Juz.
+    /// Uses the Al Quran Cloud API with Mishary Rashid Alafasy recitation.
+    func audioURL(forAyah globalAyahNumber: Int) -> URL? {
+        URL(string: "\(baseURL)/\(globalAyahNumber).mp3")
     }
 }
 

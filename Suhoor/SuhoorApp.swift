@@ -2,6 +2,9 @@ import SwiftUI
 
 @main
 struct SuhoorApp: App {
+    @StateObject private var settings = AppSettings.shared
+    @StateObject private var store = StoreService.shared
+
     @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding = false
 
     @State private var userPreferences = UserPreferences.shared
@@ -27,7 +30,8 @@ struct SuhoorApp: App {
             Group {
                 if hasCompletedOnboarding {
                     ContentView()
-                        .preferredColorScheme(.dark)
+                        .environmentObject(store)
+                        .preferredColorScheme(settings.appearanceMode.colorScheme)
                 } else {
                     OnboardingView()
                         .preferredColorScheme(.dark)
